@@ -7,7 +7,6 @@ public class Language {
 	static ResourceBundle langs;
 	public static String getLang(String word)
 	{
-
 		if(langs==null)
 		{
 
