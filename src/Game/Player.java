@@ -22,13 +22,20 @@ public class Player {
 	
 	public String getPlayerName (int IDOfPlayer){
 		
+		String NameOfPlayer = null;
 		
+		if (IDOfPlayer < 6 && IDOfPlayer >= 0){
+			
+			NameOfPlayer = Names[IDOfPlayer];
+		}
+		if (IDOfPlayer > 6 || IDOfPlayer < 0){
+			
+			NameOfPlayer = "A fault happend - See; Game -> Player -> getPlayerName";
+			
+			System.out.println("A fault happend - See; Game -> Player -> getPlayerName");
+		}
 		
-		
-		
-		
-		
-		return null;
+		return NameOfPlayer;
 		
 	}
 	
