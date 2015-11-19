@@ -2,7 +2,6 @@ package Game;
 
 public class Player {
 
-	
 	private static int lenghtOfArray = 0;
 	private static int indexNumber = 0;
 	
@@ -23,31 +22,20 @@ public class Player {
 	public String getPlayerName (int IDOfPlayer){
 		
 		String NameOfPlayer = null;
-		
-		if (IDOfPlayer < 6 && IDOfPlayer >= 0){
+	
+		if (Player.isValidID(IDOfPlayer)){
 			
 			NameOfPlayer = Names[IDOfPlayer];
 		}
-		if (IDOfPlayer > 6 || IDOfPlayer < 0){
+		if (!(Player.isValidID(IDOfPlayer))){
 			
 			NameOfPlayer = "A fault happend - See; Game -> Player -> getPlayerName";
-			
 			System.out.println("A fault happend - See; Game -> Player -> getPlayerName");
 		}
 		
 		return NameOfPlayer;
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	private static void addSpaceForPlayer(){
 		
@@ -64,11 +52,29 @@ public class Player {
 		indexNumber++;
 		
 	}
+	private static boolean isValidID(int IDOfPlayer){
+		
+		boolean validity = false;
+		
+		if (IDOfPlayer < 6 && IDOfPlayer >= 0){
+			
+			validity = true;
+		}
+		if (IDOfPlayer > 6 || IDOfPlayer < 0){
+			
+			validity = false;
+		}
+		return validity;
+	}
 
+//	Additional, can be deleted when program is finished
 	
-	
-	
-	
-	
-	
+	public void setIndexNumber(int NewIndexNumber){
+		
+		indexNumber = NewIndexNumber;
+	}
+	public void setLenghtOfArray(int NewLenghtOfArray){
+		
+		lenghtOfArray = NewLenghtOfArray;
+	}
 }
