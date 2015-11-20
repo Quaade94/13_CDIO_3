@@ -13,7 +13,12 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-
+		
+		Die Roll = new Die();
+		int[] roll = Roll.roll();
+		GameBoard Board = new GameBoard();
+		
+		
 		//Spilleplade (SKAL være først)
 		Field[] fields = new Field[21];
 
@@ -191,15 +196,39 @@ public class Main {
 				.build();
 		
 		
-				
-		GUI.addPlayer("Name1", 1000, car1);
-		GUI.addPlayer("Name2", 1000, car2);
-		GUI.addPlayer("Name3", 1000, car3);
-		GUI.addPlayer("Name4", 1000, car4);
-		GUI.addPlayer("Name5", 1000, car5);
-		GUI.addPlayer("Name6", 1000, car6);
+//		if(playerAmount >= 2){
+//			//input name here
+//			GUI.addPlayer("Name1", 1000, car1);
+//			//input name here
+//			GUI.addPlayer("Name2", 1000, car2);
+//		}
+//		else if(playerAmount >= 3){
+//			//input name here
+//			GUI.addPlayer("Name3", 1000, car3);
+//		}
+//		else if(playerAmount >= 4){
+//			//input name here
+//			GUI.addPlayer("Name4", 1000, car4);
+//		}
+//		else if(playerAmount >= 5){
+//			//input name here
+//			GUI.addPlayer("Name5", 1000, car5);
+//		}
+//		else if(playerAmount == 6){
+//			//input name here
+//			GUI.addPlayer("Name6", 1000, car6);
+//		}
+//		else{
+//			//indsæt fejl her.
+//		}
 		
 		
+		
+		//DETTE AFSNIT ER EN TEST
+		System.out.println("rolled: "+roll[2]);
+		System.out.println(Board.getFieldRent(1));
+		System.out.println(Board.getFieldName(1));
+		System.out.println("Price: "+Board.getFieldPrice(1));
 		
 				
 				
