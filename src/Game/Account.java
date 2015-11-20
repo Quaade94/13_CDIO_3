@@ -39,8 +39,16 @@ public class Account extends Player {
 		int SumOfAccount = 0;
 		
 		if (super.isValidID(IDOfPlayer)){
+			if (isNotBroke(IDOfPlayer)){
+				
+				SumOfAccount = Accounts[IDOfPlayer];
+			}
+			if (!(isNotBroke(IDOfPlayer))){
+				
+				System.out.println("This Player ID = " + IDOfPlayer + " is broke, and cannot play anymore");
+				
+			}
 			
-			SumOfAccount = Accounts[IDOfPlayer];
 		}
 		if (!(super.isValidID(IDOfPlayer))){
 			
@@ -63,16 +71,20 @@ public class Account extends Player {
 			System.out.println("A fault happend - See; Game -> Account -> addOrRemoveCapitalFromPlayerAccount");
 
 		}
-		
-		
-		
-		
 	}
 	
-	
-	
-	
-	
-	
+	private boolean isNotBroke(int IDOfPlayer){
+		
+		boolean broke = false;
+		
+		if (Account.getAccountSum(IDOfPlayer) < 0){
+			
+			broke = true;
+			
+		}
+
+		return broke;
+		
+	}
 	
 }
