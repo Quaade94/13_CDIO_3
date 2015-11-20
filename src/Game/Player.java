@@ -68,11 +68,11 @@ public class Player {
 		
 		boolean validity = false;
 		
-		if (IDOfPlayer < 6 && IDOfPlayer >= 0){
+		if (IDOfPlayer < lenghtOfPlayerArray && IDOfPlayer >= 0){
 			
 			validity = true;
 		}
-		if (IDOfPlayer > 6 || IDOfPlayer < 0){
+		if (IDOfPlayer > lenghtOfPlayerArray || IDOfPlayer < 0){
 			
 			validity = false;
 		}
