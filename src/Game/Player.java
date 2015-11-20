@@ -2,16 +2,28 @@ package Game;
 
 public class Player {
 
-	private static int lenghtOfArray = 0;
-	private static int indexNumber = 0;
+	protected static int lenghtOfPlayerArray = 0;
+	protected static int indexNumber = 0;
 	
-	private static String[]	 Names 	= new String[lenghtOfArray];
+	protected static String[]	 Names 	= new String[lenghtOfPlayerArray];
+	
+	
+	
+	
+//	This constructor uses 5000 as a starting capital for the player, but needs the accual staring capital.
+	Account Account = new Account(5000);
+	
+	
+	
 	
 	public void addPlayer(String NameOfPlayer){
 		
-		Player.addSpaceForPlayer();
-		Player.addNameOfPlayerToArray(NameOfPlayer);
-		Player.moveToNextIndex();
+		if (indexNumber <= 6){
+			Player.addSpaceForPlayer();
+			Player.addNameOfPlayerToArray(NameOfPlayer);
+			Account.addPlayerAccount(indexNumber);
+			Player.moveToNextIndex();
+		}
 		
 		if (indexNumber > 6){
 			System.out.println("You should not be able to add more than 6 players - See; Game -> Player");
@@ -39,7 +51,7 @@ public class Player {
 	
 	private static void addSpaceForPlayer(){
 		
-		lenghtOfArray++;
+		lenghtOfPlayerArray++;
 		
 	}
 	private static void addNameOfPlayerToArray(String NameOfPlayer){
@@ -75,6 +87,6 @@ public class Player {
 	}
 	public void setLenghtOfArray(int NewLenghtOfArray){
 		
-		lenghtOfArray = NewLenghtOfArray;
+		lenghtOfPlayerArray = NewLenghtOfArray;
 	}
 }
