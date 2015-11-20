@@ -147,14 +147,58 @@ public class Main {
 	
 //		Tilføjer en spiller til spillepladen
 		
-		Car car = new Car.Builder()
-				.typeUfo()
+		
+		Car car1 = new Car.Builder()
+				.typeCar()
 				.patternHorizontalDualColor()
 				.primaryColor(Color.RED)
 				.secondaryColor(Color.BLUE)
 				.build();
+		
+		Car car2 = new Car.Builder()
+				.typeCar()
+				.patternHorizontalDualColor()
+				.primaryColor(Color.RED)
+				.secondaryColor(Color.BLUE)
+				.build();
+		
+		Car car3 = new Car.Builder()
+				.typeCar()
+				.patternHorizontalDualColor()
+				.primaryColor(Color.RED)
+				.secondaryColor(Color.BLUE)
+				.build();
+		
+		Car car4 = new Car.Builder()
+				.typeCar()
+				.patternHorizontalDualColor()
+				.primaryColor(Color.RED)
+				.secondaryColor(Color.BLUE)
+				.build();
+		
+		Car car5 = new Car.Builder()
+				.typeCar()
+				.patternHorizontalDualColor()
+				.primaryColor(Color.RED)
+				.secondaryColor(Color.BLUE)
+				.build();
+		
+		Car car6 = new Car.Builder()
+				.typeCar()
+				.patternHorizontalDualColor()
+				.primaryColor(Color.RED)
+				.secondaryColor(Color.BLUE)
+				.build();
+		
+		
 				
-		GUI.addPlayer("John Rambo", 1000);
+		GUI.addPlayer("Name1", 1000, car1);
+		GUI.addPlayer("Name2", 1000, car2);
+		GUI.addPlayer("Name3", 1000, car3);
+		GUI.addPlayer("Name4", 1000, car4);
+		GUI.addPlayer("Name5", 1000, car5);
+		GUI.addPlayer("Name6", 1000, car6);
+		
 		
 		
 				
