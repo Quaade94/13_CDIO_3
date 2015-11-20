@@ -16,7 +16,8 @@ public class Main {
 		Die Roll = new Die();
 		int[] roll = Roll.roll();
 		GameBoard Board = new GameBoard();
-		int playerAmount = new Player().getPlayerAmount();
+//		Player player = new Player();	
+//		int playerAmount = Player.getPlayerAmount();
 		
 		
 		//Spilleplade (SKAL være først)
@@ -199,33 +200,34 @@ public class Main {
 //		Tilføjer spillere til spillepladen
 		
 		//Denne er der kun så GUI kan åbne
-//		GUI.addPlayer("Name1", 1000, car1);
+		GUI.addPlayer("Name1", 1000, car1);
 		
-		if(playerAmount == 2){
-			//input name here
-			GUI.addPlayer("Name1", 1000, car1);
-			//input name here
-			GUI.addPlayer("Name2", 1000, car2);
-		}
-		else if(playerAmount == 3){
-			//input name here
-			GUI.addPlayer("Name3", 1000, car3);
-		}
-		else if(playerAmount == 4){
-			//input name here
-			GUI.addPlayer("Name4", 1000, car4);
-		}
-		else if(playerAmount == 5){
-			//input name here
-			GUI.addPlayer("Name5", 1000, car5);
-		}
-		else if(playerAmount == 6){
-			//input name here
-			GUI.addPlayer("Name6", 1000, car6);
-		}
-		else{
-			System.out.println("Fejl! For mange/få spillere!");
-		}
+		
+//		if(playerAmount == 2){
+//			//input name here
+//			GUI.addPlayer("Name1", 1000, car1);
+//			//input name here
+//			GUI.addPlayer("Name2", 1000, car2);
+//		}
+//		else if(playerAmount == 3){
+//			//input name here
+//			GUI.addPlayer("Name3", 1000, car3);
+//		}
+//		else if(playerAmount == 4){
+//			//input name here
+//			GUI.addPlayer("Name4", 1000, car4);
+//		}
+//		else if(playerAmount == 5){
+//			//input name here
+//			GUI.addPlayer("Name5", 1000, car5);
+//		}
+//		else if(playerAmount == 6){
+//			//input name here
+//			GUI.addPlayer("Name6", 1000, car6);
+//		}
+//		else{
+//			System.out.println("Fejl! For mange/få spillere!");
+//		}
 		
 		
 		
