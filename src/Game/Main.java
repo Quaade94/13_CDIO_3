@@ -4,10 +4,12 @@ import java.awt.Color;
 
 import desktop_codebehind.Car;
 import desktop_fields.Field;
-import desktop_fields.Shipping;
-import desktop_fields.Start;
-import desktop_resources.GUI;
 import desktop_fields.Street;
+import desktop_resources.GUI;
+
+import Test.TestKlasse;
+
+
 
 public class Main {
 	
@@ -16,7 +18,16 @@ public class Main {
 
 		//Spilleplade (SKAL være først)
 		Field[] fields = new Field[21];
+		
+		TestKlasse TestT = new TestKlasse();
+		
 
+		
+		
+
+		
+		
+		
 		
 		fields[0] = new Street.Builder()
 				.setTitle(Language.getLang("TER1"))
