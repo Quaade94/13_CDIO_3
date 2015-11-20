@@ -89,4 +89,10 @@ public class Player {
 		
 		lenghtOfPlayerArray = NewLenghtOfArray;
 	}
+	public int getPlayerAmount(){
+		
+		int playerAmount = lenghtOfPlayerArray;
+		
+		return playerAmount;
+	}
 }

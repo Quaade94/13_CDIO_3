@@ -7,9 +7,6 @@ import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
 
-import Test.TestKlasse;
-
-
 
 public class Main {
 	
@@ -19,19 +16,11 @@ public class Main {
 		Die Roll = new Die();
 		int[] roll = Roll.roll();
 		GameBoard Board = new GameBoard();
+		int playerAmount = new Player().getPlayerAmount();
 		
 		
 		//Spilleplade (SKAL være først)
 		Field[] fields = new Field[21];
-		
-		TestKlasse TestT = new TestKlasse();
-		
-
-		
-		
-
-		
-		
 		
 		
 		fields[0] = new Street.Builder()
@@ -112,13 +101,13 @@ public class Main {
 		
 		fields[13] = new Street.Builder()
 				.setTitle(Language.getLang("LAB1"))
-				.setRent("100*Dice,-")
+				.setRent(roll[2]*100+",-")
 				.setSubText(Language.getLang("PRI")+": 2500")
 				.build();
 		
 		fields[14] = new Street.Builder()
 				.setTitle(Language.getLang("LAB2"))
-				.setRent("100*Dice,-")
+				.setRent(roll[2]*100+",-")
 				.setSubText(Language.getLang("PRI")+": 2500")
 				.build();
 		
@@ -156,13 +145,10 @@ public class Main {
 				.setSubText(Language.getLang("PRI")+": 4000")
 				.build();
 		
-		
-		
-		
 		GUI.create(fields);
 	
-//		Tilføjer en spiller til spillepladen
-		
+
+//		Laver spilernes biler
 		
 		Car car1 = new Car.Builder()
 				.typeCar()
@@ -207,39 +193,47 @@ public class Main {
 				.build();
 		
 		
-//		if(playerAmount >= 2){
-//			//input name here
-//			GUI.addPlayer("Name1", 1000, car1);
-//			//input name here
-//			GUI.addPlayer("Name2", 1000, car2);
-//		}
-//		else if(playerAmount >= 3){
-//			//input name here
-//			GUI.addPlayer("Name3", 1000, car3);
-//		}
-//		else if(playerAmount >= 4){
-//			//input name here
-//			GUI.addPlayer("Name4", 1000, car4);
-//		}
-//		else if(playerAmount >= 5){
-//			//input name here
-//			GUI.addPlayer("Name5", 1000, car5);
-//		}
-//		else if(playerAmount == 6){
-//			//input name here
-//			GUI.addPlayer("Name6", 1000, car6);
-//		}
-//		else{
-//			//indsæt fejl her.
-//		}
+	
+		
+		
+//		Tilføjer spillere til spillepladen
+		
+		//Denne er der kun så GUI kan åbne
+//		GUI.addPlayer("Name1", 1000, car1);
+		
+		if(playerAmount == 2){
+			//input name here
+			GUI.addPlayer("Name1", 1000, car1);
+			//input name here
+			GUI.addPlayer("Name2", 1000, car2);
+		}
+		else if(playerAmount == 3){
+			//input name here
+			GUI.addPlayer("Name3", 1000, car3);
+		}
+		else if(playerAmount == 4){
+			//input name here
+			GUI.addPlayer("Name4", 1000, car4);
+		}
+		else if(playerAmount == 5){
+			//input name here
+			GUI.addPlayer("Name5", 1000, car5);
+		}
+		else if(playerAmount == 6){
+			//input name here
+			GUI.addPlayer("Name6", 1000, car6);
+		}
+		else{
+			System.out.println("Fejl! For mange/få spillere!");
+		}
 		
 		
 		
 		//DETTE AFSNIT ER EN TEST
-		System.out.println("rolled: "+roll[2]);
-		System.out.println(Board.getFieldRent(1));
-		System.out.println(Board.getFieldName(1));
-		System.out.println("Price: "+Board.getFieldPrice(1));
+		System.out.println("Rolled: "+roll[2]);
+		System.out.println(Board.getFieldRent(14));
+		System.out.println(Board.getFieldName(14));
+		System.out.println("Price: "+Board.getFieldPrice(14));
 		
 				
 				
