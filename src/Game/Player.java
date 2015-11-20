@@ -64,7 +64,7 @@ public class Player {
 		indexNumber++;
 		
 	}
-	private static boolean isValidID(int IDOfPlayer){
+	protected static boolean isValidID(int IDOfPlayer){
 		
 		boolean validity = false;
 		

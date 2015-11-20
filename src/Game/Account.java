@@ -34,6 +34,45 @@ public class Account extends Player {
 		
 	}
 	
+	public int getAccountSum(int IDOfPlayer){
+		
+		int SumOfAccount = 0;
+		
+		if (super.isValidID(IDOfPlayer)){
+			
+			SumOfAccount = Accounts[IDOfPlayer];
+		}
+		if (!(super.isValidID(IDOfPlayer))){
+			
+			System.out.println("A fault happend - See; Game -> Account -> getAccountSum");
+
+		}
+		
+		return SumOfAccount;
+
+	}
+	
+	public void addOrRemoveCapitalFromPlayerAccount(int IDOfPlayer, int AddRemove){
+		
+		if (super.isValidID(IDOfPlayer)){
+			
+			Accounts[IDOfPlayer] = Accounts[IDOfPlayer] + AddRemove;
+		}
+		if (!(super.isValidID(IDOfPlayer))){
+			
+			System.out.println("A fault happend - See; Game -> Account -> addOrRemoveCapitalFromPlayerAccount");
+
+		}
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 	
 	
 }
