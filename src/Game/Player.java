@@ -89,10 +89,11 @@ public class Player {
 		
 		lenghtOfPlayerArray = NewLenghtOfArray;
 	}
-//	public static int getPlayerAmount(){
-//		
-//		int playerAmount = lenghtOfPlayerArray;
-//		
-//		return playerAmount;
-//	}
+	public static int getPlayerAmount(){
+		
+		int playerAmount = lenghtOfPlayerArray;
+		System.out.println(playerAmount);
+		return playerAmount;
+		
+	}
 }
