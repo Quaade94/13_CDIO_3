@@ -7,6 +7,8 @@ import desktop_resources.GUI;
 
 public class PlayerAndCars {
 	
+	Account Account = new Account(5000);
+	
 	public void addPlayer1AndCar(){
 		
 		String player1Name = GUI.getUserString("Choose your name player 1");
@@ -18,6 +20,8 @@ public class PlayerAndCars {
 				.secondaryColor(Color.BLUE)
 				.build();
 		GUI.addPlayer(player1Name, 1000, car1);
+		
+		Account.addPlayerAndAccount(player1Name);
 		
 	}
 	public void addPlayer2AndCar(){
@@ -32,6 +36,8 @@ public class PlayerAndCars {
 				.build();
 		GUI.addPlayer(player2Name, 1000, car2);
 		
+		Account.addPlayerAndAccount(player2Name);
+		
 	}
 	public void addPlayer3AndCar(){
 		
@@ -44,6 +50,8 @@ public class PlayerAndCars {
 				.secondaryColor(Color.BLUE)
 				.build();
 		GUI.addPlayer(player3Name, 1000, car3);
+		
+		Account.addPlayerAndAccount(player3Name);
 		
 	}
 	public void addPlayer4AndCar(){
@@ -58,6 +66,8 @@ public class PlayerAndCars {
 				.build();
 		GUI.addPlayer(player4Name, 1000, car4);
 		
+		Account.addPlayerAndAccount(player4Name);
+		
 	}
 	public void addPlayer5AndCar(){
 		
@@ -70,6 +80,8 @@ public class PlayerAndCars {
 				.secondaryColor(Color.BLUE)
 				.build();
 		GUI.addPlayer(player5Name, 1000, car5);
+		
+		Account.addPlayerAndAccount(player5Name);
 		
 	}
 	public void addPlayer6AndCar(){
@@ -84,5 +96,7 @@ public class PlayerAndCars {
 				.build();
 		GUI.addPlayer(player6Name, 1000, car6);
 		
+		Account.addPlayerAndAccount(player6Name);
+
 	}	
 }
