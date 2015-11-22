@@ -2,82 +2,69 @@ package Game;
 
 public class Player {
 
-	protected static int lenghtOfPlayerArray = 0;
-	protected static int indexNumber = 0;
+	protected  int lenghtOfPlayerArray = 6;
+	protected  int indexNumber = 0;
 	
-	protected static String[]	 Names 	= new String[lenghtOfPlayerArray];
+	protected  String[]	 Names 	= new String[lenghtOfPlayerArray];
 	
 	
 	
 	
 //	This constructor uses 5000 as a starting capital for the player, but needs the accual staring capital.
-	Account Account = new Account(5000);
+
 	
 	
+
 	
+//	public String getPlayerName (int IDOfPlayer){
+//		
+//		String NameOfPlayer = null;
+//	
+//		if (Player.isValidID(IDOfPlayer)){
+//			
+//			NameOfPlayer = Names[IDOfPlayer];
+//		}
+//		if (!(Player.isValidID(IDOfPlayer))){
+//			
+//			NameOfPlayer = "A fault happend - See; Game -> Player -> getPlayerName";
+//			System.out.println("A fault happend - See; Game -> Player -> getPlayerName");
+//		}
+//		
+//		return NameOfPlayer;
+//		
+//	}
 	
-	public void addPlayer(String NameOfPlayer){
+
+	protected void addNameOfPlayerToArray(String NameOfPlayer){
 		
-		if (indexNumber <= 6){
-			Player.addSpaceForPlayer();
-			Player.addNameOfPlayerToArray(NameOfPlayer);
-			Account.addPlayerAccount(indexNumber);
-			Player.moveToNextIndex();
-		}
-		
-		if (indexNumber > 6){
-			System.out.println("You should not be able to add more than 6 players - See; Game -> Player");
-		}
-		
-	}
-	
-	public String getPlayerName (int IDOfPlayer){
-		
-		String NameOfPlayer = null;
-	
-		if (Player.isValidID(IDOfPlayer)){
-			
-			NameOfPlayer = Names[IDOfPlayer];
-		}
-		if (!(Player.isValidID(IDOfPlayer))){
-			
-			NameOfPlayer = "A fault happend - See; Game -> Player -> getPlayerName";
-			System.out.println("A fault happend - See; Game -> Player -> getPlayerName");
-		}
-		
-		return NameOfPlayer;
-		
-	}
-	
-	private static void addSpaceForPlayer(){
-		
-		lenghtOfPlayerArray++;
-		
-	}
-	private static void addNameOfPlayerToArray(String NameOfPlayer){
+		System.out.println("addNameOfPlayerToArray " + NameOfPlayer);
+		System.out.println("addNameOfPlayerToArray " + indexNumber);
+
 		
 		Names[indexNumber] = NameOfPlayer;
 		
+		System.out.println("addNameOfPlayerToArray " + Names[indexNumber]);
+		
 	}
-	private static void moveToNextIndex(){
+	protected void moveToNextIndex(){
 		
 		indexNumber++;
 		
 	}
-	protected static boolean isValidID(int IDOfPlayer){
-		
-		boolean validity = false;
-		
-		if (IDOfPlayer < lenghtOfPlayerArray && IDOfPlayer >= 0){
-			
-			validity = true;
-		}
-		if (IDOfPlayer > lenghtOfPlayerArray || IDOfPlayer < 0){
-			
-			validity = false;
-		}
-		return validity;
-	}
+//	protected static boolean isValidID(int IDOfPlayer){
+//		
+//		boolean validity = false;
+//		
+//		if (IDOfPlayer < lenghtOfPlayerArray && IDOfPlayer >= 0){
+//			
+//			validity = true;
+//		}
+//		if (IDOfPlayer > lenghtOfPlayerArray || IDOfPlayer < 0){
+//			
+//			validity = false;
+//		}
+//		return validity;
+//	}
 
 //	Additional, can be deleted when program is finished
 	
@@ -89,11 +76,11 @@ public class Player {
 		
 		lenghtOfPlayerArray = NewLenghtOfArray;
 	}
-	public static int getPlayerAmount(){
-		
-		int playerAmount = lenghtOfPlayerArray;
-		System.out.println(playerAmount);
-		return playerAmount;
-		
-	}
+//	public static int getPlayerAmount(){
+//		
+//		int playerAmount = lenghtOfPlayerArray;
+//		System.out.println(playerAmount);
+//		return playerAmount;
+//		
+//	}
 }

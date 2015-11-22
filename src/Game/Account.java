@@ -2,7 +2,7 @@ package Game;
 
 public class Account extends Player {
 
-	private int StartingCapital;
+	private  int StartingCapital;
 	
 	public Account (int StaringCapitalConstructor){
 		
@@ -10,81 +10,78 @@ public class Account extends Player {
 		
 	}
 	
-	protected  int lenghtOfAccountArray = 0;
+	protected   int lenghtOfAccountArray = 6;
 
-	protected  int[]	 Accounts 	= new int[lenghtOfAccountArray];
+	protected   int[]	 Accounts 	= new int[lenghtOfAccountArray];
 
 	
-	public void addPlayerAccount(int IDOfPlayer){
+	public  void addPlayerAndAccount(String NameOfPlayer){
 		
-		Account.addAccountSpaceForPlayer();
-		
-		Account.addStartingCapitalOfPlayerToArray(StartingCapital);
+
+		super.addNameOfPlayerToArray(NameOfPlayer);
+		this.addStartingCapitalOfPlayerToArray(StartingCapital);
+		super.moveToNextIndex();
 		
 	}
 	
-	private void addAccountSpaceForPlayer(){
-		
-		lenghtOfAccountArray++;
-		
-	}
-	private void addStartingCapitalOfPlayerToArray(int StartingCapital){
+
+	private  void addStartingCapitalOfPlayerToArray(int StartingCapital){
 		
 		Accounts[indexNumber] = StartingCapital;
 		
 	}
 	
-	public int getAccountSum(int IDOfPlayer){
-		
-		int SumOfAccount = 0;
-		
-		if (super.isValidID(IDOfPlayer)){
-			if (isNotBroke(IDOfPlayer)){
-				
-				SumOfAccount = Accounts[IDOfPlayer];
-			}
-			if (!(isNotBroke(IDOfPlayer))){
-				
-				System.out.println("This Player ID = " + IDOfPlayer + " is broke, and cannot play anymore");
-				
-			}
-			
-		}
-		if (!(super.isValidID(IDOfPlayer))){
-			
-			System.out.println("A fault happend - See; Game -> Account -> getAccountSum");
-
-		}
-		
-		return SumOfAccount;
-
-	}
+//	public static int getAccountSum(int IDOfPlayer){
+//		
+//		int SumOfAccount = 0;
+//		
+//		if (isValidID(IDOfPlayer)){
+//			if (isNotBroke(IDOfPlayer)){
+//				
+//				SumOfAccount = Accounts[IDOfPlayer];
+//			}
+//			if (!(isNotBroke(IDOfPlayer))){
+//				
+//				System.out.println("This Player ID = " + IDOfPlayer + " is broke, and cannot play anymore");
+//				
+//			}
+//			
+//		}
+//		if (!(isValidID(IDOfPlayer))){
+//			
+//			System.out.println("A fault happend - See; Game -> Account -> getAccountSum");
+//
+//		}
+//		
+//		return SumOfAccount;
+//
+//	}
 	
-	public void addOrRemoveCapitalFromPlayerAccount(int IDOfPlayer, int AddRemove){
-		
-		if (super.isValidID(IDOfPlayer)){
-			
-			Accounts[IDOfPlayer] = Accounts[IDOfPlayer] + AddRemove;
-		}
-		if (!(super.isValidID(IDOfPlayer))){
-			
-			System.out.println("A fault happend - See; Game -> Account -> addOrRemoveCapitalFromPlayerAccount");
-
-		}
-	}
-	
-	private boolean isNotBroke(int IDOfPlayer){
-		
-		boolean broke = false;
-		
-		if (Account.getAccountSum(IDOfPlayer) < 0){
-			
-			broke = true;
-			
-		}
-
-		return broke;
-		
-	}
+//	public void addOrRemoveCapitalFromPlayerAccount(int IDOfPlayer, int AddRemove){
+//		
+//		if (super.isValidID(IDOfPlayer)){
+//			
+//			Accounts[IDOfPlayer] = Accounts[IDOfPlayer] + AddRemove;
+//		}
+//		if (!(super.isValidID(IDOfPlayer))){
+//			
+//			System.out.println("A fault happend - See; Game -> Account -> addOrRemoveCapitalFromPlayerAccount");
+//
+//		}
+//	}
+//	
+//	private static boolean isNotBroke(int IDOfPlayer){
+//		
+//		boolean broke = false;
+//		
+//		if (Account.getAccountSum(IDOfPlayer) < 0){
+//			
+//			broke = true;
+//			
+//		}
+//
+//		return broke;
+//		
+//	}
 	
 }

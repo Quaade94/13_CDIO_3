@@ -10,7 +10,13 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+
+		Account Account = new Account(5000);
+		
+
+		
 		//Spilleplade (SKAL være først)
+		
 		
 		GameBoard GameBoard = new GameBoard(21);
 		
@@ -20,6 +26,10 @@ public class Main {
 		// Opretter en spiller ved at de indtaster deres navn
 		String player1Name = GUI.getUserString("Choose your name player 1");
 		//Laver spilernes biler
+		
+
+		
+		
 		Car car1 = new Car.Builder()
 				.typeCar()
 				.patternHorizontalDualColor()
@@ -27,11 +37,13 @@ public class Main {
 				.secondaryColor(Color.BLUE)
 				.build();
 		GUI.addPlayer(player1Name, 1000, car1);
-		
+
+		Account.addPlayerAndAccount(player1Name);
 				
 		
 		//opretter spiller 2
 		String player2Name = GUI.getUserString("Choose your name player 2");
+		
 		Car car2 = new Car.Builder()
 				.typeCar()
 				.patternHorizontalDualColor()
@@ -39,6 +51,8 @@ public class Main {
 				.secondaryColor(Color.BLUE)
 				.build();
 		GUI.addPlayer(player2Name, 1000, car2);
+		
+		Account.addPlayerAndAccount(player2Name);
 				
 		
 			
@@ -53,6 +67,9 @@ public class Main {
 					.secondaryColor(Color.BLUE)
 					.build();
 			GUI.addPlayer(player3Name, 3000, car3);
+			
+			Account.addPlayerAndAccount(player3Name);
+			
 			i++;
 		}
 		else if (!newPlayer){
