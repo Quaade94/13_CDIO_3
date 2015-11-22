@@ -14,16 +14,13 @@ public class Account extends Player {
 
 	protected   int[]	 Accounts 	= new int[lenghtOfAccountArray];
 
-	
 	public  void addPlayerAndAccount(String NameOfPlayer){
-		
-
+	
 		super.addNameOfPlayerToArray(NameOfPlayer);
 		this.addStartingCapitalOfPlayerToArray(StartingCapital);
 		super.moveToNextIndex();
 		
 	}
-	
 
 	private  void addStartingCapitalOfPlayerToArray(int StartingCapital){
 		

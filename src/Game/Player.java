@@ -37,14 +37,8 @@ public class Player {
 
 	protected void addNameOfPlayerToArray(String NameOfPlayer){
 		
-		System.out.println("addNameOfPlayerToArray " + NameOfPlayer);
-		System.out.println("addNameOfPlayerToArray " + indexNumber);
-
-		
 		Names[indexNumber] = NameOfPlayer;
-		
-		System.out.println("addNameOfPlayerToArray " + Names[indexNumber]);
-		
+			
 	}
 	protected void moveToNextIndex(){
 		
