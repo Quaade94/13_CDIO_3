@@ -1,14 +1,15 @@
 package Game;
 
 import desktop_fields.Field;
+//import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
 
 
 public class GameBoard {
 	
-	private int numberOfFields;
-	private int index;
+	private int numberOfFields = 0;
+	private int index = 0;
 	
 	public GameBoard(int numberOfFieldsConstructor){
 		numberOfFields = numberOfFieldsConstructor;
@@ -19,15 +20,16 @@ public class GameBoard {
 	private int[] fieldPrice = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000,0,0,2500,2500,0,0,4000,4000,4000,4000};
 	
 	
-public GameBoard() {
+	public void setGameBoard() {
 		
 		Field[] fields = new Field[numberOfFields];
 		
 		for(index = 0; index < numberOfFields ; index++){
+			
 			fields[index] = new Street.Builder()
 					.setTitle(Language.getLang(fieldName[index]))
-					.setRent("99")
-					.setSubText("99")
+					.setRent(fieldRent[index] + ",-")
+					.setSubText(Language.getLang("PRI") + ": " + fieldPrice[index])
 					.build();
 			
 		}

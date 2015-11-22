@@ -11,7 +11,11 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//Spilleplade (SKAL være først)
-		new GameBoard();
+		
+		GameBoard GameBoard = new GameBoard(21);
+		
+		GameBoard.setGameBoard();
+		
 		
 		// Opretter en spiller ved at de indtaster deres navn
 		String player1Name = GUI.getUserString("Choose your name player 1");
