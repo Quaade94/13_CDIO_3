@@ -1,17 +1,17 @@
 package Game;
 
 import java.awt.Color;
-
-import desktop_codebehind.Car;
+import desktop_fields.Field;
+import desktop_fields.Street;
 import desktop_resources.GUI;
-
+import desktop_codebehind.Car;
 
 public class Main {
 	
 	public static void main(String[] args) {
 		
 		//Spilleplade (SKAL være først)
-		//GameBoard GameBoard = new GameBoard();
+		new GameBoard();
 		
 		// Opretter en spiller ved at de indtaster deres navn
 		String player1Name = GUI.getUserString("Choose your name player 1");
