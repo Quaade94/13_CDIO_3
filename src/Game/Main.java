@@ -21,12 +21,12 @@ public class Main {
 		
 		GameBoard.setGameBoard();
 		
-		PlayerAndCars.addPlayer1AndCar();
-		PlayerAndCars.addPlayer2AndCar();
-		PlayerAndCars.addPlayer3AndCar();
-		PlayerAndCars.addPlayer4AndCar();
-		PlayerAndCars.addPlayer5AndCar();
-		PlayerAndCars.addPlayer6AndCar();
+		PlayerAndCars.addPlayer(1);
+		PlayerAndCars.addPlayer(2);
+		PlayerAndCars.addPlayer(4);
+		
+		
+		
 		
 		
 //		// Opretter en spiller ved at de indtaster deres navn

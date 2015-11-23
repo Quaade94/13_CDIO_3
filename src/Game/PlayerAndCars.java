@@ -9,7 +9,19 @@ public class PlayerAndCars {
 	
 	Account Account = new Account(5000);
 	
-	public void addPlayer1AndCar(){
+	public void addPlayer(int PlayerNumber){
+		
+		switch (PlayerNumber){
+		case 1: 		this.addPlayer1AndCar(); break;
+		case 2: 		this.addPlayer2AndCar(); break;
+		case 3: 		this.addPlayer3AndCar(); break;
+		case 4: 		this.addPlayer4AndCar(); break;
+		case 5: 		this.addPlayer5AndCar(); break;
+		case 6: 		this.addPlayer6AndCar(); break;
+		}
+	}
+	
+	private void addPlayer1AndCar(){
 		
 		String player1Name = GUI.getUserString("Choose your name player 1");
 		
@@ -24,7 +36,7 @@ public class PlayerAndCars {
 		Account.addPlayerAndAccount(player1Name);
 		
 	}
-	public void addPlayer2AndCar(){
+	private void addPlayer2AndCar(){
 		
 		String player2Name = GUI.getUserString("Choose your name player 2");
 		
@@ -39,7 +51,7 @@ public class PlayerAndCars {
 		Account.addPlayerAndAccount(player2Name);
 		
 	}
-	public void addPlayer3AndCar(){
+	private void addPlayer3AndCar(){
 		
 		String player3Name = GUI.getUserString("Choose your name player 3");
 		
@@ -54,7 +66,7 @@ public class PlayerAndCars {
 		Account.addPlayerAndAccount(player3Name);
 		
 	}
-	public void addPlayer4AndCar(){
+	private void addPlayer4AndCar(){
 		
 		String player4Name = GUI.getUserString("Choose your name player 4");
 		
@@ -69,7 +81,7 @@ public class PlayerAndCars {
 		Account.addPlayerAndAccount(player4Name);
 		
 	}
-	public void addPlayer5AndCar(){
+	private void addPlayer5AndCar(){
 		
 		String player5Name = GUI.getUserString("Choose your name player 5");
 		
@@ -84,7 +96,7 @@ public class PlayerAndCars {
 		Account.addPlayerAndAccount(player5Name);
 		
 	}
-	public void addPlayer6AndCar(){
+	private void addPlayer6AndCar(){
 		
 		String player6Name = GUI.getUserString("Choose your name player 6");
 		
