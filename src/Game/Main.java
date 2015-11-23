@@ -1,7 +1,6 @@
 package Game;
 
 import java.awt.Color;
-import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
 import desktop_codebehind.Car;
