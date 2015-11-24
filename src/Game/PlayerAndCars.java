@@ -11,17 +11,12 @@ public class PlayerAndCars {
 	
 	private int numOfPlayers;
 	
-	
-	
-			
-	
 	public PlayerAndCars(int numOfPlayersConstructor) {
 
 		numOfPlayers = numOfPlayersConstructor;
 		
 	}
-
-
+	
 	public void addPlayers(){
 		
 		int i;
@@ -30,22 +25,9 @@ public class PlayerAndCars {
 			
 			this.addPlayerSwitch(i);
 			
-		}
-		
-		
-		
+		}	
 	}
 	
-
-
-
-
-
-
-
-
-
-
 	private void addPlayerSwitch(int PlayerNumber){
 		
 		switch (PlayerNumber){
@@ -61,8 +43,6 @@ public class PlayerAndCars {
 	private void addPlayer1AndCar(){
 		
 		String player1Name = GUI.getUserString("Choose your name player 1");
-		
-
 		
 		Car car1 = new Car.Builder()
 				.typeCar()

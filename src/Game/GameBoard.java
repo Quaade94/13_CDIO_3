@@ -24,7 +24,6 @@ public class GameBoard {
 	private int[] fieldRent = {100,300,500,700,1000,1300,1600,2000,2600,3200,4000,5000,500,(Die.getDiceSum()*100),(Die.getDiceSum()*100),2000,4000,500,500,500,500};
 	private int[] fieldPrice = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000,0,0,2500,2500,0,0,4000,4000,4000,4000};
 
-
 	public void setGameBoard() {
 
 		Field[] fields = new Field[numberOfFields];
@@ -42,7 +41,7 @@ public class GameBoard {
 						.setBgColor(Color.pink)
 						.build();
 			}
-			
+
 
 			else if (index == 13 || index == 14 ){
 
@@ -55,7 +54,7 @@ public class GameBoard {
 						.setBgColor(Color.orange)
 						.build();
 			}
-			
+
 			else if (index == 17 || index == 18 || index == 19 || index == 20 ){
 
 				fields[index] = new Street.Builder()
@@ -79,7 +78,6 @@ public class GameBoard {
 						.setBgColor(Color.yellow)
 						.build();
 			}
-
 		}
 		GUI.create(fields);
 	}
