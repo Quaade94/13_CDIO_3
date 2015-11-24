@@ -8,10 +8,8 @@ import desktop_codebehind.Car;
 public class Main {
 	
 	public static void main(String[] args) {
-		
 
-
-		PlayerAndCars PlayerAndCars = new PlayerAndCars();
+	
 
 		
 		//Spilleplade (SKAL være først)
@@ -20,11 +18,14 @@ public class Main {
 		GameBoard GameBoard = new GameBoard(21);
 		
 		GameBoard.setGameBoard();
+				
 		
-		PlayerAndCars.addPlayer(1);
-		PlayerAndCars.addPlayer(2);
-		PlayerAndCars.addPlayer(4);
 		
+//		GUI.getUserButtonPressed("Welcome, press start to begin");
+		
+		PlayerAndCars PlayerAndCars = new PlayerAndCars((GUI.getUserInteger("How many players?", 2, 6)));
+
+		PlayerAndCars.addPlayers();
 		
 		
 		

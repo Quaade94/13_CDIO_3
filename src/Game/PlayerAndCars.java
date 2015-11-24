@@ -9,7 +9,44 @@ public class PlayerAndCars {
 	
 	Account Account = new Account(5000);
 	
-	public void addPlayer(int PlayerNumber){
+	private int numOfPlayers;
+	
+	
+	
+			
+	
+	public PlayerAndCars(int numOfPlayersConstructor) {
+
+		numOfPlayers = numOfPlayersConstructor;
+		
+	}
+
+
+	public void addPlayers(){
+		
+		int i;
+		
+		for (i=1; i <= numOfPlayers; i++) {
+			
+			this.addPlayerSwitch(i);
+			
+		}
+		
+		
+		
+	}
+	
+
+
+
+
+
+
+
+
+
+
+	private void addPlayerSwitch(int PlayerNumber){
 		
 		switch (PlayerNumber){
 		case 1: 		this.addPlayer1AndCar(); break;
@@ -24,6 +61,8 @@ public class PlayerAndCars {
 	private void addPlayer1AndCar(){
 		
 		String player1Name = GUI.getUserString("Choose your name player 1");
+		
+
 		
 		Car car1 = new Car.Builder()
 				.typeCar()
