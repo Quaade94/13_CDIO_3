@@ -1,5 +1,7 @@
 package Game;
 
+import java.awt.Color;
+
 import desktop_fields.Field;
 //import desktop_fields.Field;
 import desktop_fields.Street;
@@ -16,6 +18,7 @@ public class GameBoard {
 	}
 	
 	private String[] fieldName = {"TER1","TER2","TER3","TER4","TER5","TER6","TER7","TER8","TER9","TER10","TER11","REF1","REF2","LAB1","LAB2","TAX1","TAX2","FLE1","FLE2", "FLE3", "FLE4"};
+	private String[] fieldDescription = {"TER_DES","TER_DES","TER_DES","TER_DES","TER_DES","TER_DES","TER_DES","TER_DES","TER_DES","TER_DES","TER_DES","REF1_DES","REF2_DES","LAB_DES","LAB_DES","TAX1_DES","TAX2_DES","FLEET_DES","FLEET_DES","FLEET_DES","FLEET_DES"};
 	private int[] fieldRent = {100,300,500,700,1000,1300,1600,2000,2600,3200,4000,5000,500,100,100,2000,4000,500,500,500,500};
 	private int[] fieldPrice = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000,0,0,2500,2500,0,0,4000,4000,4000,4000};
 	
@@ -26,12 +29,30 @@ public class GameBoard {
 		
 		for(index = 0; index < numberOfFields ; index++){
 			
-			fields[index] = new Street.Builder()
-					.setTitle(Language.getLang(fieldName[index]))
-					.setRent(fieldRent[index] + ",-")
-					.setSubText(Language.getLang("PRI") + ": " + fieldPrice[index])
-					.build();
+			if (index == 11 || index == 12 || index == 15 || index == 16 ){
+				
+				fields[index] = new Street.Builder()
+						.setTitle(Language.getLang(fieldName[index]))
+						.setDescription(Language.getLang(fieldDescription[index]))
+						.setSubText(fieldRent[index] + ",-")
+						.setRent(fieldRent[index] + ",-")
+						.setFgColor(Color.BLACK)
+						.setBgColor(Color.yellow)
+						.build();
+			}
 			
+			else {
+					
+				fields[index] = new Street.Builder()
+						.setTitle(Language.getLang(fieldName[index]))
+						.setDescription(Language.getLang(fieldDescription[index]))
+						.setSubText(fieldRent[index]+",-" + "   Price:" +fieldPrice[index] + ",-")
+						.setRent(fieldRent[index] + ",-")
+						.setFgColor(Color.BLACK)
+						.setBgColor(Color.yellow)
+						.build();
+			}
+									
 		}
 	GUI.create(fields);
 	}
