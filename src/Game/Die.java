@@ -4,20 +4,27 @@ public class Die {
 
 	private int dice1;
 	private int dice2;
-	
-	public int[] roll() {
+	private int sum;
 
-		int [] roll = {0,0,0};
+	public void roll() {
 
 			dice1 = (int) (Math.random() * 6) + 1;
 			dice2 = (int) (Math.random() * 6) + 1;
 
-			int sum = dice1 + dice2;
-			
-			roll [0] = dice1;
-			roll [1] = dice2;
-			roll [2] = sum;
-		
-		return roll;
+			sum = dice1 + dice2;
 	}
+	
+	public int getDice1(){
+		
+		return dice1;
+	}
+	public int getDice2(){
+		
+		return dice2;
+	}	
+	public int getDiceSum(){
+		
+		return sum;
+	}
+	
 }
