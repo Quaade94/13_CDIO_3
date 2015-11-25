@@ -35,13 +35,24 @@ public class Main {
 		//player kaster med terningen og flytter brikken
 		//Der mangler at blive kaldt et navn og spillerens egen position
 		int turn = 0;
+		int fakeP = 0;
 		
 		while(antalspillere>1){
 			
 		GUI.getUserButtonPressed(VehicleBuilder.getPlayerName(0) + Language.getLang("TURN"), Language.getLang("TD"));
 		Die.roll();
 		GUI.setDice(Die.getDice1(),Die.getDice2());
+		
+		if (PlayerPosition.getPlayerPosition(0)<21){
 		PlayerPosition.setPlayerPosition(0, Die.getDiceSum());
+		GUI.setCar(PlayerPosition.getPlayerPosition(0), VehicleBuilder.getPlayerName(0));
+		}
+		else{
+		fakeP = PlayerPosition.getPlayerPosition(0)+Die.getDiceSum();
+		fakeP = fakeP - 21;
+		PlayerPosition.setPlayerPosition(0, fakeP);
+		
+		}
 		//placerer bilen på sin nye plads
 		
 //		System.out.println(Player.getNameOfPlayer(0));
