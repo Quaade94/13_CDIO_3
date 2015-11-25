@@ -18,15 +18,14 @@ public class Main {
 		Die Die = new Die();
 		PlayerPosition PlayerPosition = new PlayerPosition();
 		
-		Player Player = new Player();
-
 		VehicleBuilder VehicleBuilder = new VehicleBuilder((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
 		VehicleBuilder.addPlayers();
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
 		
-		
+		System.out.print(VehicleBuilder.getPlayerName(0) + VehicleBuilder.getPlayerName(1));
+	
 		//DETTE SKAL SLETTES
 		int antalspillere = 2;
 		
@@ -36,21 +35,21 @@ public class Main {
 		
 		while(antalspillere>1){
 			
-		GUI.getUserButtonPressed(Language.getLang("TURN"), Language.getLang("TD"));
+		GUI.getUserButtonPressed(VehicleBuilder.getPlayerName(0) + Language.getLang("TURN"), Language.getLang("TD"));
 		Die.roll();
 		GUI.setDice(Die.getDice1(),Die.getDice2());
 		PlayerPosition.setPlayerPosition(0, Die.getDiceSum());
 		//placerer bilen på sin nye plads
 		
-		System.out.println(Player.getNameOfPlayer(0));
+//		System.out.println(Player.getNameOfPlayer(0));
 		
-		GUI.setCar(PlayerPosition.getPlayerPosition(0), Player.getNameOfPlayer(0));
+		GUI.setCar(PlayerPosition.getPlayerPosition(0), VehicleBuilder.getPlayerName(0));
 		
 
 		
 		//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
 		if (turn>0){
-		GUI.removeCar(PlayerPosition.getPlayerPosition(0)-Die.getDiceSum(), Player.getNameOfPlayer(0));
+		GUI.removeCar(PlayerPosition.getPlayerPosition(0)-Die.getDiceSum(), VehicleBuilder.getPlayerName(0));
 		}
 		turn++;
 		}
