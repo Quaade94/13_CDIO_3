@@ -1,14 +1,13 @@
 package Test;
 
-public class TestKlasse {
+import Game.Player;
 
-	
-	public int landOnField(int IDOfPlayer){
-		
+public abstract class TestKlasse {
 
-		
-		return 0;
-	}
+	protected String Name;
 	
+
+
+	public abstract void landOnField(Player player);
 	
 }

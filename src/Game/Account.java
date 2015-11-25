@@ -1,5 +1,7 @@
 package Game;
 
+// Account er ikke en spiller, men en spiller har en account, så ikke helt rigtigt, men kan virker alligevel
+
 public class Account extends Player {
 
 	private  int StartingCapital;
