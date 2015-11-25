@@ -22,6 +22,11 @@ public class Main {
 		VehicleBuilder VehicleBuilder = new VehicleBuilder((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
 		VehicleBuilder.addPlayers();
 		
+		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
+		IndependentTurnTracker Track = new IndependentTurnTracker();
+		
+		
+		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
 		
@@ -34,23 +39,23 @@ public class Main {
 		
 		//player kaster med terningen og flytter brikken
 		//Der mangler at blive kaldt et navn og spillerens egen position
-		int turn = 0;
+		int turn1 = 0;
 		int fakeP = 0;
 		
 		while(antalspillere>1){
 			
-		GUI.getUserButtonPressed(VehicleBuilder.getPlayerName(0) + Language.getLang("TURN"), Language.getLang("TD"));
+		GUI.getUserButtonPressed(VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
 		Die.roll();
 		GUI.setDice(Die.getDice1(),Die.getDice2());
 		
-		if (PlayerPosition.getPlayerPosition(0)<21){
-		PlayerPosition.setPlayerPosition(0, Die.getDiceSum());
-		GUI.setCar(PlayerPosition.getPlayerPosition(0), VehicleBuilder.getPlayerName(0));
+		if (PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn())<21){
+		PlayerPosition.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
+		GUI.setCar(PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn()), VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
 		}
 		else{
-		fakeP = PlayerPosition.getPlayerPosition(0)+Die.getDiceSum();
+		fakeP = PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn())+Die.getDiceSum();
 		fakeP = fakeP - 21;
-		PlayerPosition.setPlayerPosition(0, fakeP);
+		PlayerPosition.setPlayerPosition(Turns1.getPlayerTurn(), fakeP);
 		
 		}
 		//placerer bilen på sin nye plads
@@ -60,10 +65,11 @@ public class Main {
 
 		
 		//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
-		if (turn>0){
-		GUI.removeCar(PlayerPosition.getPlayerPosition(0)-Die.getDiceSum(), VehicleBuilder.getPlayerName(0));
+		if (Track.getIndependentTurn(Turns1.getPlayerTurn())>0){
+		GUI.removeCar(PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn())-Die.getDiceSum(), VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
 		}
-		turn++;
+		Track.scaleIndependentTurn(Turns1.getPlayerTurn());
+		Turns1.endTurn();
 		}
 		
 		GUI.getUserButtonPressed(Language.getLang("WIN"), Language.getLang("CL"));

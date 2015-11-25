@@ -1,12 +1,12 @@
 package Game;
 
-public class TurnSwitcher {
+public class PlayerTurnSwitcher {
 	
 
 	
 	private int playerTurn =1;
 	
-	private int playerArraySize =2;	// størrelsen på array der styrer antal spillere. (Hentes fra en anden klasse med size af array metoden).
+	private int playerArraySize =5;	// størrelsen på array der styrer antal spillere. (Hentes fra en anden klasse med size af array metoden).
 	
 
 			
