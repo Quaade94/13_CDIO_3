@@ -44,20 +44,14 @@ public class Main {
 		
 		while(antalspillere>1){
 			
-		GUI.getUserButtonPressed(VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
-		Die.roll();
-		GUI.setDice(Die.getDice1(),Die.getDice2());
+			GUI.getUserButtonPressed(VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
+			Die.roll();
+			GUI.setDice(Die.getDice1(),Die.getDice2());
+			
+			PlayerPosition.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
+			GUI.setCar(PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn()), VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
 		
-		if (PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn())<21){
-		PlayerPosition.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
-		GUI.setCar(PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn()), VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
-		}
-		else{
-		fakeP = PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn())+Die.getDiceSum();
-		fakeP = fakeP - 21;
-		PlayerPosition.setPlayerPosition(Turns1.getPlayerTurn(), fakeP);
 		
-		}
 		//placerer bilen på sin nye plads
 		
 //		System.out.println(Player.getNameOfPlayer(0));
@@ -66,7 +60,7 @@ public class Main {
 		
 		//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
 		if (Track.getIndependentTurn(Turns1.getPlayerTurn())>0){
-		GUI.removeCar(PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn())-Die.getDiceSum(), VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
+		GUI.removeCar(PlayerPosition.bilSletter, VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
 		}
 		Track.scaleIndependentTurn(Turns1.getPlayerTurn());
 		Turns1.endTurn();
