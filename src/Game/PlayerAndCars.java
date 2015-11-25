@@ -7,7 +7,7 @@ import desktop_resources.GUI;
 
 public class PlayerAndCars {
 	
-	Account Account = new Account(5000);
+	Account Account = new Account(30000);
 	
 	private int numOfPlayers;
 	
@@ -52,9 +52,7 @@ public class PlayerAndCars {
 				.secondaryColor(Color.BLUE)
 				.build();
 		GUI.addPlayer(player1Name, Account.getPlayerStash(0), car1);
-		
-		
-		
+	
 	}
 	private void addPlayer2AndCar(){
 		
@@ -68,9 +66,7 @@ public class PlayerAndCars {
 				.secondaryColor(Color.BLACK)
 				.build();
 		GUI.addPlayer(player2Name, Account.getPlayerStash(1), car2);
-		
-		
-		
+	
 	}
 	private void addPlayer3AndCar(){
 		
@@ -84,9 +80,7 @@ public class PlayerAndCars {
 				.secondaryColor(Color.RED)
 				.build();
 		GUI.addPlayer(player3Name, Account.getPlayerStash(2), car3);
-		
-		
-		
+	
 	}
 	private void addPlayer4AndCar(){
 		
@@ -100,9 +94,7 @@ public class PlayerAndCars {
 				.secondaryColor(Color.GREEN)
 				.build();
 		GUI.addPlayer(player4Name, Account.getPlayerStash(3), car4);
-		
-		
-		
+	
 	}
 	private void addPlayer5AndCar(){
 		
@@ -116,9 +108,7 @@ public class PlayerAndCars {
 				.secondaryColor(Color.RED)
 				.build();
 		GUI.addPlayer(player5Name, Account.getPlayerStash(4), car5);
-		
-		
-		
+
 	}
 	private void addPlayer6AndCar(){
 		

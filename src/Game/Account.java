@@ -1,10 +1,10 @@
 package Game;
 
-// Account er ikke en spiller, men en spiller har en account, så ikke helt rigtigt, men kan virker alligevel
+// Account er ikke en spiller, men en spiller har et account, saa ikke helt rigtigt, men kan virke alligevel
 
 public class Account extends Player {
 
-	private  int StartingCapital;
+	private int StartingCapital;
 	
 	public Account (int StaringCapitalConstructor){
 		
@@ -12,11 +12,11 @@ public class Account extends Player {
 		
 	}
 	
-	protected   int lenghtOfAccountArray = 6;
+	protected int lenghtOfAccountArray = 6;
 
-	protected   int[]	 Accounts 	= new int[lenghtOfAccountArray];
+	protected int[]	Accounts = new int[lenghtOfAccountArray];
 
-	public  void addPlayerAndAccount(String NameOfPlayer){
+	public void addPlayerAndAccount(String NameOfPlayer){
 	
 		super.addNameOfPlayerToArray(NameOfPlayer);
 		this.addStartingCapitalOfPlayerToArray(StartingCapital);
@@ -25,7 +25,7 @@ public class Account extends Player {
 		
 	}
 
-	private  void addStartingCapitalOfPlayerToArray(int StartingCapital){
+	private void addStartingCapitalOfPlayerToArray(int StartingCapital){
 		
 		Accounts[indexNumber] = StartingCapital;
 		
@@ -34,6 +34,13 @@ public class Account extends Player {
 	public int getPlayerStash(int playerId){
 		int playerStash = Accounts[playerId];
 		return playerStash;
+	}
+	
+	public void setPlayerStash(int playerId, int incMoney){
+		int playerStash = Accounts[playerId];
+		int difference = incMoney;
+		int newPlayerStash = playerStash + difference;
+		Accounts[playerId] = newPlayerStash;
 	}
 	
 //	public static int getAccountSum(int IDOfPlayer){
