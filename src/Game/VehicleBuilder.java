@@ -17,19 +17,15 @@ public class VehicleBuilder {
 	private int numOfPlayers;
 	
 	public VehicleBuilder(int numOfPlayersConstructor) {
-
 		numOfPlayers = numOfPlayersConstructor;
-
 	}
 	
 	public void addPlayers(){
 		
 		int i;
 		
-		for (i=1; i <= numOfPlayers; i++) {
-			
-			this.addPlayerSwitch(i);
-			
+		for (i=1; i <= numOfPlayers; i++) {			
+			this.addPlayerSwitch(i);			
 		}	
 	}
 
@@ -63,6 +59,7 @@ public class VehicleBuilder {
 	
 		
 	}
+	
 	private void addPlayer2AndCar(){
 		
 		player2Name = GUI.getUserString("Choose your name player 2");
@@ -77,6 +74,7 @@ public class VehicleBuilder {
 		GUI.addPlayer(player2Name, 1000, car2);
 	
 	}
+	
 	private void addPlayer3AndCar(){
 		
 		player3Name = GUI.getUserString("Choose your name player 3");
@@ -91,6 +89,7 @@ public class VehicleBuilder {
 		GUI.addPlayer(player3Name, 1000, car3);
 	
 	}
+	
 	private void addPlayer4AndCar(){
 		
 		player4Name = GUI.getUserString("Choose your name player 4");
@@ -105,6 +104,7 @@ public class VehicleBuilder {
 		GUI.addPlayer(player4Name, 1000, car4);
 	
 	}
+	
 	private void addPlayer5AndCar(){
 		
 		player5Name = GUI.getUserString("Choose your name player 5");
@@ -119,6 +119,7 @@ public class VehicleBuilder {
 		GUI.addPlayer(player5Name, 1000, car5);
 
 	}
+	
 	private void addPlayer6AndCar(){
 		
 		player6Name = GUI.getUserString("Choose your name player 6");
@@ -140,9 +141,7 @@ public class VehicleBuilder {
 	public String getPlayerName(int IDOfPlayer){
 		
 	String[] playerName = {player1Name,player2Name,player3Name,player4Name,player5Name,player6Name};
-		
-	return playerName[IDOfPlayer];
 	
-	}
-	
+	return playerName[IDOfPlayer];	
+	}	
 }

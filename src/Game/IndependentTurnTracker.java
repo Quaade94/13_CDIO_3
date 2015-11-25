@@ -15,14 +15,12 @@ public class IndependentTurnTracker {
 	public int getIndependentTurn(int IDOfPlayers){
 		
 		return independentTurn[IDOfPlayers];
-
 	}
 
 	public void scaleIndependentTurn(int IDOfPlayers){
 		
 		
-		independentTurn[IDOfPlayers]++;
-			
-		}
+		independentTurn[IDOfPlayers]++;			
+	}
 }
 

@@ -7,8 +7,6 @@ import desktop_codebehind.Car;
 
 public class Main {
 
-	private int index;
-	
 	public static void main(String[] args) {
 
 		//Spilleplade (SKAL være først)
@@ -38,9 +36,6 @@ public class Main {
 		int antalspillere = 2;
 		
 		//player kaster med terningen og flytter brikken
-		//Der mangler at blive kaldt et navn og spillerens egen position
-		int turn1 = 0;
-		int fakeP = 0;
 		
 		while(antalspillere>1){
 			

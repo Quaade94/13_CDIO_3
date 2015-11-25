@@ -8,35 +8,27 @@ public class Account {
 	private int indexNumber = 0;
 	
 	
-	public Account (int StaringCapitalConstructor){
-		
-		StartingCapital = StaringCapitalConstructor;
-		
+	public Account (int StaringCapitalConstructor){		
+		StartingCapital = StaringCapitalConstructor;		
 	}
 	
 	protected int lenghtOfAccountArray = 6;
 
 	protected int[]	Accounts = new int[lenghtOfAccountArray];
 
-	public void addPlayerAndAccount(String NameOfPlayer){
-	
-		this.addStartingCapitalOfPlayerToArray(StartingCapital);
-		
+	public void addPlayerAndAccount(String NameOfPlayer){			
+		this.addStartingCapitalOfPlayerToArray(StartingCapital);		
 	}
 
-	private void addStartingCapitalOfPlayerToArray(int StartingCapital){
-		
-		Accounts[indexNumber] = StartingCapital;
-		
+	private void addStartingCapitalOfPlayerToArray(int StartingCapital){		
+		Accounts[indexNumber] = StartingCapital;		
 	}
 	
 	public int getPlayerStash(int IDOfPlayer){
-
 		return Accounts[IDOfPlayer];
 	}
 	
 	public void setPlayerStash(int IDOfPlayer, int incMoney){
-
 		Accounts[IDOfPlayer] = Accounts[IDOfPlayer] + incMoney;
 	}
 	

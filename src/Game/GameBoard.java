@@ -27,21 +27,22 @@ public class GameBoard {
 	public String[] getFieldNames(){
 		return fieldName;
 	}
+	
 	public int[] getFieldRent(){
 		return fieldRent;
+		
 	}
 	public int[] getFieldPrice(){
-		return fieldPrice;
+		return fieldPrice;		
 	}
 	
 	public void setGameBoard() {
-
-		Field[] fields = new Field[numberOfFields];
+		Field[] fields = new Field[numberOfFields];	
 		
-		for(index = 0; index < numberOfFields ; index++){
-
+		for(index = 0; index < numberOfFields ; index++){	
+			
 			if (index == 11 || index == 12 || index == 15 || index == 16 ){
-
+				
 				fields[index] = new Street.Builder()
 						.setTitle(Language.getLang(fieldName[index]))
 						.setDescription(Language.getLang(fieldDescription[index]))

@@ -19,9 +19,7 @@ public class PlayerPosition {
 	
 	int[] playerPosition = {player1Position,player2Position,player3Position,player4Position,player5Position,player6Position,};
 
-
-	public int getPlayerPosition(int IDOfPlayer){
-		
+	public int getPlayerPosition(int IDOfPlayer){		
 		return playerPosition[IDOfPlayer];
 	}
 
@@ -29,24 +27,20 @@ public class PlayerPosition {
 		
 		playerPosition[IDOfPlayer] = (playerPosition[IDOfPlayer] + DiceSum);
 		
-		/*
+		/**
 		 * For removing the car from the last known position
-		 */
+		 **/
 		bilSletter = playerPosition[IDOfPlayer]-DiceSum;
 		
-		/*
+		/**
 		 * Makes the player go back to the start if he reaches the end of the GameBoard
-		 */
+		 **/
 		if(playerPosition[IDOfPlayer]>21){
 			fakePos = playerPosition[IDOfPlayer];
 			fakePos = fakePos - 21;
 			playerPosition[IDOfPlayer] = fakePos;
-			}
-		
-		//		System.out.println("set " + DiceSum);
-//		System.out.println(playerPosition[IDOfPlayer]);
-	}
-	
+			}		
+	}	
 }
 
 
