@@ -13,7 +13,7 @@ public class Die {
 
 			sum = dice1 + dice2;
 			
-			System.out.println(sum +" " + dice1 +" "+ dice2);
+//			System.out.println(sum +" " + dice1 +" "+ dice2);
 	}
 	
 	public int getDice1(){

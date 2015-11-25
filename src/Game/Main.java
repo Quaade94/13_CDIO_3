@@ -26,6 +26,9 @@ public class Main {
 		Die.roll();
 		GUI.setDice(Die.getDice1(),Die.getDice2());
 		
+		//While()
+		
+		
 		//GUI.close();
 
 	}

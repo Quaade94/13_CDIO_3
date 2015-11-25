@@ -17,6 +17,11 @@ public class PlayerAndCars {
 		
 	}
 	
+	public int getPlayerAmount(){
+		
+		return numOfPlayers;
+	}
+	
 	public void addPlayers(){
 		
 		int i;
