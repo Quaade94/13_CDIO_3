@@ -13,27 +13,11 @@ public class Player {
 //	This constructor uses 5000 as a starting capital for the player, but needs the accual staring capital.
 
 	
-	
-
-	
-//	public String getPlayerName (int IDOfPlayer){
-//		
-//		String NameOfPlayer = null;
-//	
-//		if (Player.isValidID(IDOfPlayer)){
-//			
-//			NameOfPlayer = Names[IDOfPlayer];
-//		}
-//		if (!(Player.isValidID(IDOfPlayer))){
-//			
-//			NameOfPlayer = "A fault happend - See; Game -> Player -> getPlayerName";
-//			System.out.println("A fault happend - See; Game -> Player -> getPlayerName");
-//		}
-//		
-//		return NameOfPlayer;
-//		
-//	}
-	
+	public String getNameOfPlayer(int IDOfPlayer){
+				
+		return Names[IDOfPlayer];
+		
+	}
 
 	protected void addNameOfPlayerToArray(String NameOfPlayer){
 		
@@ -45,22 +29,6 @@ public class Player {
 		indexNumber++;
 		
 	}
-//	protected static boolean isValidID(int IDOfPlayer){
-//		
-//		boolean validity = false;
-//		
-//		if (IDOfPlayer < lenghtOfPlayerArray && IDOfPlayer >= 0){
-//			
-//			validity = true;
-//		}
-//		if (IDOfPlayer > lenghtOfPlayerArray || IDOfPlayer < 0){
-//			
-//			validity = false;
-//		}
-//		return validity;
-//	}
-
-//	Additional, can be deleted when program is finished
 	
 	public void setIndexNumber(int NewIndexNumber){
 		
@@ -70,11 +38,5 @@ public class Player {
 		
 		lenghtOfPlayerArray = NewLenghtOfArray;
 	}
-//	public static int getPlayerAmount(){
-//		
-//		int playerAmount = lenghtOfPlayerArray;
-//		System.out.println(playerAmount);
-//		return playerAmount;
-//		
-//	}
+
 }
