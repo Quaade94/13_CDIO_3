@@ -8,7 +8,7 @@ public class PlayerTurnSwitcher {
 	
 	private int playerArraySize =5;	// størrelsen på array der styrer antal spillere. (Hentes fra en anden klasse med size af array metoden).
 	
-
+//ss
 			
 public void endTurn(){
 	
