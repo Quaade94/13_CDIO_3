@@ -21,6 +21,7 @@ public class Account extends Player {
 		super.addNameOfPlayerToArray(NameOfPlayer);
 		this.addStartingCapitalOfPlayerToArray(StartingCapital);
 		super.moveToNextIndex();
+		System.out.println(Accounts[indexNumber-1]);
 		
 	}
 
@@ -28,6 +29,11 @@ public class Account extends Player {
 		
 		Accounts[indexNumber] = StartingCapital;
 		
+	}
+	
+	public int getPlayerStash(int playerId){
+		int playerStash = Accounts[playerId];
+		return playerStash;
 	}
 	
 //	public static int getAccountSum(int IDOfPlayer){
