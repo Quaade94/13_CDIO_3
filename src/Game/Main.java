@@ -17,6 +17,7 @@ public class Main {
 		
 		Die Die = new Die();
 		PlayerPosition PlayerPosition = new PlayerPosition();
+		Account Account = new Account(30000);
 		
 		VehicleBuilder VehicleBuilder = new VehicleBuilder((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
 		VehicleBuilder.addPlayers();
@@ -24,8 +25,10 @@ public class Main {
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
 		
-		System.out.print(VehicleBuilder.getPlayerName(0) + VehicleBuilder.getPlayerName(1));
-	
+		
+		
+		
+		
 		//DETTE SKAL SLETTES
 		int antalspillere = 2;
 		
@@ -42,8 +45,6 @@ public class Main {
 		//placerer bilen på sin nye plads
 		
 //		System.out.println(Player.getNameOfPlayer(0));
-		
-		GUI.setCar(PlayerPosition.getPlayerPosition(0), VehicleBuilder.getPlayerName(0));
 		
 
 		
