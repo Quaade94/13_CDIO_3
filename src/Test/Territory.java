@@ -8,6 +8,9 @@ public class Territory extends Ownable{
 	public void landOnField(int IDOfPlayer){
 		
 		
+		
+		
+		
 	}
 	
 	@Override
