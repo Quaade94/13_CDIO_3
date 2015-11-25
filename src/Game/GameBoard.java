@@ -27,7 +27,7 @@ public class GameBoard {
 	public void setGameBoard() {
 
 		Field[] fields = new Field[numberOfFields];
-
+		
 		for(index = 0; index < numberOfFields ; index++){
 
 			if (index == 11 || index == 12 || index == 15 || index == 16 ){

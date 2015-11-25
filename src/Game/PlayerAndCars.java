@@ -14,12 +14,7 @@ public class PlayerAndCars {
 	public PlayerAndCars(int numOfPlayersConstructor) {
 
 		numOfPlayers = numOfPlayersConstructor;
-		
-	}
-	
-	public int getPlayerAmount(){
-		
-		return numOfPlayers;
+
 	}
 	
 	public void addPlayers(){
@@ -52,7 +47,7 @@ public class PlayerAndCars {
 		Car car1 = new Car.Builder()
 				.typeCar()
 				.patternHorizontalDualColor()
-				.primaryColor(Color.RED)
+				.primaryColor(Color.CYAN)
 				.secondaryColor(Color.BLUE)
 				.build();
 		GUI.addPlayer(player1Name, 1000, car1);
@@ -65,10 +60,10 @@ public class PlayerAndCars {
 		String player2Name = GUI.getUserString("Choose your name player 2");
 		
 		Car car2 = new Car.Builder()
-				.typeCar()
+				.typeRacecar()
 				.patternHorizontalDualColor()
-				.primaryColor(Color.RED)
-				.secondaryColor(Color.BLUE)
+				.primaryColor(Color.WHITE)
+				.secondaryColor(Color.BLACK)
 				.build();
 		GUI.addPlayer(player2Name, 1000, car2);
 		
@@ -80,10 +75,10 @@ public class PlayerAndCars {
 		String player3Name = GUI.getUserString("Choose your name player 3");
 		
 		Car car3 = new Car.Builder()
-				.typeCar()
+				.typeTractor()
 				.patternHorizontalDualColor()
-				.primaryColor(Color.RED)
-				.secondaryColor(Color.BLUE)
+				.primaryColor(Color.PINK)
+				.secondaryColor(Color.RED)
 				.build();
 		GUI.addPlayer(player3Name, 1000, car3);
 		
@@ -95,10 +90,10 @@ public class PlayerAndCars {
 		String player4Name = GUI.getUserString("Choose your name player 4");
 		
 		Car car4 = new Car.Builder()
-				.typeCar()
+				.typeUfo()
 				.patternHorizontalDualColor()
-				.primaryColor(Color.RED)
-				.secondaryColor(Color.BLUE)
+				.primaryColor(Color.GREEN)
+				.secondaryColor(Color.GREEN)
 				.build();
 		GUI.addPlayer(player4Name, 1000, car4);
 		
@@ -112,8 +107,8 @@ public class PlayerAndCars {
 		Car car5 = new Car.Builder()
 				.typeCar()
 				.patternHorizontalDualColor()
-				.primaryColor(Color.RED)
-				.secondaryColor(Color.BLUE)
+				.primaryColor(Color.PINK)
+				.secondaryColor(Color.RED)
 				.build();
 		GUI.addPlayer(player5Name, 1000, car5);
 		
@@ -125,10 +120,10 @@ public class PlayerAndCars {
 		String player6Name = GUI.getUserString("Choose your name player 6");
 		
 		Car car6 = new Car.Builder()
-				.typeCar()
+				.typeRacecar()
 				.patternHorizontalDualColor()
-				.primaryColor(Color.RED)
-				.secondaryColor(Color.BLUE)
+				.primaryColor(Color.YELLOW)
+				.secondaryColor(Color.RED)
 				.build();
 		GUI.addPlayer(player6Name, 1000, car6);
 		
