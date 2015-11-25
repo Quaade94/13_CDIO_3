@@ -1,4 +1,4 @@
-
+package Game;
 
 import java.awt.Color;
 import desktop_fields.Street;
