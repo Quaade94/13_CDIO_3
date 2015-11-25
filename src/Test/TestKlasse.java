@@ -8,6 +8,6 @@ public abstract class TestKlasse {
 	
 
 
-	public abstract void landOnField(Player player);
+	public abstract void landOnField(int IDOfPlayer);
 	
 }

@@ -10,11 +10,7 @@ public abstract class Ownable extends TestKlasse {
 	public abstract  int getRent();
 	
 	@Override
-	public void landOnField(Player player){
-		
-		
-		
-	}
+	public abstract void landOnField(int IDOfPlayer);
 	
 	
 	
