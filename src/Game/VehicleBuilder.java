@@ -5,13 +5,13 @@ import java.awt.Color;
 import desktop_codebehind.Car;
 import desktop_resources.GUI;
 
-public class PlayerAndCars {
+public class VehicleBuilder {
 	
 	Account Account = new Account(30000);
 	
 	private int numOfPlayers;
 	
-	public PlayerAndCars(int numOfPlayersConstructor) {
+	public VehicleBuilder(int numOfPlayersConstructor) {
 
 		numOfPlayers = numOfPlayersConstructor;
 

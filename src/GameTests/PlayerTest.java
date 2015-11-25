@@ -2,15 +2,15 @@ package GameTests;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import Game.PlayerAndCars;
+import Game.VehicleBuilder;
 import Game.Die;
 
 public class PlayerTest {
 
-//	Kan først laves når klasserne er færdige
+//	Kan fï¿½rst laves nï¿½r klasserne er fï¿½rdige
 //	@Test
 //	public void testPlayer() {
-//		PlayerAndCars player = new PlayerAndCars(1);
+//		VehicleBuilder player = new VehicleBuilder(1);
 //		assertTrue(1000 == )
 //	}
 

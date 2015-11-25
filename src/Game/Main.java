@@ -20,8 +20,8 @@ public class Main {
 		
 		Player Player = new Player();
 
-		PlayerAndCars PlayerAndCars = new PlayerAndCars((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
-		PlayerAndCars.addPlayers();
+		VehicleBuilder VehicleBuilder = new VehicleBuilder((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
+		VehicleBuilder.addPlayers();
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
