@@ -2,7 +2,6 @@ package GameTests;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import Game.VehicleBuilder;
 import Game.Die;
 
 public class PlayerTest {
