@@ -1,9 +1,11 @@
 package Game;
 
 import java.awt.Color;
+import java.util.regex.Pattern;
 
 import desktop_codebehind.Car;
 import desktop_resources.GUI;
+import game.Translator;
 
 public class Player{
 	
@@ -43,44 +45,43 @@ public class Player{
 	}
 	
 	private void addPlayer1(){		
-		player1Name = GUI.getUserString("Choose your name player 1");	
+		player1Name = GUI.getUserString("Choose your name player 1");
+		playerNameArray[0] = player1Name;
 		Car car1 = new Car.Builder()
 				.typeCar()
 				.patternHorizontalDualColor()
 				.primaryColor(Color.CYAN)
 				.secondaryColor(Color.BLUE)
 				.build();
-		GUI.addPlayer(player1Name, 30000, car1);	
-		playerNameArray[0] = player1Name;
+		GUI.addPlayer(player1Name, 30000, car1);
 	}
 	
 	private void addPlayer2(){		
-		player2Name = GUI.getUserString("Choose your name player 2");
+		player2Name = GUI.getUserString("Choose your name player 2");	
+		playerNameArray[1] = player2Name;
 		Car car2 = new Car.Builder()
 				.typeRacecar()
 				.patternHorizontalDualColor()
 				.primaryColor(Color.WHITE)
 				.secondaryColor(Color.BLACK)
 				.build();
-		GUI.addPlayer(player2Name, 30000, car2);	
-		playerNameArray[1] = player2Name;
 	}
 	
 	private void addPlayer3(){
 		
-		player3Name = GUI.getUserString("Choose your name player 3");		
+		player3Name = GUI.getUserString("Choose your name player 3");
+		playerNameArray[2] = player3Name;
 		Car car3 = new Car.Builder()
 				.typeTractor()
 				.patternHorizontalDualColor()
 				.primaryColor(Color.PINK)
 				.secondaryColor(Color.RED)
 				.build();
-		GUI.addPlayer(player3Name, 30000, car3);	
-		playerNameArray[2] = player3Name;
 	}
 	
 	private void addPlayer4(){		
-		player4Name = GUI.getUserString("Choose your name player 4");		
+		player4Name = GUI.getUserString("Choose your name player 4");
+		playerNameArray[3] = player4Name;
 		Car car4 = new Car.Builder()
 				.typeUfo()
 				.patternHorizontalDualColor()
@@ -88,11 +89,11 @@ public class Player{
 				.secondaryColor(Color.GREEN)
 				.build();
 		GUI.addPlayer(player4Name, 30000, car4);	
-		playerNameArray[3] = player4Name;
 	}
 	
 	private void addPlayer5(){
-		player5Name = GUI.getUserString("Choose your name player 5");		
+		player5Name = GUI.getUserString("Choose your name player 5");
+		playerNameArray[4] = player5Name;
 		Car car5 = new Car.Builder()
 				.typeCar()
 				.patternHorizontalDualColor()
@@ -100,11 +101,11 @@ public class Player{
 				.secondaryColor(Color.RED)
 				.build();
 		GUI.addPlayer(player5Name, 30000, car5);
-		playerNameArray[4] = player5Name;
 	}
 	
 	private void addPlayer6(){		
 		player6Name = GUI.getUserString("Choose your name player 6");		
+		playerNameArray[5] = player6Name;
 		Car car6 = new Car.Builder()
 				.typeRacecar()
 				.patternHorizontalDualColor()
@@ -112,7 +113,6 @@ public class Player{
 				.secondaryColor(Color.RED)
 				.build();
 		GUI.addPlayer(player6Name, 30000, car6);
-		playerNameArray[5] = player6Name;
 	}	
 	
 	public String getPlayerName(int IDOfPlayer){	
@@ -122,6 +122,24 @@ public class Player{
 	public int getNumberOfPlayers(){
 		return playerNameArray.length;
 	}
+	
+//	private void setupPlayers(){
+//		String player2name = getPlayerName(1);
+//		
+//		//A player can't name them after someone else cannot be called the same as player1
+//		while(!verifyName(user2) || user2.equals(user1))
+//		{
+//			if(!verifyName(user2))
+//			{
+//				user2 = GUI.getUserString(Translator.getString("EMPTYNAMEERROR"));
+//			}
+//			else
+//			{
+//				user2 = GUI.getUserString(Translator.getString("NAMEERROR"));
+//			}
+//		}
+//		createPlayer(user2);
+//	}
 
 //---------------------------------------------------------------------------------------------------------------------------------------
 	Die Die = new Die();
