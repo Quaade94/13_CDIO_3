@@ -47,22 +47,32 @@ public class Fleet extends Ownable{
 	}
 	
 	public boolean isFieldOwned(int IDOfPlayer){
-		
-		if (Player.getPlayerPosition(IDOfPlayer) >= 17 || Player.getPlayerPosition(IDOfPlayer) <= 20){
-			
-				if (isOwnedArray[Player.getPlayerPosition(IDOfPlayer)] - 17 == -1){
-					
-					isOwned = false;
-					
-				}
-				
-				if (isOwnedArray[Player.getPlayerPosition(IDOfPlayer)] - 17 >= 0){
-					
-					isOwned = true;
-					
-				}
+		String[] fieldNames = GameBoard.getFieldNames();
+		if (fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "FLE1") {
+			if (isOwnedArray[0] == -1) {
+				isOwned = false;
+			} else if (isOwnedArray[0] >= 0) {
+				isOwned = true;
+			}
+		} else if(fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "FLE2") {
+			if (isOwnedArray[1] == -1) {
+				isOwned = false;
+			} else if (isOwnedArray[1] >= 0) {
+				isOwned = true;
+			}
+		} else if(fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "FLE3") {
+			if (isOwnedArray[2] == -1) {
+				isOwned = false;
+			} else if (isOwnedArray[2] >= 0) {
+				isOwned = true;
+			}
+		} else if(fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "FLE4") {
+			if (isOwnedArray[3] == -1) {
+				isOwned = false;
+			} else if (isOwnedArray[3] >= 0) {
+				isOwned = true;
+			}
 		}
-		
 		return isOwned;
 	}
 	
@@ -76,8 +86,7 @@ public class Fleet extends Ownable{
 			if (Array[i] == LookingFor){
 				Occurances++;
 				i++;
-			}
-			else i++;	
+			} else i++;	
 		}
 	
 		return Occurances;
@@ -90,13 +99,11 @@ public class Fleet extends Ownable{
 			if (!(isFieldOwned(IDOfPlayer))){
 				
 				isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 17] =  IDOfPlayer;
-				
 			}
 			
 			if ((isFieldOwned(IDOfPlayer))){
 				
 //				Her skal staa en PayRent Metod der traekker penge fra personens penge og saetter dem over paa den anden persons penge
-				
 			}		
 		}
 	}
@@ -110,10 +117,8 @@ public class Fleet extends Ownable{
 		if (Player.getPlayerPosition(IDOfPlayer) >= 17 || Player.getPlayerPosition(IDOfPlayer) <= 20){
 	
 			RetrunElement = isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 17];	
-			
 		}
 		
 		return RetrunElement;		
-		
 	}
 }
