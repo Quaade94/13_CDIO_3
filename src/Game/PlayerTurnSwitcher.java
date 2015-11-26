@@ -1,13 +1,15 @@
 package Game;
 
 public class PlayerTurnSwitcher {
-		
+
 	private int playerTurn =1;
-	
-	private int playerArraySize =2;	// størrelsen på array der styrer antal spillere. (Hentes fra en anden klasse med size af array metoden).
-	
+	private int playerArraySize;	
 //ss
 			
+	public void setPlayerSize(int size){
+		playerArraySize = size;
+	}
+	
 	public void endTurn(){
 			
 		if(playerTurn<=playerArraySize){			

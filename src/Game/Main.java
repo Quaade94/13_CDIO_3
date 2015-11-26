@@ -1,9 +1,6 @@
 package Game;
 
-import java.awt.Color;
-import desktop_fields.Street;
 import desktop_resources.GUI;
-import desktop_codebehind.Car;
 
 public class Main {
 
@@ -18,9 +15,11 @@ public class Main {
 		Account Account = new Account(30000);
 		
 		VehicleBuilder VehicleBuilder = new VehicleBuilder((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
+		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
+		Turns1.setPlayerSize(VehicleBuilder.getNumberOfPlayers());
 		VehicleBuilder.addPlayers();
 
-		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
+
 		IndependentTurnTracker Track = new IndependentTurnTracker();
 		
 		
