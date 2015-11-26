@@ -1,6 +1,6 @@
-package Test;
+package Fields;
 
-import Test.Ownable;
+import Fields.Ownable;
 
 public class Territory extends Ownable{
 

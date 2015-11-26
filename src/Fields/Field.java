@@ -1,9 +1,9 @@
-package Test;
+package Fields;
 
 import Game.GameBoard;
 import Game.PlayerPosition;
 
-public abstract class TestKlasse {
+public abstract class Field {
 
 	protected String Name;
 	

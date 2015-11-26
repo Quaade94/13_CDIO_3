@@ -1,6 +1,6 @@
-package Test;
+package Fields;
 
-public class Refuge extends TestKlasse{
+public class Refuge extends Field{
 
 	private int bonus;
 

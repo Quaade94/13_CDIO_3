@@ -1,10 +1,10 @@
-package Test;
+package Fields;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 import desktop_resources.GUI;
 
-public class Tax extends TestKlasse{
+public class Tax extends Field{
 
 	private int taxAmount;
 	private int taxRate = -1;

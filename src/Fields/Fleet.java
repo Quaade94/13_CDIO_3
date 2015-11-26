@@ -1,6 +1,4 @@
-package Test;
-
-import Game.Player;
+package Fields;
 
 public class Fleet extends Ownable{
 

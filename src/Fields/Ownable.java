@@ -1,8 +1,6 @@
-package Test;
+package Fields;
 
-import Game.Player;
-
-public abstract class Ownable extends TestKlasse {
+public abstract class Ownable extends Field {
 
 	private int price;
 	private int IDOfPlayer;
