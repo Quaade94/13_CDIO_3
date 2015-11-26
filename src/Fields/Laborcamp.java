@@ -32,9 +32,6 @@ public class Laborcamp extends Ownable{
 		}
 		
 	}
-	//Her skal vi have fat på ejeren af feltet
-	int field13Owner=1;
-	int field14Owner=1;
 	
 	if (occurences(0, isOwnedArray)==2){
 		

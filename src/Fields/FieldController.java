@@ -102,7 +102,7 @@ public class FieldController {
 	}
 	public boolean isFleOwned(int IDOfPlayer){
 		int[] isOwnedArray = {-1,-1,-1,-1};
-		boolean isOwned= false;
+		boolean isOwned = false;
 		String[] fieldNames = GameBoard.getFieldNames();
 		if (fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "FLE1") {
 			if (isOwnedArray[0] == -1) {
@@ -126,6 +126,25 @@ public class FieldController {
 			if (isOwnedArray[3] == -1) {
 				isOwned = false;
 			} else if (isOwnedArray[3] >= 0) {
+				isOwned = true;
+			}
+		}
+		return isOwned;
+	}
+	public boolean isLabOwned(int IDOfPlayer){
+		int[] isOwnedArray = {-1,-1};
+		boolean isOwned = false;
+		String[] fieldNames = GameBoard.getFieldNames();
+		if (fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "LAB1") {
+			if (isOwnedArray[0] == -1) {
+				isOwned = false;
+			} else if (isOwnedArray[0] >= 0) {
+				isOwned = true;
+			}
+		} else if (fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "LAB1") {
+			if (isOwnedArray[1] == -1) {
+				isOwned = false;
+			} else if (isOwnedArray[1] >= 0) {
 				isOwned = true;
 			}
 		}
