@@ -13,7 +13,7 @@ public class Fleet extends Ownable{
 	
 	private int[] isOwnedArray = {-1,-1,-1,-1};
 
-	private int RetrunElement;
+	private int ReturnElement;
 	
 	@Override
 	public void landOnField(int IDOfPlayer){
@@ -112,13 +112,13 @@ public class Fleet extends Ownable{
 		
 		// If this method returns -1, then it is not working properly
 		
-		RetrunElement = -1;
+		ReturnElement = -1;
 		
 		if (Player.getPlayerPosition(IDOfPlayer) >= 17 || Player.getPlayerPosition(IDOfPlayer) <= 20){
 	
-			RetrunElement = isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 17];	
+			ReturnElement = isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 17];	
 		}
 		
-		return RetrunElement;		
+		return ReturnElement;		
 	}
 }

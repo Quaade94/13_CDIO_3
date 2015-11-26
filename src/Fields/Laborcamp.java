@@ -8,7 +8,7 @@ public class Laborcamp extends Ownable{
 	private int baseRent = 100;
 	private int rent;
 	private int price;
-	private int RetrunElement;
+	private int ReturnnElement;
 	
 	private boolean isOwned= false;
 	
@@ -110,15 +110,15 @@ public int isOwnedByWho(int IDOfPlayer){
 	
 	// If this method returns -1, then it is not working properly
 	
-	RetrunElement = -1;
+	ReturnnElement = -1;
 	
 	if (Player.getPlayerPosition(IDOfPlayer) == 13 || Player.getPlayerPosition(IDOfPlayer) <= 14){
 
-		RetrunElement = isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 17];	
+		ReturnnElement = isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 17];	
 		
 	}
 	
-	return RetrunElement;		
+	return ReturnnElement;		
 	
 }
 
