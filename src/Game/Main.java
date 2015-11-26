@@ -5,19 +5,27 @@ import desktop_resources.GUI;
 public class Main {
 
 	public static void main(String[] args) {
-
+		
+		long gameTime1 = System.currentTimeMillis();
+		
 		//Spilleplade (SKAL være først)
+		long responseTimeLaunch1 = System.currentTimeMillis();
 		GameBoard GameBoard = new GameBoard(21);
 		GameBoard.setGameBoard();
+		long responseTimeLaunch2 = System.currentTimeMillis();
+		System.out.println("Launch Time: "+(double)(responseTimeLaunch2-responseTimeLaunch1)/1000 + " seconds");
 		
+		//Importere
 		Die Die = new Die();
 		Player Player = new Player((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
 		Account Account = new Account();
-
 		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
+		
 		Turns1.setPlayerSize(Player.getNumberOfPlayers());
 		Player.addPlayers();
 		Account.addAccounts(Player.getNumberOfPlayers());
+		
+		
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
@@ -54,7 +62,11 @@ public class Main {
 		Turns1.endTurn();
 		}
 		GUI.getUserButtonPressed(Language.getLang("WIN"), Language.getLang("CL"));
+		
 		GUI.close();
-
+		long gameTime2 = System.currentTimeMillis();
+		double gameTime = (gameTime2-gameTime1/1000)/60;
+		double gameTimes = gameTime-(int)gameTime;
+		System.out.println("Game lasted: " + (int)gameTime + " minutes");
 	}
 }
