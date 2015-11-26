@@ -24,7 +24,10 @@ public class Main {
 			
 		//DETTE SKAL SLETTES
 		int antalspillere = Player.getNumberOfPlayers();
-		
+		int blob =0;
+		int[] blob2 = GameBoard.getFieldPrice();
+		int blob3 =0;
+				
 		//player kaster med terningen og flytter brikken
 		
 		while(antalspillere>1){
@@ -32,9 +35,12 @@ public class Main {
 			GUI.getUserButtonPressed(Player.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
 			Die.roll();
 			GUI.setDice(Die.getDice1(),Die.getDice2());
-			Account.setPlayerStash(0, 300);
-			System.out.println(Account.getPlayerStash(0));
 			Player.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
+			blob = Player.getPlayerPosition(Turns1.getPlayerTurn());
+			System.out.println("position "+blob);
+			blob3 = blob2[Player.getPlayerPosition(Turns1.getPlayerTurn())-1];
+			System.out.println("koster "+blob3);
+//			Account.setPlayerStash(Turns1.getIndependentTurn(), incMoney);
 			GUI.setCar(Player.getPlayerPosition(Turns1.getPlayerTurn()), Player.getPlayerName(Turns1.getPlayerTurn()));
 		
 		

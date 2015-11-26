@@ -27,6 +27,10 @@ public class GameBoard {
 		return fieldName;
 	}
 	
+	public int[] getFieldPrice(){
+		return fieldPrice;
+	}
+	
 	public void setGameBoard() {
 		Field[] fields = new Field[numberOfFields];	
 		
