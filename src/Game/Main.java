@@ -55,7 +55,7 @@ public class Main {
 		
 		//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
 		if (Track.getIndependentTurn(Turns1.getPlayerTurn())>0){
-		GUI.removeCar(PlayerPosition.bilSletter, VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
+		GUI.removeCar(PlayerPosition.carDestroyer, VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
 		}
 		Track.scaleIndependentTurn(Turns1.getPlayerTurn());
 		Turns1.endTurn();

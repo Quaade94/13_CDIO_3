@@ -15,7 +15,7 @@ public class PlayerPosition {
 	
 	private int fakePos = 0;
 	
-	public int bilSletter = 0;
+	public int carDestroyer = 0;
 	
 	int[] playerPosition = {player1Position,player2Position,player3Position,player4Position,player5Position,player6Position,};
 
@@ -30,7 +30,7 @@ public class PlayerPosition {
 		/**
 		 * For removing the car from the last known position
 		 **/
-		bilSletter = playerPosition[IDOfPlayer]-DiceSum;
+		carDestroyer = playerPosition[IDOfPlayer]-DiceSum;
 		
 		/**
 		 * Makes the player go back to the start if he reaches the end of the GameBoard
