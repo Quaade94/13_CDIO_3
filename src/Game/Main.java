@@ -21,25 +21,19 @@ public class Main {
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
-			
-		//DETTE SKAL SLETTES
-		int antalspillere = Player.getNumberOfPlayers();
-		int blob =0;
-		int[] blob2 = GameBoard.getFieldPrice();
-		int blob3 =0;
+					
+		//Dette skal IKKE slettes
+		int[] FieldEffect = GameBoard.getFieldPrice();
 				
-		//player kaster med terningen og flytter brikken
-		
-		while(antalspillere>1){
+		//player kaster med terningen og flytter brikke		
+		while(Player.getNumberOfPlayers()>1){
 			
 			GUI.getUserButtonPressed(Player.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
 			Die.roll();
 			GUI.setDice(Die.getDice1(),Die.getDice2());
 			Player.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
-			blob = Player.getPlayerPosition(Turns1.getPlayerTurn());
-			System.out.println("position "+blob);
-			blob3 = blob2[Player.getPlayerPosition(Turns1.getPlayerTurn())-1];
-			System.out.println("koster "+blob3);
+			Account.setPlayerStash(Turns1.getPlayerTurn(), FieldEffect[Player.getPlayerPosition(Turns1.getPlayerTurn())-1]);
+			System.out.println(Turns1.getPlayerTurn()+" " +Account.getPlayerStash(Turns1.getPlayerTurn()));
 //			Account.setPlayerStash(Turns1.getIndependentTurn(), incMoney);
 			GUI.setCar(Player.getPlayerPosition(Turns1.getPlayerTurn()), Player.getPlayerName(Turns1.getPlayerTurn()));
 		
@@ -56,7 +50,6 @@ public class Main {
 		Turns1.scaleIndependentTurn();
 		Turns1.endTurn();
 		}
-		
 		GUI.getUserButtonPressed(Language.getLang("WIN"), Language.getLang("CL"));
 		GUI.close();
 
