@@ -5,10 +5,7 @@ import java.awt.Color;
 import desktop_codebehind.Car;
 import desktop_resources.GUI;
 
-
 public class Player{
-
-	Die Die = new Die();
 	
 	private String player1Name;
 	private String player2Name;
@@ -19,7 +16,7 @@ public class Player{
 	private int numOfPlayers;
 	String[] playerNameArray;
 	
-	public void PlayerConstructor(int numOfPlayersConstructor){
+	public Player(int numOfPlayersConstructor){
 		numOfPlayers = numOfPlayersConstructor;
 		playerNameArray = new String[numOfPlayers];
 	}
@@ -32,7 +29,6 @@ public class Player{
 			this.addPlayerSwitch(i);			
 		}	
 	}
-
 	
 	private void addPlayerSwitch(int PlayerNumber){
 		
@@ -45,8 +41,6 @@ public class Player{
 		case 6: 		this.addPlayer6(); break;
 		}
 	}
-	
-
 	
 	private void addPlayer1(){
 		
@@ -146,6 +140,11 @@ public class Player{
 		return playerNameArray.length;
 	}
 
+//---------------------------------------------------------------------------------------------------------------------------------------
+	Die Die = new Die();
+	
+	public Player(){
+	}
 	
 	private int player1Position = 0;
 	private int player2Position = 0;

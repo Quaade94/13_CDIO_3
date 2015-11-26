@@ -11,30 +11,29 @@ public class Main {
 		GameBoard.setGameBoard();
 		
 		Die Die = new Die();
-		PlayerPosition PlayerPosition = new PlayerPosition();
-		Account Account = new Account(30000);
+		Player Player = new Player((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
 		
-		VehicleBuilder VehicleBuilder = new VehicleBuilder((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
+
 		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
-		Turns1.setPlayerSize(VehicleBuilder.getNumberOfPlayers());
-		VehicleBuilder.addPlayers();
+		Turns1.setPlayerSize(Player.getNumberOfPlayers());
+		Player.addPlayers();
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
 			
 		//DETTE SKAL SLETTES
-		int antalspillere = VehicleBuilder.getNumberOfPlayers();
+		int antalspillere = Player.getNumberOfPlayers();
 		
 		//player kaster med terningen og flytter brikken
 		
 		while(antalspillere>1){
 			
-			GUI.getUserButtonPressed(VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
+			GUI.getUserButtonPressed(Player.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
 			Die.roll();
 			GUI.setDice(Die.getDice1(),Die.getDice2());
 			
-			PlayerPosition.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
-			GUI.setCar(PlayerPosition.getPlayerPosition(Turns1.getPlayerTurn()), VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
+			Player.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
+			GUI.setCar(Player.getPlayerPosition(Turns1.getPlayerTurn()), Player.getPlayerName(Turns1.getPlayerTurn()));
 		
 		
 		//placerer bilen på sin nye plads
@@ -44,7 +43,7 @@ public class Main {
 	
 		//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
 		if (Turns1.getIndependentTurn() > 0){
-		GUI.removeCar(PlayerPosition.carDestroyer, VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
+		GUI.removeCar(Player.carDestroyer, Player.getPlayerName(Turns1.getPlayerTurn()));
 		}
 		Turns1.scaleIndependentTurn();
 		Turns1.endTurn();
