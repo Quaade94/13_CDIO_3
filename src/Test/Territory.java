@@ -8,9 +8,13 @@ public class Territory extends Ownable{
 	private int rent;
 	private int price;
 	private int[] priceArray = {100,300,500,700,1000,1300,1600,2000,2600,3200};
-	private int [] rentArray = {1000,1500,2000,3000,4000,4300,4750,5000,5500};
+	private int[] rentArray = {1000,1500,2000,3000,4000,4300,4750,5000,5500};
 	
+	private int[] isOwnedArray = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 	
+	private boolean isOwned= false;
+	
+	private int RetrunElement;
 	
 	@Override
 	public void landOnField(int IDOfPlayer){
@@ -36,4 +40,62 @@ public class Territory extends Ownable{
 		return price;
 		
 	}
+	
+	public boolean isFieldOwned(int IDOfPlayer){
+		
+		if (PlayerPosition.getPlayerPosition(IDOfPlayer) >= 0 && PlayerPosition.getPlayerPosition(IDOfPlayer) <= 10){
+			
+				if (isOwnedArray[PlayerPosition.getPlayerPosition(IDOfPlayer)] == -1){
+					
+					isOwned = false;
+					
+				}
+				
+				if (isOwnedArray[PlayerPosition.getPlayerPosition(IDOfPlayer)] >= 0){
+					
+					isOwned = true;
+					
+				}
+		}
+		
+		return isOwned;
+	}
+	
+	public int isOwnedByWho(int IDOfPlayer){
+		
+		// If this method returns -1, then it is not working properly
+		
+		RetrunElement = -1;
+		
+		if (PlayerPosition.getPlayerPosition(IDOfPlayer) >= 0 && PlayerPosition.getPlayerPosition(IDOfPlayer) <= 10){
+	
+			RetrunElement = isOwnedArray[PlayerPosition.getPlayerPosition(IDOfPlayer)];	
+			
+		}
+		
+		return RetrunElement;		
+		
+		
+	}
+	
+	public void setOwner(int IDOfPlayer){
+		
+		if (PlayerPosition.getPlayerPosition(IDOfPlayer) >= 0 && PlayerPosition.getPlayerPosition(IDOfPlayer) <= 10){
+
+			if (!(isFieldOwned(IDOfPlayer))){
+				
+				isOwnedArray[PlayerPosition.getPlayerPosition(IDOfPlayer)] = IDOfPlayer;
+				
+			}
+			
+			if ((isFieldOwned(IDOfPlayer))){
+				
+//				Her skal staa en PayRent Metod der traekker penge fra personens penge og saetter dem over paa den anden persons penge
+				
+			}
+				
+		}
+	
+	}
+
 }
