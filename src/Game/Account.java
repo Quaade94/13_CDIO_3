@@ -8,8 +8,8 @@ public class Account {
 	private int indexNumber = 0;
 	
 	
-	public Account (int StaringCapitalConstructor){		
-		StartingCapital = StaringCapitalConstructor;		
+	public Account (){		
+		StartingCapital = 30000;		
 	}
 	
 	protected int lenghtOfAccountArray = 6;
