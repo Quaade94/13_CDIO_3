@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class FieldController {
 	Player Player = new Player();
 	GameBoard GameBoard = new GameBoard(21);
-	private int[] terArray = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+	private int[] terArray = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 	private int[] fleArray = {-1,-1,-1,-1};
 	private int[] labArray = {-1,-1};
 	
@@ -32,12 +32,12 @@ public class FieldController {
 	}
 	
 	public void OwnableCheck(int IDOfPlayer, int playerPosition){
-		
+		System.out.println(playerPosition);
 		Boolean[] fieldOwnable = GameBoard.getFieldOwnable();
 		String[] fieldNames = GameBoard.getFieldNames();
-		String fieldName = fieldNames[playerPosition];
+		String fieldName = fieldNames[playerPosition-1];
 		
-		if (fieldOwnable[playerPosition] == true) {
+		if (fieldOwnable[playerPosition-1] == true) {
 			if (fieldName.contains("TER") == true){
 				System.out.println("Territory");
 				isTerOwned(IDOfPlayer, playerPosition);
@@ -55,67 +55,67 @@ public class FieldController {
 		boolean isOwned= false;
 		String[] fieldNames = GameBoard.getFieldNames();
 		
-		if (fieldNames[playerPosition] == "TER1") {
+		if (fieldNames[playerPosition-1] == "TER1") {
 			if (terArray[0] == -1) {
 				isOwned = false;
 			} else if (terArray[0] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER2") {
+		} else if(fieldNames[playerPosition-1] == "TER2") {
 			if (terArray[1] == -1) {
 				isOwned = false;
 			} else if (terArray[1] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER3") {
+		} else if(fieldNames[playerPosition-1] == "TER3") {
 			if (terArray[2] == -1) {
 				isOwned = false;
 			} else if (terArray[2] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER4") {
+		} else if(fieldNames[playerPosition-1] == "TER4") {
 			if (terArray[3] == -1) {
 				isOwned = false;
 			} else if (terArray[3] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER5") {
+		} else if(fieldNames[playerPosition-1] == "TER5") {
 			if (terArray[4] == -1) {
 				isOwned = false;
 			} else if (terArray[4] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER6") {
+		} else if(fieldNames[playerPosition-1] == "TER6") {
 			if (terArray[5] == -1) {
 				isOwned = false;
 			} else if (terArray[5] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER7") {
+		} else if(fieldNames[playerPosition-1] == "TER7") {
 			if (terArray[6] == -1) {
 				isOwned = false;
 			} else if (terArray[6] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER8") {
+		} else if(fieldNames[playerPosition-1] == "TER8") {
 			if (terArray[7] == -1) {
 				isOwned = false;
 			} else if (terArray[7] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER9") {
+		} else if(fieldNames[playerPosition-1] == "TER9") {
 			if (terArray[8] == -1) {
 				isOwned = false;
 			} else if (terArray[8] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER10") {
+		} else if(fieldNames[playerPosition-1] == "TER10") {
 			if (terArray[9] == -1) {
 				isOwned = false;
 			} else if (terArray[9] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "TER11") {
+		} else if(fieldNames[playerPosition-1] == "TER11") {
 			if (terArray[10] == -1) {
 				isOwned = false;
 			} else if (terArray[10] >= 0) {
@@ -128,25 +128,25 @@ public class FieldController {
 
 		boolean isOwned = false;
 		String[] fieldNames = GameBoard.getFieldNames();
-		if (fieldNames[playerPosition] == "FLE1") {
+		if (fieldNames[playerPosition-1] == "FLE1") {
 			if (fleArray[0] == -1) {
 				isOwned = false;
 			} else if (fleArray[0] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "FLE2") {
+		} else if(fieldNames[playerPosition-1] == "FLE2") {
 			if (fleArray[1] == -1) {
 				isOwned = false;
 			} else if (fleArray[1] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "FLE3") {
+		} else if(fieldNames[playerPosition-1] == "FLE3") {
 			if (fleArray[2] == -1) {
 				isOwned = false;
 			} else if (fleArray[2] >= 0) {
 				isOwned = true;
 			}
-		} else if(fieldNames[playerPosition] == "FLE4") {
+		} else if(fieldNames[playerPosition-1] == "FLE4") {
 			if (fleArray[3] == -1) {
 				isOwned = false;
 			} else if (fleArray[3] >= 0) {
@@ -159,14 +159,14 @@ public class FieldController {
 
 		boolean isOwned = false;
 		String[] fieldNames = GameBoard.getFieldNames();
-		if (fieldNames[playerPosition] == "LAB1") {
+		if (fieldNames[playerPosition-1] == "LAB1") {
 			if (labArray[0] == -1) {
 				isOwned = false;
 			} else if (labArray[0] >= 0) {
 				isOwned = true;
 				//whoOwns(IDOfPlayer,labArray[0]);
 			}
-		} else if (fieldNames[playerPosition] == "LAB1") {
+		} else if (fieldNames[playerPosition-1] == "LAB1") {
 			if (labArray[1] == -1) {
 				isOwned = false;
 			} else if (labArray[1] >= 0) {
