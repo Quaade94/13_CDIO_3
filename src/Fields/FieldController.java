@@ -7,7 +7,8 @@ import java.util.Arrays;
 public class FieldController {
 	Player Player = new Player();
 	GameBoard GameBoard = new GameBoard(21);
-	private int[] terArray = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+	Territory Territory = new Territory();
+
 	private int[] fleArray = {-1,-1,-1,-1};
 	private int[] labArray = {-1,-1};
 	
@@ -36,14 +37,15 @@ public class FieldController {
 		Boolean[] fieldOwnable = GameBoard.getFieldOwnable();
 		String[] fieldNames = GameBoard.getFieldNames();
 		String fieldName = fieldNames[playerPosition-1];
+		int rent;
 		
 		if (fieldOwnable[playerPosition-1] == true) {
 			if (fieldName.contains("TER") == true){
 				System.out.println("Territory");
-				isTerOwned(IDOfPlayer, playerPosition);
+					Territory.setPlayerPositionTer(playerPosition);
+					Territory.landOnField(IDOfPlayer);
 			} else if (fieldName.contains("FLE") == true){
 				System.out.println("Fleet");
-				isFleOwned(IDOfPlayer, playerPosition);
 			} else if (fieldName.contains("LAB") == true){
 				System.out.println("Labor Camp");
 				isLabOwned(IDOfPlayer, playerPosition);
@@ -51,79 +53,6 @@ public class FieldController {
 		}
 	}
 	
-	public boolean isTerOwned(int IDOfPlayer, int playerPosition){
-		boolean isOwned= false;
-		String[] fieldNames = GameBoard.getFieldNames();
-		
-		if (fieldNames[playerPosition-1] == "TER1") {
-			if (terArray[0] == -1) {
-				isOwned = false;
-			} else if (terArray[0] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER2") {
-			if (terArray[1] == -1) {
-				isOwned = false;
-			} else if (terArray[1] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER3") {
-			if (terArray[2] == -1) {
-				isOwned = false;
-			} else if (terArray[2] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER4") {
-			if (terArray[3] == -1) {
-				isOwned = false;
-			} else if (terArray[3] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER5") {
-			if (terArray[4] == -1) {
-				isOwned = false;
-			} else if (terArray[4] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER6") {
-			if (terArray[5] == -1) {
-				isOwned = false;
-			} else if (terArray[5] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER7") {
-			if (terArray[6] == -1) {
-				isOwned = false;
-			} else if (terArray[6] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER8") {
-			if (terArray[7] == -1) {
-				isOwned = false;
-			} else if (terArray[7] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER9") {
-			if (terArray[8] == -1) {
-				isOwned = false;
-			} else if (terArray[8] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER10") {
-			if (terArray[9] == -1) {
-				isOwned = false;
-			} else if (terArray[9] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "TER11") {
-			if (terArray[10] == -1) {
-				isOwned = false;
-			} else if (terArray[10] >= 0) {
-				isOwned = true;
-			}
-		}
-		return isOwned;
-	}
 	public boolean isFleOwned(int IDOfPlayer, int playerPosition){
 
 		boolean isOwned = false;
