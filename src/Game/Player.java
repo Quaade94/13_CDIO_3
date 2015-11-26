@@ -169,7 +169,7 @@ public class Player{
 		
 		/**
 		 * For removing the car from the last known position
-		 **/
+		 */
 		carDestroyer = playerPosition[IDOfPlayer]-DiceSum;
 		
 		/**
