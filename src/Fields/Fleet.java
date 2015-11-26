@@ -46,36 +46,6 @@ public class Fleet extends Ownable{
 		return rent;
 	}
 	
-	public boolean isFieldOwned(int IDOfPlayer){
-		String[] fieldNames = GameBoard.getFieldNames();
-		if (fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "FLE1") {
-			if (isOwnedArray[0] == -1) {
-				isOwned = false;
-			} else if (isOwnedArray[0] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "FLE2") {
-			if (isOwnedArray[1] == -1) {
-				isOwned = false;
-			} else if (isOwnedArray[1] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "FLE3") {
-			if (isOwnedArray[2] == -1) {
-				isOwned = false;
-			} else if (isOwnedArray[2] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[Player.getPlayerPosition(IDOfPlayer)] == "FLE4") {
-			if (isOwnedArray[3] == -1) {
-				isOwned = false;
-			} else if (isOwnedArray[3] >= 0) {
-				isOwned = true;
-			}
-		}
-		return isOwned;
-	}
-	
 	private int occurences(int LookingFor, int[] Array){
 		
 		int i = 0;
