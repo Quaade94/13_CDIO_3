@@ -18,19 +18,10 @@ public class Main {
 		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
 		Turns1.setPlayerSize(VehicleBuilder.getNumberOfPlayers());
 		VehicleBuilder.addPlayers();
-
-
-		IndependentTurnTracker Track = new IndependentTurnTracker();
-		
-		
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
-		
-		
-		
-		
-		
+			
 		//DETTE SKAL SLETTES
 		int antalspillere = VehicleBuilder.getNumberOfPlayers();
 		
@@ -50,13 +41,12 @@ public class Main {
 		
 //		System.out.println(Player.getNameOfPlayer(0));
 		
-
-		
+	
 		//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
-		if (Track.getIndependentTurn(Turns1.getPlayerTurn())>0){
+		if (Turns1.getIndependentTurn(Turns1.getPlayerTurn())>0){
 		GUI.removeCar(PlayerPosition.carDestroyer, VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
 		}
-		Track.scaleIndependentTurn(Turns1.getPlayerTurn());
+		Turns1.scaleIndependentTurn(Turns1.getPlayerTurn());
 		Turns1.endTurn();
 		}
 		
