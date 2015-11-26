@@ -1,4 +1,5 @@
 package Game;
+import Fields.FieldController;
 
 public class PlayerTurnSwitcher {
 	int turnPlayer1 =0;
@@ -7,6 +8,7 @@ public class PlayerTurnSwitcher {
 	int turnPlayer4 =0;
 	int turnPlayer5 =0;
 	int turnPlayer6 =0;
+	FieldController FieldController = new FieldController();
 	
 	int[] independentTurn = {turnPlayer1,turnPlayer2,turnPlayer3,turnPlayer4,turnPlayer5,turnPlayer6};
 	
@@ -40,5 +42,8 @@ public class PlayerTurnSwitcher {
 
 	public int getPlayerTurn(){	
 	return playerTurn-1;
+	}
+	public void checkField(int IDOfPlayer){
+		FieldController.OwnableCheck(IDOfPlayer);
 	}
 }
