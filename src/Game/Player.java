@@ -16,6 +16,8 @@ public class Player{
 	private int numOfPlayers;
 	String[] playerNameArray;
 	
+	Account Account = new Account();
+	
 	public Player(int numOfPlayersConstructor){
 		numOfPlayers = numOfPlayersConstructor;
 		playerNameArray = new String[numOfPlayers];
@@ -51,7 +53,7 @@ public class Player{
 				.primaryColor(Color.CYAN)
 				.secondaryColor(Color.BLUE)
 				.build();
-		GUI.addPlayer(player1Name, 1000, car1);
+		GUI.addPlayer(player1Name, 30000, car1);
 	
 		playerNameArray[0] = player1Name;
 	}
@@ -65,7 +67,7 @@ public class Player{
 				.primaryColor(Color.WHITE)
 				.secondaryColor(Color.BLACK)
 				.build();
-		GUI.addPlayer(player2Name, 1000, car2);
+		GUI.addPlayer(player2Name, 30000, car2);
 	
 		playerNameArray[1] = player2Name;
 	}
@@ -79,7 +81,7 @@ public class Player{
 				.primaryColor(Color.PINK)
 				.secondaryColor(Color.RED)
 				.build();
-		GUI.addPlayer(player3Name, 1000, car3);
+		GUI.addPlayer(player3Name, 30000, car3);
 	
 		playerNameArray[2] = player3Name;
 	}
@@ -92,7 +94,7 @@ public class Player{
 				.primaryColor(Color.GREEN)
 				.secondaryColor(Color.GREEN)
 				.build();
-		GUI.addPlayer(player4Name, 1000, car4);
+		GUI.addPlayer(player4Name, 30000, car4);
 	
 		playerNameArray[3] = player4Name;
 	}
@@ -108,7 +110,7 @@ public class Player{
 				.primaryColor(Color.PINK)
 				.secondaryColor(Color.RED)
 				.build();
-		GUI.addPlayer(player5Name, 1000, car5);
+		GUI.addPlayer(player5Name, 30000, car5);
 
 		playerNameArray[4] = player5Name;
 	}
@@ -124,7 +126,7 @@ public class Player{
 				.primaryColor(Color.YELLOW)
 				.secondaryColor(Color.RED)
 				.build();
-		GUI.addPlayer(player6Name, 1000, car6);
+		GUI.addPlayer(player6Name, 30000, car6);
 		
 		//		GUI.addPlayer(player6Name, Account.getPlayerStash(5), car6);
 
