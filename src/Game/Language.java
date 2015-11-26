@@ -5,8 +5,7 @@ import java.util.ResourceBundle;
 
 public class Language {
 	static ResourceBundle langs;
-	public static String getLang(String word)
-	{
+	public static String getLang(String word){
 		if(langs==null){
 			setLocale(new Locale("en", "GB"));
 		}

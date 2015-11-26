@@ -1,18 +1,18 @@
 package Fields;
 
-
 import desktop_resources.GUI;
 
 public class Tax extends Field{
 
 	private int taxAmount;
 	private int taxRate = -1;
-	private double per = 0.90;
-	private int [] rentArray = {2000,4000,((int)0.90)};
+	private int uDifineretKonto = 1000;
+	private double per = 0.1;
+	private int [] rentArray = {2000,4000,((int)(per*uDifineretKonto))};
 
 	@Override
 	public void landOnField(int IDOfPlayer){
-
+		
 		taxAmount = 0;
 
 		if (Player.getPlayerPosition(IDOfPlayer) == 16){
