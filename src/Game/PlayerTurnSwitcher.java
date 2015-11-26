@@ -43,7 +43,7 @@ public class PlayerTurnSwitcher {
 	public int getPlayerTurn(){	
 	return playerTurn-1;
 	}
-	public void checkField(int IDOfPlayer){
-		FieldController.OwnableCheck(IDOfPlayer);
+	public void checkField(int IDOfPlayer, int playerPosition){
+		FieldController.OwnableCheck(IDOfPlayer, playerPosition);
 	}
 }

@@ -37,7 +37,7 @@ public class Main {
 //			Account.setPlayerStash(Turns1.getIndependentTurn(), incMoney);
 			GUI.setCar(Player.getPlayerPosition(Turns1.getPlayerTurn()), Player.getPlayerName(Turns1.getPlayerTurn()));
 			
-			Turns1.checkField(Turns1.getPlayerTurn());
+			Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
 		
 		//placerer bilen på sin nye plads
 		
