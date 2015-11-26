@@ -19,7 +19,7 @@ public class Main {
 		
 		VehicleBuilder VehicleBuilder = new VehicleBuilder((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
 		VehicleBuilder.addPlayers();
-		
+
 		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
 		IndependentTurnTracker Track = new IndependentTurnTracker();
 		
@@ -33,7 +33,7 @@ public class Main {
 		
 		
 		//DETTE SKAL SLETTES
-		int antalspillere = 2;
+		int antalspillere = VehicleBuilder.getNumberOfPlayers();
 		
 		//player kaster med terningen og flytter brikken
 		
