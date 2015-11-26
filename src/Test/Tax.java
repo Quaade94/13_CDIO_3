@@ -1,15 +1,54 @@
 package Test;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+import desktop_resources.GUI;
+
 public class Tax extends TestKlasse{
 
 	private int taxAmount;
 	private int taxRate = -1;
-	
+	private double per = 0.90;
+	private int [] rentArray = {2000,4000,((int)0.90)};
+
 	@Override
 	public void landOnField(int IDOfPlayer){
-		
-		
+
+		taxAmount = 0;
+
+		if (PlayerPosition.getPlayerPosition(IDOfPlayer) == 16){
+
+			//Ser ud til at knappen ikke laver en true eller false boolean alligvel.. -Lars
+			GUI.getUserLeftButtonPressed("GUI_TAX_DES", "10%", "4000,-");
+
+			if (true){
+				// Dette skal ganges med de penge som brugeren som har tur ejer.
+				taxAmount = rentArray[2];
+			}
+
+			else if (false) {
+				taxAmount = rentArray[1];
+			}
+		}
+
+		else if (PlayerPosition.getPlayerPosition(IDOfPlayer) == 15){
+
+			taxAmount = rentArray[0];
+
+
+
+		}
 	}
-	
-	
+
+	public int getRent() {
+
+		return taxAmount;
+
+	}
 }
+
+
+
+
+
+
