@@ -1,5 +1,7 @@
 package Fields;
 
+
+
 public abstract class Ownable extends Field {
 
 	private int price;

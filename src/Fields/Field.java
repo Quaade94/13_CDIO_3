@@ -1,13 +1,13 @@
 package Fields;
 
 import Game.GameBoard;
-import Game.PlayerPosition;
+import Game.Player;
 
 public abstract class Field {
 
 	protected String Name;
 	
-	PlayerPosition PlayerPosition = new PlayerPosition();
+	Player Player = new Player();
 	GameBoard GameBoard = new GameBoard(21);
 
 	public abstract void landOnField(int IDOfPlayer);

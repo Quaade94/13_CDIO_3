@@ -22,10 +22,10 @@ public class Territory extends Ownable{
 		rent = 0;
 		price = 0;
 
-		if (PlayerPosition.getPlayerPosition(IDOfPlayer) >= 0 && PlayerPosition.getPlayerPosition(IDOfPlayer) <= 10){
+		if (Player.getPlayerPosition(IDOfPlayer) >= 0 && Player.getPlayerPosition(IDOfPlayer) <= 10){
 						
-			price = priceArray[PlayerPosition.getPlayerPosition(IDOfPlayer)];
-			rent = rentArray[PlayerPosition.getPlayerPosition(IDOfPlayer)];
+			price = priceArray[Player.getPlayerPosition(IDOfPlayer)];
+			rent = rentArray[Player.getPlayerPosition(IDOfPlayer)];
 
 		}
 	}
@@ -43,15 +43,15 @@ public class Territory extends Ownable{
 	
 	public boolean isFieldOwned(int IDOfPlayer){
 		
-		if (PlayerPosition.getPlayerPosition(IDOfPlayer) >= 0 && PlayerPosition.getPlayerPosition(IDOfPlayer) <= 10){
+		if (Player.getPlayerPosition(IDOfPlayer) >= 0 && Player.getPlayerPosition(IDOfPlayer) <= 10){
 			
-				if (isOwnedArray[PlayerPosition.getPlayerPosition(IDOfPlayer)] == -1){
+				if (isOwnedArray[Player.getPlayerPosition(IDOfPlayer)] == -1){
 					
 					isOwned = false;
 					
 				}
 				
-				if (isOwnedArray[PlayerPosition.getPlayerPosition(IDOfPlayer)] >= 0){
+				if (isOwnedArray[Player.getPlayerPosition(IDOfPlayer)] >= 0){
 					
 					isOwned = true;
 					
@@ -67,9 +67,9 @@ public class Territory extends Ownable{
 		
 		RetrunElement = -1;
 		
-		if (PlayerPosition.getPlayerPosition(IDOfPlayer) >= 0 && PlayerPosition.getPlayerPosition(IDOfPlayer) <= 10){
+		if (Player.getPlayerPosition(IDOfPlayer) >= 0 && Player.getPlayerPosition(IDOfPlayer) <= 10){
 	
-			RetrunElement = isOwnedArray[PlayerPosition.getPlayerPosition(IDOfPlayer)];	
+			RetrunElement = isOwnedArray[Player.getPlayerPosition(IDOfPlayer)];	
 			
 		}
 		
@@ -80,11 +80,11 @@ public class Territory extends Ownable{
 	
 	public void setOwner(int IDOfPlayer){
 		
-		if (PlayerPosition.getPlayerPosition(IDOfPlayer) >= 0 && PlayerPosition.getPlayerPosition(IDOfPlayer) <= 10){
+		if (Player.getPlayerPosition(IDOfPlayer) >= 0 && Player.getPlayerPosition(IDOfPlayer) <= 10){
 
 			if (!(isFieldOwned(IDOfPlayer))){
 				
-				isOwnedArray[PlayerPosition.getPlayerPosition(IDOfPlayer)] = IDOfPlayer;
+				isOwnedArray[Player.getPlayerPosition(IDOfPlayer)] = IDOfPlayer;
 				
 			}
 			

@@ -1,6 +1,5 @@
 package Fields;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 import desktop_resources.GUI;
 
@@ -16,7 +15,7 @@ public class Tax extends Field{
 
 		taxAmount = 0;
 
-		if (PlayerPosition.getPlayerPosition(IDOfPlayer) == 16){
+		if (Player.getPlayerPosition(IDOfPlayer) == 16){
 
 			//Ser ud til at knappen ikke laver en true eller false boolean alligvel.. -Lars
 			GUI.getUserLeftButtonPressed("GUI_TAX_DES", "10%", "4000,-");
@@ -31,7 +30,7 @@ public class Tax extends Field{
 			}
 		}
 
-		else if (PlayerPosition.getPlayerPosition(IDOfPlayer) == 15){
+		else if (Player.getPlayerPosition(IDOfPlayer) == 15){
 
 			taxAmount = rentArray[0];
 
