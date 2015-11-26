@@ -22,10 +22,16 @@ public class Territory extends Ownable{
 		rent = 0;
 		price = 0;
 
-		if (Player.getPlayerPosition(IDOfPlayer) >= 0 && Player.getPlayerPosition(IDOfPlayer) <= 10){
-						
-			price = priceArray[Player.getPlayerPosition(IDOfPlayer)];
-			rent = rentArray[Player.getPlayerPosition(IDOfPlayer)];
+		if (!(isFieldOwned(IDOfPlayer))){
+			if (Player.getPlayerPosition(IDOfPlayer) >= 0 && Player.getPlayerPosition(IDOfPlayer) <= 10){
+				
+				price = priceArray[Player.getPlayerPosition(IDOfPlayer)];
+				rent = rentArray[Player.getPlayerPosition(IDOfPlayer)];
+			
+			
+		}
+		
+
 
 		}
 	}
@@ -92,10 +98,15 @@ public class Territory extends Ownable{
 				
 //				Her skal staa en PayRent Metod der traekker penge fra personens penge og saetter dem over paa den anden persons penge
 				
-			}
-				
+			}		
 		}
-	
 	}
-
 }
+
+
+
+
+
+
+
+
