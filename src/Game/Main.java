@@ -66,7 +66,6 @@ public class Main {
 		GUI.close();
 		long gameTime2 = System.currentTimeMillis();
 		double gameTime = (gameTime2-gameTime1/1000)/60;
-		double gameTimes = gameTime-(int)gameTime;
 		System.out.println("Game lasted: " + (int)gameTime + " minutes");
 	}
 }
