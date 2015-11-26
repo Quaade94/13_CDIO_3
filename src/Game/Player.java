@@ -16,8 +16,6 @@ public class Player{
 	private int numOfPlayers;
 	String[] playerNameArray;
 	
-	Account Account = new Account();
-	
 	public Player(int numOfPlayersConstructor){
 		numOfPlayers = numOfPlayersConstructor;
 		playerNameArray = new String[numOfPlayers];
@@ -44,8 +42,7 @@ public class Player{
 		}
 	}
 	
-	private void addPlayer1(){
-		
+	private void addPlayer1(){		
 		player1Name = GUI.getUserString("Choose your name player 1");	
 		Car car1 = new Car.Builder()
 				.typeCar()
@@ -53,13 +50,11 @@ public class Player{
 				.primaryColor(Color.CYAN)
 				.secondaryColor(Color.BLUE)
 				.build();
-		GUI.addPlayer(player1Name, 30000, car1);
-	
+		GUI.addPlayer(player1Name, 30000, car1);	
 		playerNameArray[0] = player1Name;
 	}
 	
-	private void addPlayer2(){
-		
+	private void addPlayer2(){		
 		player2Name = GUI.getUserString("Choose your name player 2");
 		Car car2 = new Car.Builder()
 				.typeRacecar()
@@ -67,8 +62,7 @@ public class Player{
 				.primaryColor(Color.WHITE)
 				.secondaryColor(Color.BLACK)
 				.build();
-		GUI.addPlayer(player2Name, 30000, car2);
-	
+		GUI.addPlayer(player2Name, 30000, car2);	
 		playerNameArray[1] = player2Name;
 	}
 	
@@ -81,8 +75,7 @@ public class Player{
 				.primaryColor(Color.PINK)
 				.secondaryColor(Color.RED)
 				.build();
-		GUI.addPlayer(player3Name, 30000, car3);
-	
+		GUI.addPlayer(player3Name, 30000, car3);	
 		playerNameArray[2] = player3Name;
 	}
 	
@@ -94,16 +87,12 @@ public class Player{
 				.primaryColor(Color.GREEN)
 				.secondaryColor(Color.GREEN)
 				.build();
-		GUI.addPlayer(player4Name, 30000, car4);
-	
+		GUI.addPlayer(player4Name, 30000, car4);	
 		playerNameArray[3] = player4Name;
 	}
 	
 	private void addPlayer5(){
-		
-		player5Name = GUI.getUserString("Choose your name player 5");
-//		Account.addPlayerAndAccount(player5Name);
-		
+		player5Name = GUI.getUserString("Choose your name player 5");		
 		Car car5 = new Car.Builder()
 				.typeCar()
 				.patternHorizontalDualColor()
@@ -111,15 +100,11 @@ public class Player{
 				.secondaryColor(Color.RED)
 				.build();
 		GUI.addPlayer(player5Name, 30000, car5);
-
 		playerNameArray[4] = player5Name;
 	}
 	
-	private void addPlayer6(){
-		
-		player6Name = GUI.getUserString("Choose your name player 6");
-//		Account.addPlayerAndAccount(player6Name);
-		
+	private void addPlayer6(){		
+		player6Name = GUI.getUserString("Choose your name player 6");		
 		Car car6 = new Car.Builder()
 				.typeRacecar()
 				.patternHorizontalDualColor()
@@ -127,14 +112,10 @@ public class Player{
 				.secondaryColor(Color.RED)
 				.build();
 		GUI.addPlayer(player6Name, 30000, car6);
-		
-		//		GUI.addPlayer(player6Name, Account.getPlayerStash(5), car6);
-
 		playerNameArray[5] = player6Name;
 	}	
 	
-	public String getPlayerName(int IDOfPlayer){
-	
+	public String getPlayerName(int IDOfPlayer){	
 		return playerNameArray[IDOfPlayer];	
 	}	
 	
