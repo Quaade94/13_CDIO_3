@@ -13,14 +13,14 @@ public class PlayerTurnSwitcher {
 	private int playerTurn =1;
 	private int playerArraySize;	
 
-	public int getIndependentTurn(int IDOfPlayers){
-		
-		return independentTurn[IDOfPlayers];
+	public int getIndependentTurn(){
+		int iDOfPlayers = playerTurn-1;
+		return independentTurn[iDOfPlayers];
 	}
 
-	public void scaleIndependentTurn(int IDOfPlayers){
-		
-		independentTurn[IDOfPlayers]++;			
+	public void scaleIndependentTurn(){
+		int iDOfPlayers = playerTurn-1;
+		independentTurn[iDOfPlayers]++;			
 	}
 			
 	public void setPlayerSize(int size){
