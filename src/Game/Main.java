@@ -30,12 +30,14 @@ public class Main {
 			
 			GUI.getUserButtonPressed(Player.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
 			Die.roll();
+			
 			GUI.setDice(Die.getDice1(),Die.getDice2());
+			
 			Player.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
 			Account.setPlayerStash(Turns1.getPlayerTurn(), FieldEffect[Player.getPlayerPosition(Turns1.getPlayerTurn())-1]);
-			System.out.println(Turns1.getPlayerTurn()+" " +Account.getPlayerStash(Turns1.getPlayerTurn()));
-//			Account.setPlayerStash(Turns1.getIndependentTurn(), incMoney);
+
 			GUI.setCar(Player.getPlayerPosition(Turns1.getPlayerTurn()), Player.getPlayerName(Turns1.getPlayerTurn()));
+			GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
 			
 			Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
 		
