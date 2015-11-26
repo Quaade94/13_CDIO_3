@@ -12,11 +12,12 @@ public class Main {
 		
 		Die Die = new Die();
 		Player Player = new Player((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
-		
+		Account Account = new Account();
 
 		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
 		Turns1.setPlayerSize(Player.getNumberOfPlayers());
 		Player.addPlayers();
+		Account.addAccounts(Player.getNumberOfPlayers());
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
@@ -31,7 +32,8 @@ public class Main {
 			GUI.getUserButtonPressed(Player.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
 			Die.roll();
 			GUI.setDice(Die.getDice1(),Die.getDice2());
-			
+			Account.setPlayerStash(0, 300);
+			System.out.println(Account.getPlayerStash(0));
 			Player.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
 			GUI.setCar(Player.getPlayerPosition(Turns1.getPlayerTurn()), Player.getPlayerName(Turns1.getPlayerTurn()));
 		

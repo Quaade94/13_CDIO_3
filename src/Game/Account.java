@@ -5,23 +5,17 @@ package Game;
 public class Account {
 
 	private int StartingCapital;
-	private int indexNumber = 0;
-	
+	private int[] Accounts;
 	
 	public Account (){		
 		StartingCapital = 30000;		
 	}
-	
-	protected int lenghtOfAccountArray = 6;
 
-	protected int[]	Accounts = new int[lenghtOfAccountArray];
-
-	public void addPlayerAndAccount(String NameOfPlayer){			
-		this.addStartingCapitalOfPlayerToArray(StartingCapital);		
-	}
-
-	private void addStartingCapitalOfPlayerToArray(int StartingCapital){		
-		Accounts[indexNumber] = StartingCapital;		
+	public void addAccounts(int lengthOfAccountArray){
+		Accounts = new int[lengthOfAccountArray];
+		for (int i = 0; i < Accounts.length; i++){
+			Accounts[i] = StartingCapital;		
+		}
 	}
 	
 	public int getPlayerStash(int IDOfPlayer){
