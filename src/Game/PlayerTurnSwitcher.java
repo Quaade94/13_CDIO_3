@@ -1,13 +1,32 @@
 package Game;
 
 public class PlayerTurnSwitcher {
-		
+	int turnPlayer1 =0;
+	int turnPlayer2 =0;
+	int turnPlayer3 =0;
+	int turnPlayer4 =0;
+	int turnPlayer5 =0;
+	int turnPlayer6 =0;
+	
+	int[] independentTurn = {turnPlayer1,turnPlayer2,turnPlayer3,turnPlayer4,turnPlayer5,turnPlayer6};
+	
 	private int playerTurn =1;
-	
-	private int playerArraySize =2;	// størrelsen på array der styrer antal spillere. (Hentes fra en anden klasse med size af array metoden).
-	
-//ss
+	private int playerArraySize;	
+
+	public int getIndependentTurn(int IDOfPlayers){
+		
+		return independentTurn[IDOfPlayers];
+	}
+
+	public void scaleIndependentTurn(int IDOfPlayers){
+		
+		independentTurn[IDOfPlayers]++;			
+	}
 			
+	public void setPlayerSize(int size){
+		playerArraySize = size;
+	}
+	
 	public void endTurn(){
 			
 		if(playerTurn<=playerArraySize){			

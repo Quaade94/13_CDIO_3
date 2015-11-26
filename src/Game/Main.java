@@ -1,9 +1,6 @@
 package Game;
 
-import java.awt.Color;
-import desktop_fields.Street;
 import desktop_resources.GUI;
-import desktop_codebehind.Car;
 
 public class Main {
 
@@ -18,20 +15,13 @@ public class Main {
 		Account Account = new Account(30000);
 		
 		VehicleBuilder VehicleBuilder = new VehicleBuilder((GUI.getUserInteger(Language.getLang("PLAYERNO"), 2, 6)));
-		VehicleBuilder.addPlayers();
-
 		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
-		IndependentTurnTracker Track = new IndependentTurnTracker();
-		
-		
+		Turns1.setPlayerSize(VehicleBuilder.getNumberOfPlayers());
+		VehicleBuilder.addPlayers();
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
-		
-		
-		
-		
-		
+			
 		//DETTE SKAL SLETTES
 		int antalspillere = VehicleBuilder.getNumberOfPlayers();
 		
@@ -51,13 +41,12 @@ public class Main {
 		
 //		System.out.println(Player.getNameOfPlayer(0));
 		
-
-		
+	
 		//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
-		if (Track.getIndependentTurn(Turns1.getPlayerTurn())>0){
+		if (Turns1.getIndependentTurn(Turns1.getPlayerTurn())>0){
 		GUI.removeCar(PlayerPosition.carDestroyer, VehicleBuilder.getPlayerName(Turns1.getPlayerTurn()));
 		}
-		Track.scaleIndependentTurn(Turns1.getPlayerTurn());
+		Turns1.scaleIndependentTurn(Turns1.getPlayerTurn());
 		Turns1.endTurn();
 		}
 		
