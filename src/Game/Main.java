@@ -25,7 +25,7 @@ public class Main {
 		Player.addPlayers();
 		Account.addAccounts(Player.getNumberOfPlayers());
 		
-		
+		Language.getLang(REF_dw)
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
