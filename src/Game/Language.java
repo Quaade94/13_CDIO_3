@@ -4,23 +4,24 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Language {
-	static ResourceBundle langs;
-	public static String getLang(String word){
-		if(langs==null){
-			setLocale(new Locale("en", "GB"));
-		}
-		return langs.getString(word);
+	
+	//Her Opretter vi en Resource Bundle med navnet 'text', den er static så den er bedre tilgænglig i andre klasser.
+	static ResourceBundle text;
+	
+	public static void setLocale(Locale eng){	
+		
+		//Resource bundle 'text' bliver difineret som vores textfil (som vi skriver vores sætningerne ind i).
+		text = ResourceBundle.getBundle("MessageBundle", eng);
 	}
 	
-	@Override
-	public String toString() {
-		return "Current locale: " + langs.getLocale() + " on the following file: " + langs.getBaseBundleName() + " where " + langs.keySet().size() + "keys are contained";
+	//en get-metode så vi kan kalde vores String til de andre klasser.
+	public static String getLang(String keyword){
+		
+		//Locale beskriver vores regions sprog, tegn osv..
+		//Kommandoen lyder Locale(String language, String country), her sætter vi den til typen engelsk i storbritanien.
+		setLocale(new Locale("en", "GB"));
+		
+		return text.getString(keyword);
 	}
 	
-	public static void setLocale(Locale l){	
-		langs = ResourceBundle.getBundle("MessageBundle", l);
-	}
-	//Avoids creating objects of this class
-	private Language(){
-	}	
 }
