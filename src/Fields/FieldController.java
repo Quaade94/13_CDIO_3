@@ -15,6 +15,7 @@ public class FieldController {
 
 	private int[] fleArray = {-1,-1,-1,-1};
 	private int[] labArray = {-1,-1};
+	private int type;
 	
 //	private void setFleArray(int IDOfPlayer, int index){
 //		fleArray[index] = IDOfPlayer;
@@ -31,19 +32,41 @@ public class FieldController {
 //	}
 	
 	public int getTerPrice(){
-		return Territory.getPrice();
+		int returnValue = 0;
+		if (type == 1){
+			returnValue = Territory.getPrice();
+		} else if (type == 4){
+			
+		}
+		return returnValue;
 	}
 	public int getTerPlayer(){
-		return Territory.getPlayer();
+		int returnValue = 0;
+		if (type == 1){
+			returnValue = Territory.getPlayer();
+		} else if (type == 2){
+			
+		}
+		return returnValue;
 	}
 	public int getTerRent(){
-		return Territory.getRent();
+		int returnValue = 0;
+		if (type == 1){
+			returnValue = Territory.getRent();
+		} else if (type == 2){
+			
+		}
+		return returnValue;
 	}
 	public void setTerOwner(int IDOfPlayer){
-		Territory.setNewOwner(IDOfPlayer);
+		if (type == 1){
+			Territory.setNewOwner(IDOfPlayer);
+		} else if (type == 2){
+			
+		}
 	}
 	public boolean OwnableCheck(int IDOfPlayer, int playerPosition){
-		boolean isOwned = false;
+		boolean isOwned = true;
 		System.out.println(playerPosition);
 		Boolean[] fieldOwnable = GameBoard.getFieldOwnable();
 		String[] fieldNames = GameBoard.getFieldNames();
@@ -51,18 +74,27 @@ public class FieldController {
 		
 		if (fieldOwnable[playerPosition-1]) {
 			if (fieldName.contains("TER")){
-					Territory.setPlayerPositionTer(playerPosition-1);
-					Territory.landOnField(IDOfPlayer);
-					if (Territory.isOwned(IDOfPlayer)){
-						isOwned = true;
-					} else if (Territory.isOwned(IDOfPlayer) == false){
-						isOwned = false;
-					}
-			} else if (fieldName.contains("FLE") == true){
+				type = 1;
+				Territory.setPlayerPositionTer(playerPosition-1);
+				Territory.landOnField(IDOfPlayer);
+				if (Territory.isOwned(IDOfPlayer)){
+					isOwned = true;
+				} else if (!(Territory.isOwned(IDOfPlayer))){
+					isOwned = false;
+				}
+			} else if (fieldName.contains("FLE")){
+				type = 2;
 				System.out.println("Fleet");
-			} else if (fieldName.contains("LAB") == true){
+			} else if (fieldName.contains("LAB")){
+				type = 3;
 				System.out.println("Labor Camp");
 				isLabOwned(IDOfPlayer, playerPosition);
+			} else if (fieldName.contains("TAX")){
+				type = 4;
+				isOwned = true;
+			} else if (fieldName.contains("REF")){
+				type = 5;
+				isOwned = true;
 			}
 		}
 		return isOwned;

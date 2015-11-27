@@ -50,7 +50,7 @@ public class PlayerTurnSwitcher {
 	}
 	public void checkField(int IDOfPlayer, int playerPosition){
 		if (FieldController.OwnableCheck(IDOfPlayer, playerPosition)){
-			
+			isOwned = true;
 		} else if (!(FieldController.OwnableCheck(IDOfPlayer, playerPosition))){
 			isOwned = false;
 			money = FieldController.getTerPrice() * -1;

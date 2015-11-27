@@ -58,6 +58,8 @@ public class Main {
 					GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
 					Turns1.shiftOwner(Turns1.getPlayerTurn());
 				}
+			} else if (Turns1.getOwned()){
+				
 			}
 		
 		//placerer bilen på sin nye plads
