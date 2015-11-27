@@ -1,8 +1,5 @@
 package Fields;
 
-import java.util.Arrays;
-
-import desktop_resources.GUI;
 
 public class Territory extends Ownable{
 
@@ -16,7 +13,7 @@ public class Territory extends Ownable{
 	private int whoOwns;
 	private int fieldNumber;
 	
-
+	
 	@Override
 	public void landOnField(int IDOfPlayer){
 		rent = 0;
@@ -28,7 +25,7 @@ public class Territory extends Ownable{
 		boolean isOwned = isTerOwned(IDOfPlayer, playerPosition);
 		return isOwned;
 	}
-	//Trækker penge fra spiller og sætter som ny ejer
+	//Trï¿½kker penge fra spiller og sï¿½tter som ny ejer
 	public void setNewOwner(int IDOfPlayer){
 			terArray[fieldNumber] = IDOfPlayer;
 	}
@@ -36,7 +33,7 @@ public class Territory extends Ownable{
 	public void setPlayerPositionTer(int playerPositionMethod) {
 		playerPosition = playerPositionMethod;
 	}
-	//Tjekker om pladsen spilleren er landet på er optaget
+	//Tjekker om pladsen spilleren er landet pï¿½ er optaget
 	public boolean isTerOwned(int IDOfPlayer, int playerPosition){
 		boolean isOwned = false;
 		String[] fieldNames = GameBoard.getFieldNames();

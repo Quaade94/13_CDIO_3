@@ -1,7 +1,5 @@
 package Fields;
 
-import desktop_resources.GUI;
-
 public class Refuge extends Field{
 
 		private int bonus;

@@ -17,7 +17,7 @@ public class Tax extends Field{
 		taxAmount = 0;
 		
 		if (fieldNumber == 2){
-			//Ser ud til at knappen ikke laver en true eller false boolean alligvel.. -Lars
+			
 			boolean choice = GUI.getUserLeftButtonPressed(Language.getLang("PAY"), "10%", "4000,-");
 			if (choice){
 				double calculation = per * konto;
