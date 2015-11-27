@@ -58,8 +58,9 @@ public class PlayerTurnSwitcher {
 			money = FieldController.getPrice() * -1;
 			player = FieldController.getPlayer();
 		}
-		
-		
+	}
+	public void setTenPercent(int playerMoney){
+		FieldController.setPlayerPercent(playerMoney);
 	}
 	public int[] getRentAndPlayer(){
 		int[] rentAndPlayer = {money,player};

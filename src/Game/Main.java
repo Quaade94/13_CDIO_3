@@ -48,6 +48,7 @@ public class Main {
 				GUI.removeCar(Player.carDestroyer, Player.getPlayerName(Turns1.getPlayerTurn()));
 			}
 			
+			Turns1.setTenPercent(Account.getPlayerStash(Turns1.getPlayerTurn()));
 			Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
 			System.out.println(Player.getPlayerPosition(Turns1.getPlayerTurn()));
 			int[] rentAndPlayer = Turns1.getRentAndPlayer();

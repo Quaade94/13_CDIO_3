@@ -14,6 +14,8 @@ public class FieldController {
 	Territory Territory = new Territory();
 	Fleet Fleet = new Fleet();
 	Laborcamp Laborcamp = new Laborcamp();
+	Tax Tax = new Tax();
+	Refuge Refuge = new Refuge();
 
 	private int[] fleArray = {-1,-1,-1,-1};
 	private int[] labArray = {-1,-1};
@@ -49,6 +51,10 @@ public class FieldController {
 		} else if (type == 2){
 			returnValue = Fleet.getPlayer();
 		}
+		
+		else if (type == 4){
+			returnValue = 7;
+		}
 		return returnValue;
 	}
 	public int getRent(){
@@ -58,6 +64,10 @@ public class FieldController {
 		} else if (type == 2){
 			returnValue = Fleet.getRent();
 		}
+		
+		else if (type == 4){
+			returnValue = Tax.getRent();
+		}
 		return returnValue;
 	}
 	public void setOwner(int IDOfPlayer){
@@ -66,6 +76,9 @@ public class FieldController {
 		} else if (type == 2){
 			Fleet.setNewOwner(IDOfPlayer);
 		}
+	}
+	public void setPlayerPercent(int playerMoney){
+		Tax.setTenPercent(playerMoney);
 	}
 	public boolean OwnableCheck(int IDOfPlayer, int playerPosition){
 		boolean isOwned = true;
@@ -97,6 +110,13 @@ public class FieldController {
 				System.out.println("Labor Camp");
 			} else if (fieldName.contains("TAX")){
 				type = 4;
+				Tax.setPlayerPositionTax(playerPosition-1);
+				if (fieldName.contains("TAX1")){
+					Tax.setFieldNumber(1);
+				} else if (fieldName.contains("TAX2")){
+					Tax.setFieldNumber(2);
+				}
+				Tax.landOnField(IDOfPlayer);
 				isOwned = true;
 			} else if (fieldName.contains("REF")){
 				type = 5;
