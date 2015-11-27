@@ -41,6 +41,8 @@ public class FieldController {
 			returnValue = Territory.getPrice();
 		} else if (type == 2){
 			returnValue = Fleet.getPrice();
+		} else if (type == 3){
+			returnValue = Laborcamp.getPrice();
 		}
 		return returnValue;
 	}
@@ -50,9 +52,9 @@ public class FieldController {
 			returnValue = Territory.getPlayer();
 		} else if (type == 2){
 			returnValue = Fleet.getPlayer();
-		}
-		
-		else if (type == 4){
+		} else if (type == 3){
+			returnValue = Laborcamp.getPlayer();
+		}else if (type == 4){
 			returnValue = 7;
 		}
 		return returnValue;
@@ -63,9 +65,9 @@ public class FieldController {
 			returnValue = Territory.getRent();
 		} else if (type == 2){
 			returnValue = Fleet.getRent();
-		}
-		
-		else if (type == 4){
+		} else if (type == 3){
+			returnValue = Laborcamp.getRent();
+		}else if (type == 4){
 			returnValue = Tax.getRent();
 		}
 		return returnValue;
@@ -75,6 +77,8 @@ public class FieldController {
 			Territory.setNewOwner(IDOfPlayer);
 		} else if (type == 2){
 			Fleet.setNewOwner(IDOfPlayer);
+		} else if (type == 3){
+			Laborcamp.setNewOwner(IDOfPlayer);
 		}
 	}
 	public void setPlayerPercent(int playerMoney){
@@ -107,6 +111,13 @@ public class FieldController {
 				Fleet.landOnField(IDOfPlayer);
 			} else if (fieldName.contains("LAB")){
 				type = 3;
+				Laborcamp.setPlayerPositionLab(playerPosition-1);
+				if (Laborcamp.isOwned(IDOfPlayer)){
+					isOwned = true;
+				} else if (!(Laborcamp.isOwned(IDOfPlayer))){
+					isOwned = false;
+				}
+				Laborcamp.landOnField(IDOfPlayer);
 				System.out.println("Labor Camp");
 			} else if (fieldName.contains("TAX")){
 				type = 4;

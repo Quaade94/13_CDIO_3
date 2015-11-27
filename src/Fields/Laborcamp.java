@@ -2,77 +2,43 @@ package Fields;
 
 import Fields.Ownable;
 import Game.Die;
+import java.util.Arrays;
 
-public class Laborcamp extends Ownable{
+public class Laborcamp extends Ownable {
 
 	private int baseRent = 100;
+	private int whoOwns;
 	private int rent;
+	private int playerPosition;
 	private int price;
-	private int ReturnnElement;
+	private int fieldNumber;
 	
-	private boolean isOwned= false;
-	
-	private int[] isOwnedArray = {-1,-1};
-	
+	private int[] labArray = { -1, -1 };
+
 	Die Die = new Die();
-	
-	
-	@Override
-	public void landOnField(int IDOfPlayer){
-	
-	rent = 0;
-	price = 2500;
-		
-	if (Player.getPlayerPosition(IDOfPlayer) == 13 || Player.getPlayerPosition(IDOfPlayer) == 14){
-	
-		if (!(isFieldOwned(IDOfPlayer))){
-		
-		rent = baseRent*Die.getDiceSum();
-		
-		}
-		
-	}
-	
-	if (occurences(0, isOwnedArray)==2){
-		
-		rent = rent*2;
-		
-	}
-	
-	}
-	
-	
-	@Override
-	public int getRent() {
 
-		return rent;
-	}
-	public int getPrice() {
+	@Override
+	public void landOnField(int IDOfPlayer) {
 
-		return price;
-	}
-	
-	public boolean isFieldOwned(int IDOfPlayer){
-		
-		if (Player.getPlayerPosition(IDOfPlayer) == 13 || Player.getPlayerPosition(IDOfPlayer) == 14){
-			
-				if (isOwnedArray[Player.getPlayerPosition(IDOfPlayer)] - 13 == -1){
-					
-					isOwned = false;
-					
-				}
-				
-				if (isOwnedArray[Player.getPlayerPosition(IDOfPlayer)] - 13 >= 0){
-					
-					isOwned = true;
-					
-				}
+		rent = 0;
+		price = 2500;
+
+		System.out.println("In landOnField: " + labArray.toString());
+
+		if (occurences(whoOwns, labArray) == 2) {
+			rent = rent * 2;
 		}
-		
-		return isOwned;
+		rent = baseRent * Die.getDiceSum();
 	}
-	
-private int occurences(int LookingFor, int[] Array){
+
+
+	public void setNewOwner(int IDOfPlayer){
+		labArray[fieldNumber] = IDOfPlayer;
+		
+		System.out.println(Arrays.toString(labArray) + " " + fieldNumber);
+	}
+
+	private int occurences(int LookingFor, int[] Array){
 		
 		int i = 0;
 		int Occurances = 0;
@@ -82,42 +48,53 @@ private int occurences(int LookingFor, int[] Array){
 			if (Array[i] == LookingFor){
 				Occurances++;
 				i++;
-			}
-			else i++;	
+			} else i++;	
 		}
 	
 		return Occurances;
 	}
 	
-public void setOwner(int IDOfPlayer){
+	public void setPlayerPositionLab(int playerPositionMethod) {
+		playerPosition = playerPositionMethod;
+	}
+	public boolean isOwned(int IDOfPlayer){
+		boolean isOwned = isLabOwned(IDOfPlayer, playerPosition);
+		return isOwned;
+	}
 	
-	if (Player.getPlayerPosition(IDOfPlayer) == 13 || Player.getPlayerPosition(IDOfPlayer) == 20){
-
-		if (!(isFieldOwned(IDOfPlayer))){
-			
-			isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 13] =  IDOfPlayer;
-			
+	public boolean isLabOwned(int IDOfPlayer, int playerPosition){
+		boolean isOwned = false;
+		String[] fieldNames = GameBoard.getFieldNames();
+		
+		if (fieldNames[playerPosition] == "LAB1") {
+			fieldNumber = 0;
+			if (labArray[0] == -1) {
+				isOwned = false;
+			} else if (labArray[0] >= 0) {
+				isOwned = true;
+				whoOwns = labArray[0];
+			} else if(fieldNames[playerPosition] == "LAB2") {
+			fieldNumber = 1;
+			if (labArray[1] == -1) {
+				isOwned = false;
+			} else if (labArray[1] >= 0) {
+				isOwned = true;
+				whoOwns = labArray[1];
+			}
 		}
-		
-		
+	}
+		return isOwned;
+}
+	public int getPlayer(){
+		return whoOwns;
+	}
+	@Override
+	public int getRent() {
+
+		return rent;
+	}
+	public int getPrice() {
+
+		return price;
 	}
 }
-
-public int isOwnedByWho(int IDOfPlayer){
-	
-	// If this method returns -1, then it is not working properly
-	
-	ReturnnElement = -1;
-	
-	if (Player.getPlayerPosition(IDOfPlayer) == 13 || Player.getPlayerPosition(IDOfPlayer) <= 14){
-
-		ReturnnElement = isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 17];	
-		
-	}
-	
-	return ReturnnElement;		
-	
-}
-
-}
-
