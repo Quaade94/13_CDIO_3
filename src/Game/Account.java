@@ -1,5 +1,6 @@
 package Game;
 
+import java.util.Arrays;
 // Account er ikke en spiller, men en spiller har et account, saa ikke helt rigtigt, men kan virke alligevel
 
 public class Account {
@@ -23,6 +24,8 @@ public class Account {
 	}
 	
 	public void setPlayerStash(int IDOfPlayer, int incMoney){
+		System.out.println("Dette: " + IDOfPlayer + incMoney);
+		System.out.println(Arrays.toString(Accounts));
 		Accounts[IDOfPlayer] = Accounts[IDOfPlayer] + incMoney;
 	}
 	

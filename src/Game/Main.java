@@ -10,7 +10,7 @@ public class Main {
 		
 		//Spilleplade (SKAL være først)
 		long responseTimeLaunch1 = System.currentTimeMillis();
-		GameBoard GameBoard = new GameBoard(21);
+		GameBoard GameBoard = new GameBoard();
 		GameBoard.setGameBoard();
 		long responseTimeLaunch2 = System.currentTimeMillis();
 		System.out.println("Launch Time: "+(double)(responseTimeLaunch2-responseTimeLaunch1)/1000 + " seconds");
@@ -45,7 +45,7 @@ public class Main {
 			GUI.setCar(Player.getPlayerPosition(Turns1.getPlayerTurn()), Player.getPlayerName(Turns1.getPlayerTurn()));
 			GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
 			
-			Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
+			Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()), Account);
 		
 		//placerer bilen på sin nye plads
 		

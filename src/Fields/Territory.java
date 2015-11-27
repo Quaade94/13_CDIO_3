@@ -8,37 +8,27 @@ public class Territory extends Ownable{
 	private int price;
 	private int player;
 	private int[] terArray = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
-	private int[] priceArray = {100,300,500,700,1000,1300,1600,2000,2600,3200};
+	private int[] priceArray = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000};
 	private int[] rentArray = {1000,1500,2000,3000,4000,4300,4750,5000,5500};
 	private int playerPosition;
 	private int whoOwns;
 	private int fieldNumber;
+	
 
 	@Override
 	public void landOnField(int IDOfPlayer){
 		
-		rent = 0;
-		price = 0;
-		player = 0;
+		rent = rentArray[fieldNumber];
+		price = priceArray[fieldNumber];
+	}
+	public boolean isOwned(int IDOfPlayer){
 		boolean isOwned = isTerOwned(IDOfPlayer, playerPosition);
-		
-		if (isOwned == true){
-			//Overfører penge fra spiller til ejer
-			rent = rentArray[fieldNumber];
-			player = whoOwns;
-			
-			Account.setPlayerStash(IDOfPlayer, -rent);
-			Account.setPlayerStash(whoOwns, rent);
-		} else if (isOwned == false){
-			//Spørger om spiller vil købe
-			price = priceArray[fieldNumber];
-			setNewOwner(GUI.getUserLeftButtonPressed("Vil du gerne købe dette Territory", "Ja", "Nej"), IDOfPlayer);
-		}
+		return isOwned;
 	}
 	//Trækker penge fra spiller og sætter som ny ejer
 	private void setNewOwner(boolean wantToBuy, int IDOfPlayer){
 		if (wantToBuy == true){
-			Account.setPlayerStash(IDOfPlayer, -price);
+			price = price * -1;
 			terArray[fieldNumber] = IDOfPlayer;
 		}
 	}
@@ -52,91 +42,91 @@ public class Territory extends Ownable{
 		String[] fieldNames = GameBoard.getFieldNames();
 		
 		if (fieldNames[playerPosition] == "TER1") {
+			fieldNumber = 0;
 			if (terArray[0] == -1) {
 				isOwned = false;
 			} else if (terArray[0] >= 0) {
 				isOwned = true;
-				fieldNumber = 0;
 				whoOwns = terArray[0];
 			}
 		} else if(fieldNames[playerPosition] == "TER2") {
+			fieldNumber = 1;
 			if (terArray[1] == -1) {
 				isOwned = false;
 			} else if (terArray[1] >= 0) {
 				isOwned = true;
-				fieldNumber = 1;
 				whoOwns = terArray[1];
 			}
 		} else if(fieldNames[playerPosition] == "TER3") {
+			fieldNumber = 2;
 			if (terArray[2] == -1) {
 				isOwned = false;
 			} else if (terArray[2] >= 0) {
 				isOwned = true;
-				fieldNumber = 2;
 				whoOwns = terArray[2];
 			}
 		} else if(fieldNames[playerPosition] == "TER4") {
+			fieldNumber = 3;
 			if (terArray[3] == -1) {
 				isOwned = false;
 			} else if (terArray[3] >= 0) {
 				isOwned = true;
-				fieldNumber = 3;
 				whoOwns = terArray[3];
 			}
 		} else if(fieldNames[playerPosition] == "TER5") {
+			fieldNumber = 4;
 			if (terArray[4] == -1) {
 				isOwned = false;
 			} else if (terArray[4] >= 0) {
 				isOwned = true;
-				fieldNumber = 4;
 				whoOwns = terArray[4];
 			}
 		} else if(fieldNames[playerPosition] == "TER6") {
+			fieldNumber = 5;
 			if (terArray[5] == -1) {
 				isOwned = false;
 			} else if (terArray[5] >= 0) {
 				isOwned = true;
-				fieldNumber = 5;
 				whoOwns = terArray[5];
 			}
 		} else if(fieldNames[playerPosition] == "TER7") {
+			fieldNumber = 6;
 			if (terArray[6] == -1) {
 				isOwned = false;
 			} else if (terArray[6] >= 0) {
 				isOwned = true;
-				fieldNumber = 6;
 				whoOwns = terArray[6];
 			}
 		} else if(fieldNames[playerPosition] == "TER8") {
+			fieldNumber = 7;
 			if (terArray[7] == -1) {
 				isOwned = false;
 			} else if (terArray[7] >= 0) {
 				isOwned = true;
-				fieldNumber = 7;
 				whoOwns = terArray[7];
 			}
 		} else if(fieldNames[playerPosition] == "TER9") {
+			fieldNumber = 8;
 			if (terArray[8] == -1) {
 				isOwned = false;
 			} else if (terArray[8] >= 0) {
 				isOwned = true;
-				fieldNumber = 8;
 				whoOwns = terArray[8];
 			}
 		} else if(fieldNames[playerPosition] == "TER10") {
+			fieldNumber = 9;
 			if (terArray[9] == -1) {
 				isOwned = false;
 			} else if (terArray[9] >= 0) {
 				isOwned = true;
-				fieldNumber = 9;
 				whoOwns = terArray[9];
 			}
 		} else if(fieldNames[playerPosition] == "TER11") {
+			fieldNumber = 10;
 			if (terArray[10] == -1) {
 				isOwned = false;
 			} else if (terArray[10] >= 0) {
 				isOwned = true;
-				fieldNumber = 10;
 				whoOwns = terArray[10];
 			}
 		}

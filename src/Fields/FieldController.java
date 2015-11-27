@@ -2,7 +2,11 @@ package Fields;
 
 import Game.GameBoard;
 import Game.Player;
+import desktop_resources.GUI;
+
 import java.util.Arrays;
+
+import Game.Account;
 
 public class FieldController {
 	Player Player = new Player();
@@ -26,18 +30,27 @@ public class FieldController {
 		return labArray[index];
 	}
 	
-	public void OwnableCheck(int IDOfPlayer, int playerPosition){
+	public void OwnableCheck(int IDOfPlayer, int playerPosition, Account Account){
 		System.out.println(playerPosition);
 		Boolean[] fieldOwnable = GameBoard.getFieldOwnable();
 		String[] fieldNames = GameBoard.getFieldNames();
 		String fieldName = fieldNames[playerPosition-1];
 		int rent;
 		
-		if (fieldOwnable[playerPosition-1] == true) {
-			if (fieldName.contains("TER") == true){
-				System.out.println("Territory");
+		if (fieldOwnable[playerPosition-1]) {
+			if (fieldName.contains("TER")){
 					Territory.setPlayerPositionTer(playerPosition-1);
 					Territory.landOnField(IDOfPlayer);
+					if (Territory.isOwned(IDOfPlayer) == true){
+						Account.setPlayerStash(IDOfPlayer, Territory.getRent());
+					} else if (Territory.isOwned(IDOfPlayer) == false){
+						boolean wannaBuy = GUI.getUserLeftButtonPressed("Vil du købe?", "Ja", "Nej");
+						if (wannaBuy){
+							Account.setPlayerStash(IDOfPlayer, Territory.getPrice());
+						}
+					}
+					
+					
 			} else if (fieldName.contains("FLE") == true){
 				System.out.println("Fleet");
 			} else if (fieldName.contains("LAB") == true){

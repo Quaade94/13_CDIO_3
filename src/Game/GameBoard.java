@@ -13,8 +13,8 @@ public class GameBoard {
 	private int numberOfFields = 0;
 	private int index = 0;
 
-	public GameBoard(int numberOfFieldsConstructor){
-		numberOfFields = numberOfFieldsConstructor;
+	public GameBoard(){
+		numberOfFields = 21;
 	}
 
 	
