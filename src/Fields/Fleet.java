@@ -43,6 +43,7 @@ public class Fleet extends Ownable{
 		fleArray[fieldNumber] = IDOfPlayer;
 		System.out.println("Fleet array: " + Arrays.toString(fleArray));
 	}
+	//Check how many the player owns
 	private int occurences(int LookingFor, int[] Array){
 		
 		int i = 0;
@@ -64,6 +65,7 @@ public class Fleet extends Ownable{
 		boolean isOwned = isFleOwned(IDOfPlayer, playerPosition);
 		return isOwned;
 	}
+	// Checks if the position of the player is occupied
 	public boolean isFleOwned(int IDOfPlayer, int playerPosition){
 		boolean isOwned = false;
 		String[] fieldNames = GameBoard.getFieldNames();
