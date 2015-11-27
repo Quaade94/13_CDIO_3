@@ -75,12 +75,12 @@ public class FieldController {
 			if (fieldName.contains("TER")){
 				type = 1;
 				Territory.setPlayerPositionTer(playerPosition-1);
-				Territory.landOnField(IDOfPlayer);
 				if (Territory.isOwned(IDOfPlayer)){
 					isOwned = true;
 				} else if (!(Territory.isOwned(IDOfPlayer))){
 					isOwned = false;
 				}
+				Territory.landOnField(IDOfPlayer);
 			} else if (fieldName.contains("FLE")){
 				type = 2;
 				System.out.println("Fleet");

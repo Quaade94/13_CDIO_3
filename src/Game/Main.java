@@ -52,11 +52,13 @@ public class Main {
 			System.out.println(Player.getPlayerPosition(Turns1.getPlayerTurn()));
 			int[] rentAndPlayer = Turns1.getRentAndPlayer();
 			if (!(Turns1.getOwned())){
-				boolean wantToBuy = GUI.getUserLeftButtonPressed("BUY", "JA", "NOPE");
-				if (wantToBuy){
-					Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0]);
-					GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
-					Turns1.shiftOwner(Turns1.getPlayerTurn());
+				if (Account.getPlayerStash(Turns1.getPlayerTurn()) >= rentAndPlayer[0] * -1) {
+					boolean wantToBuy = GUI.getUserLeftButtonPressed("BUY", "JA", "NOPE");
+					if (wantToBuy){
+							Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0]);
+							GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
+							Turns1.shiftOwner(Turns1.getPlayerTurn());
+					}
 				}
 			} else if (Turns1.getOwned()){
 				System.out.println("Før " + Account.getPlayerStash(rentAndPlayer[1]) + " " + Account.getPlayerStash(Turns1.getPlayerTurn()));
