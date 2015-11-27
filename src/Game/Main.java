@@ -82,7 +82,7 @@ public class Main {
 						GUI.setBalance(Player.getPlayerName(rentAndPlayer[1]), Account.getPlayerStash(rentAndPlayer[1]));
 					}
 				}
-			
+				Turns1.numberOfBankrupts(Account.getAccountArray());
 			//placerer bilen på sin nye plads
 			
 //			System.out.println(Player.getNameOfPlayer(0));

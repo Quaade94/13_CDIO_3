@@ -26,7 +26,9 @@ public class Account {
 	public void setPlayerStash(int IDOfPlayer, int incMoney){
 		Accounts[IDOfPlayer] = Accounts[IDOfPlayer] + incMoney;
 	}
-	
+	public int[] getAccountArray(){
+		return Accounts;
+	}
 //	public static int getAccountSum(int IDOfPlayer){
 //		
 //		int SumOfAccount = 0;
