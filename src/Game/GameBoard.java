@@ -15,7 +15,9 @@ public class GameBoard {
 	public GameBoard(){
 		numberOfFields = 21;
 	}
-
+	
+	//Strings containing arrays with the fields name, description, price and whether or not the field is owned by a player.
+	
 	private String[] fieldName = {"TER1","TER2","TER3","TER4","TER5","TER6","TER7","TER8","TER9","TER10","TER11","REF1","REF2","LAB1","LAB2","TAX1","TAX2","FLE1","FLE2", "FLE3", "FLE4"};
 	private String[] fieldDescription = {"TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","REF1_DES","REF2_DES","LAB_DES","LAB_DES","TAX1_DES","TAX2_DES","FLEET_DES","FLEET_DES","FLEET_DES","FLEET_DES"};
 	private Boolean[] fieldOwnable = {true, true, true, true, true, true, true, true, true, true, true, false, false, true, true, false, false, true, true, true, true};
@@ -30,20 +32,20 @@ public class GameBoard {
 	public Boolean[] getFieldOwnable() {
 		return fieldOwnable;
 	}
-	
+	//System print of all the fields in the gameboard.
 	public void toStrings(){
 
 		for (int i = 0 ; i < 21 ; i++){
 			System.out.println(Language.getLang(this.getFieldNames()[i]) + " ");
 		}	
 }
-	
+	//This is where the GameBoard is created. 
 	public void setGameBoard() {
 		Field[] fields = new Field[numberOfFields];	
 		
 		for(index = 0; index < numberOfFields ; index++){	
 			
-			//REFUGE
+			//Creates the refuge camp fields
 			if (index == 11 || index == 12 ){
 				
 				fields[index] = new Street.Builder()
@@ -54,7 +56,7 @@ public class GameBoard {
 						.setBgColor(Color.pink)
 						.build();
 			}
-			//TAX
+			//TCreates the tax fields
 			else if (index == 15 || index == 16 ){
 				
 				fields[index] = new Street.Builder()
@@ -67,7 +69,7 @@ public class GameBoard {
 				
 			}
 			
-				//FLEET
+				//Creates the fleeet fields
 			else if (index == 17 || index == 18 || index == 19 || index == 20 ){
 
 				fields[index] = new Street.Builder()
@@ -79,7 +81,7 @@ public class GameBoard {
 						.build();
 			}
 			
-			//LABOR CAMP
+			//Creates the labor camp fields
 			else if (index == 13 || index == 14 ){
 
 				fields[index] = new Street.Builder()
@@ -91,7 +93,7 @@ public class GameBoard {
 						.build();
 			}
 		
-			//TERRITORY
+			//Creates the territory fields
 			else {
 
 				fields[index] = new Street.Builder()
