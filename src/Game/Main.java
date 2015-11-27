@@ -30,14 +30,9 @@ public class Main {
 		Player.addPlayers();
 		Account.addAccounts(Player.getNumberOfPlayers());
 		
-		
-		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
 					
-		
-		
-		
 		//Dette skal IKKE slettes
 		int[] FieldEffect = GameBoard.getFieldPrice();
 				

@@ -2,11 +2,6 @@ package Fields;
 
 import Game.GameBoard;
 import Game.Player;
-import desktop_resources.GUI;
-
-import java.util.Arrays;
-
-import Game.Account;
 
 public class FieldController {
 	Player Player = new Player();
@@ -17,23 +12,7 @@ public class FieldController {
 	Tax Tax = new Tax();
 	Refuge Refuge = new Refuge();
 
-	private int[] fleArray = {-1,-1,-1,-1};
-	private int[] labArray = {-1,-1};
 	private int type;
-	
-//	private void setFleArray(int IDOfPlayer, int index){
-//		fleArray[index] = IDOfPlayer;
-//	}	
-//	private void setLabArray(int IDOfPlayer, int index){
-//		labArray[index] = IDOfPlayer;
-//	}
-//	
-//	private int getFleArray(int index){
-//		return fleArray[index];
-//	}
-//	private int getLabArray(int index){
-//		return labArray[index];
-//	}
 	
 	public int getPrice(){
 		int returnValue = 0;
@@ -150,11 +129,5 @@ public class FieldController {
 		}
 		return isOwned;
 	}
-//	public int whoOwns(int IDOfPlayer, int fieldNumber){
-//		boolean isMe = true;
-//		if(IDOfPlayer != fieldNumber){
-//			isMe = false;
-//		}
-//	}
 }
 	
