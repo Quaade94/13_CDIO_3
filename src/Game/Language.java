@@ -18,15 +18,17 @@ public class Language {
 	}
 	
 	//en get-metode så vi kan kalde vores String til de andre klasser.
+	/**
+	 * 
+	 * @param keyword er et kort ord (i blokbukstaver) som man skriver ind imellem paranteterne når man kalder på metoden.
+	 * Inde i message bundle skriver man så sit keyword og = 'den text der skal så', se evt eksempler i MessageBundle.
+	 * @return retunere din String.
+	 */
 	public static String getLang(String keyword){
 		
 		//Locale beskriver vores regions sprog, tegn osv..
 		//Kommandoen lyder Locale(String language, String country), her sætter vi den til typen engelsk i storbritanien.
 		setLocale(new Locale("en", "GB"));
-		
-		//VIGTIG
-		//keyword er et kort ord som man skriver ind imellem paranteterne når man kalder på metoden.
-		//Inde i message bundle skriver man så sit keyword og = 'den text der skal så', se evt eksempler i MessageBundle.
 		
 		return text.getString(keyword);
 	}

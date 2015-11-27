@@ -10,7 +10,7 @@ public class Main {
 		
 		//Spilleplade (SKAL være først)
 		long responseTimeLaunch1 = System.currentTimeMillis();
-		GameBoard GameBoard = new GameBoard();
+		GameBoard GameBoard = new GameBoard(21);
 		GameBoard.setGameBoard();
 		long responseTimeLaunch2 = System.currentTimeMillis();
 		System.out.println("Launch Time: "+(double)(responseTimeLaunch2-responseTimeLaunch1)/1000 + " seconds");
@@ -52,7 +52,6 @@ public class Main {
 		//placerer bilen på sin nye plads
 		
 //		System.out.println(Player.getNameOfPlayer(0));
-		
 	
 		//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
 		if (Turns1.getIndependentTurn() > 0){
