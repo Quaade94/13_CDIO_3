@@ -186,7 +186,6 @@ public class GameTests {
 			Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0] * -1);
 			GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
 			if(rentAndPlayer[1] != 6){
-				System.out.println(rentAndPlayer[1]);
 				Account.setPlayerStash(rentAndPlayer[1], rentAndPlayer[0]);
 				GUI.setBalance(Player.getPlayerName(rentAndPlayer[1]), Account.getPlayerStash(rentAndPlayer[1]));
 			}
@@ -230,7 +229,7 @@ public class GameTests {
 
 		Turns1.scaleIndependentTurn();
 		Turns1.endTurn();
-		System.out.println(Account.getPlayerStash(0));
+
 		//Checks if the player recieves his price
 		int expected = 30000+5000;
 		int actual = Account.getPlayerStash(0);
@@ -264,13 +263,86 @@ public class GameTests {
 
 		Turns1.scaleIndependentTurn();
 		Turns1.endTurn();
-		System.out.println(Account.getPlayerStash(0));
+
 		//Checks if the player recieves his price
 		int expected = 30000-2000;
 		int actual = Account.getPlayerStash(0);
 		assertEquals(actual, expected);
 	}
+	@Test
+	public void testLandOnFieldLaborCamp(){
 
+		Account.addAccounts(6);
+		Turns1.setPlayerSize(2);
+		Player.setPlayerPosition(0, 14);
+
+		Turns1.setTenPercent(Account.getPlayerStash(Turns1.getPlayerTurn()));
+		Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
+		int[] rentAndPlayer = Turns1.getRentAndPlayer();
+		if (!(Turns1.getOwned())){
+			if (Account.getPlayerStash(Turns1.getPlayerTurn()) >= rentAndPlayer[0] * -1) {
+				boolean wantToBuy = true;
+				if (wantToBuy){
+					Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0]);
+					Turns1.shiftOwner(Turns1.getPlayerTurn());
+				}
+			}
+		}
+
+		Turns1.scaleIndependentTurn();
+		Turns1.endTurn();
+
+		//Checks if player is the owner of the field he bought
+		int expected = 0;
+		int actual = Turns1.getRentAndPlayer()[1];
+		assertEquals(actual, expected);
+
+		//Checks if the price of the field was taken from player account
+		expected = 30000-2500;
+		actual = Account.getPlayerStash(0);
+		assertEquals(actual, expected);
+
+		DieTest DieTest = new DieTest();
+		DieTest.roll();
+
+		int kast = DieTest.getDiceSum();
+		Player.setPlayerPosition(1, 9 + kast);
+		
+		Turns1.setDiceSum(DieTest.getDiceSum());
+		Turns1.setTenPercent(Account.getPlayerStash(Turns1.getPlayerTurn()));
+		Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
+		rentAndPlayer = Turns1.getRentAndPlayer();
+		
+		if (!(Turns1.getOwned())){
+			if (Account.getPlayerStash(Turns1.getPlayerTurn()) >= rentAndPlayer[0] * -1) {
+				boolean wantToBuy = false;
+				if (wantToBuy){
+					Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0]);
+					GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
+					Turns1.shiftOwner(Turns1.getPlayerTurn());
+				}
+			}
+		} else if (Turns1.getOwned()){
+			Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0] * -1);
+			GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
+			if(rentAndPlayer[1] != 6){
+				System.out.println(rentAndPlayer[1]);
+				Account.setPlayerStash(rentAndPlayer[1], rentAndPlayer[0]);
+				GUI.setBalance(Player.getPlayerName(rentAndPlayer[1]), Account.getPlayerStash(rentAndPlayer[1]));
+			}
+		}
+
+		System.out.println("Hallo" + Account.getPlayerStash(0));
+		//Checks if player 2 pays rent
+		expected = 30000-500;
+		actual = Account.getPlayerStash(1);
+		assertEquals(expected, actual);
+
+		//Checks if player 1 recieves player 2's money
+		expected = 27500+500;
+		actual = Account.getPlayerStash(0);
+		assertEquals(expected, actual);
+	}
 
 
 
