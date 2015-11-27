@@ -11,9 +11,9 @@ public class Refuge extends Field{
 			bonus = 0;
 			player = IDOfPlayer;
 			
-			if (fieldNumber == 2){
+			if (fieldNumber == 1){
 				bonus = -5000;
-			} else if (fieldNumber == 1){
+			} else if (fieldNumber == 2){
 				bonus = -500;
 			}
 		}
