@@ -13,6 +13,7 @@ public class Main {
 		//Spilleplade (SKAL være først)
 		long responseTimeLaunch1 = System.currentTimeMillis();
 		GameBoard GameBoard = new GameBoard();
+//		GameBoard.toStrings();		toString metode til at udskrive arrayet.
 		GameBoard.setGameBoard();
 		long responseTimeLaunch2 = System.currentTimeMillis();
 		System.out.println("Launch Time: "+(double)(responseTimeLaunch2-responseTimeLaunch1)/1000 + " seconds");
@@ -28,6 +29,8 @@ public class Main {
 		Turns1.setPlayerSize(Player.getNumberOfPlayers());
 		Player.addPlayers();
 		Account.addAccounts(Player.getNumberOfPlayers());
+		
+		
 		
 		//Start knappen
 		GUI.getUserButtonPressed(Language.getLang("RDY"), Language.getLang("SRT"));
@@ -114,5 +117,6 @@ public class Main {
 		long gameTime2 = System.currentTimeMillis();
 		double gameTime = (gameTime2-gameTime1/1000)/60;
 		System.out.println("Game lasted: " + (int)gameTime + " minutes");
+		
 	}
 }

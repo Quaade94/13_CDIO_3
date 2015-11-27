@@ -33,6 +33,14 @@ public class GameBoard {
 	public Boolean[] getFieldOwnable() {
 		return fieldOwnable;
 	}
+	
+	public void toStrings(){
+
+		for (int i = 0 ; i < 21 ; i++){
+			System.out.println(Language.getLang(this.getFieldNames()[i]) + " ");
+		}	
+}
+	
 	public void setGameBoard() {
 		Field[] fields = new Field[numberOfFields];	
 		
