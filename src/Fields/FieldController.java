@@ -12,6 +12,8 @@ public class FieldController {
 	Player Player = new Player();
 	GameBoard GameBoard = new GameBoard();
 	Territory Territory = new Territory();
+	Fleet Fleet = new Fleet();
+	Laborcamp Laborcamp = new Laborcamp();
 
 	private int[] fleArray = {-1,-1,-1,-1};
 	private int[] labArray = {-1,-1};
@@ -31,38 +33,38 @@ public class FieldController {
 //		return labArray[index];
 //	}
 	
-	public int getTerPrice(){
+	public int getPrice(){
 		int returnValue = 0;
 		if (type == 1){
 			returnValue = Territory.getPrice();
-		} else if (type == 4){
-			
+		} else if (type == 2){
+			returnValue = Fleet.getPrice();
 		}
 		return returnValue;
 	}
-	public int getTerPlayer(){
+	public int getPlayer(){
 		int returnValue = 0;
 		if (type == 1){
 			returnValue = Territory.getPlayer();
 		} else if (type == 2){
-			
+			returnValue = Fleet.getPlayer();
 		}
 		return returnValue;
 	}
-	public int getTerRent(){
+	public int getRent(){
 		int returnValue = 0;
 		if (type == 1){
 			returnValue = Territory.getRent();
 		} else if (type == 2){
-			
+			returnValue = Fleet.getRent();
 		}
 		return returnValue;
 	}
-	public void setTerOwner(int IDOfPlayer){
+	public void setOwner(int IDOfPlayer){
 		if (type == 1){
 			Territory.setNewOwner(IDOfPlayer);
 		} else if (type == 2){
-			
+			Fleet.setNewOwner(IDOfPlayer);
 		}
 	}
 	public boolean OwnableCheck(int IDOfPlayer, int playerPosition){
@@ -83,7 +85,13 @@ public class FieldController {
 				Territory.landOnField(IDOfPlayer);
 			} else if (fieldName.contains("FLE")){
 				type = 2;
-				System.out.println("Fleet");
+				Fleet.setPlayerPositionTer(playerPosition-1);
+				if (Fleet.isOwned(IDOfPlayer)){
+					isOwned = true;
+				} else if (!(Fleet.isOwned(IDOfPlayer))){
+					isOwned = false;
+				}
+				Fleet.landOnField(IDOfPlayer);
 			} else if (fieldName.contains("LAB")){
 				type = 3;
 				System.out.println("Labor Camp");

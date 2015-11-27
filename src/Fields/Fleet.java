@@ -1,51 +1,49 @@
 package Fields;
 
+import java.util.Arrays;
+
 public class Fleet extends Ownable{
 
 	private int RENT_1 = 500;
 	private int RENT_2 = 1000;
 	private int RENT_3 = 1500;
 	private int RENT_4 = 2000;
-	
+	private int whoOwns;
 	private int rent;
+	private int playerPosition;
+	private int price;
+	private int fieldNumber;
 	
-	private boolean isOwned= false;
-	
-	private int[] isOwnedArray = {-1,-1,-1,-1};
+	private int[] fleArray = {-1,-1,-1,-1};
 
 	private int ReturnElement;
 	
 	@Override
 	public void landOnField(int IDOfPlayer){
-		
-		if (Player.getPlayerPosition(IDOfPlayer) >= 17 || Player.getPlayerPosition(IDOfPlayer) <= 20){
-			
-			if (!(isFieldOwned(IDOfPlayer))){
-				
-				setOwner(IDOfPlayer);
-			}
-			if (isFieldOwned(IDOfPlayer)){
-				
-//				Mangler så man kan overføre penge
-				
-				isOwnedByWho(IDOfPlayer);
-				
-				switch (	occurences(0, isOwnedArray)){
-				case 1: rent = RENT_1; break;
-				case 2: rent = RENT_2; break;
-				case 3: rent = RENT_3; break;
-				case 4: rent = RENT_4; break;
-				}					
-			}
-		}
+		price = 4000;
+
+		switch (occurences(whoOwns, fleArray)){
+		case 1: rent = RENT_1; break;
+		case 2: rent = RENT_2; break;
+		case 3: rent = RENT_3; break;
+		case 4: rent = RENT_4; break;
+		}					
 	}
 	
+	public int getPlayer(){
+		return whoOwns;
+	}
 	@Override
 	public int getRent() {
 
 		return rent;
 	}
-	
+	public int getPrice(){
+		return price;
+	}
+	public void setNewOwner(int IDOfPlayer){
+		fleArray[fieldNumber] = IDOfPlayer;
+	}
 	private int occurences(int LookingFor, int[] Array){
 		
 		int i = 0;
@@ -61,34 +59,50 @@ public class Fleet extends Ownable{
 	
 		return Occurances;
 	}
-	
-	public void setOwner(int IDOfPlayer){
+	public void setPlayerPositionTer(int playerPositionMethod) {
+		playerPosition = playerPositionMethod;
+	}
+	public boolean isOwned(int IDOfPlayer){
+		boolean isOwned = isFleOwned(IDOfPlayer, playerPosition);
+		return isOwned;
+	}
+	public boolean isFleOwned(int IDOfPlayer, int playerPosition){
+		boolean isOwned = false;
+		String[] fieldNames = GameBoard.getFieldNames();
 		
-		if (Player.getPlayerPosition(IDOfPlayer) >= 17 || Player.getPlayerPosition(IDOfPlayer) <= 20){
-
-			if (!(isFieldOwned(IDOfPlayer))){
-				
-				isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 17] =  IDOfPlayer;
+		if (fieldNames[playerPosition] == "TER1") {
+			fieldNumber = 0;
+			if (fleArray[0] == -1) {
+				isOwned = false;
+			} else if (fleArray[0] >= 0) {
+				isOwned = true;
+				whoOwns = fleArray[0];
 			}
-			
-			if ((isFieldOwned(IDOfPlayer))){
-				
-//				Her skal staa en PayRent Metod der traekker penge fra personens penge og saetter dem over paa den anden persons penge
-			}		
+		} else if(fieldNames[playerPosition] == "TER2") {
+			fieldNumber = 1;
+			if (fleArray[1] == -1) {
+				isOwned = false;
+			} else if (fleArray[1] >= 0) {
+				isOwned = true;
+				whoOwns = fleArray[1];
+			}
+		} else if(fieldNames[playerPosition] == "TER3") {
+			fieldNumber = 2;
+			if (fleArray[2] == -1) {
+				isOwned = false;
+			} else if (fleArray[2] >= 0) {
+				isOwned = true;
+				whoOwns = fleArray[2];
+			}
+		} else if(fieldNames[playerPosition] == "TER4") {
+			fieldNumber = 3;
+			if (fleArray[3] == -1) {
+				isOwned = false;
+			} else if (fleArray[3] >= 0) {
+				isOwned = true;
+				whoOwns = fleArray[3];
+			}
 		}
-	}
-	
-	public int isOwnedByWho(int IDOfPlayer){
-		
-		// If this method returns -1, then it is not working properly
-		
-		ReturnElement = -1;
-		
-		if (Player.getPlayerPosition(IDOfPlayer) >= 17 || Player.getPlayerPosition(IDOfPlayer) <= 20){
-	
-			ReturnElement = isOwnedArray[Player.getPlayerPosition(IDOfPlayer) - 17];	
-		}
-		
-		return ReturnElement;		
-	}
+		return isOwned;
+	}	
 }

@@ -51,12 +51,12 @@ public class PlayerTurnSwitcher {
 	public void checkField(int IDOfPlayer, int playerPosition){
 		if (FieldController.OwnableCheck(IDOfPlayer, playerPosition)){
 			isOwned = true;
-			money = FieldController.getTerRent();
-			player = FieldController.getTerPlayer();
+			money = FieldController.getRent();
+			player = FieldController.getPlayer();
 		} else if (!(FieldController.OwnableCheck(IDOfPlayer, playerPosition))){
 			isOwned = false;
-			money = FieldController.getTerPrice() * -1;
-			player = FieldController.getTerPlayer();
+			money = FieldController.getPrice() * -1;
+			player = FieldController.getPlayer();
 		}
 		
 		
@@ -69,6 +69,6 @@ public class PlayerTurnSwitcher {
 		return isOwned;
 	}
 	public void shiftOwner(int IDOfPlayer){
-		FieldController.setTerOwner(IDOfPlayer);
+		FieldController.setOwner(IDOfPlayer);
 	}
 }
