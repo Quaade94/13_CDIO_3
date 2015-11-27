@@ -13,8 +13,8 @@ public class GameBoard {
 	private int numberOfFields = 0;
 	private int index = 0;
 
-	public GameBoard(int numberOfFieldsConstructor){
-		numberOfFields = numberOfFieldsConstructor;
+	public GameBoard(){
+		numberOfFields = 21;
 	}
 
 	private String[] fieldName = {"TER1","TER2","TER3","TER4","TER5","TER6","TER7","TER8","TER9","TER10","TER11","REF1","REF2","LAB1","LAB2","TAX1","TAX2","FLE1","FLE2", "FLE3", "FLE4"};

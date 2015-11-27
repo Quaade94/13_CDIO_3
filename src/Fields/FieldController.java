@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class FieldController {
 	Player Player = new Player();
-	GameBoard GameBoard = new GameBoard(21);
+	GameBoard GameBoard = new GameBoard();
 	Territory Territory = new Territory();
 
 	private int[] fleArray = {-1,-1,-1,-1};

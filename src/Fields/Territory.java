@@ -1,12 +1,9 @@
 package Fields;
 
-import Fields.Ownable;
-import Game.Account;
 import desktop_resources.GUI;
 
 public class Territory extends Ownable{
 
-	Account Account = new Account();
 	private int rent;
 	private int price;
 	private int player;
