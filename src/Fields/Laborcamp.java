@@ -1,8 +1,6 @@
 package Fields;
 
 import Fields.Ownable;
-import Game.Die;
-import java.util.Arrays;
 
 public class Laborcamp extends Ownable {
 
