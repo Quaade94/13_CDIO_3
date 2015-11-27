@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 import desktop_codebehind.Car;
 import desktop_resources.GUI;
-import game.Translator;
+
 
 public class Player{
 	
@@ -58,6 +58,10 @@ public class Player{
 	
 	private void addPlayer2(){		
 		player2Name = GUI.getUserString("Choose your name player 2");	
+		
+		while(player2Name.equals(player1Name)){
+			player2Name = GUI.getUserString(Language.getLang("WIN"));
+		}
 		playerNameArray[1] = player2Name;
 		Car car2 = new Car.Builder()
 				.typeRacecar()
@@ -65,11 +69,17 @@ public class Player{
 				.primaryColor(Color.WHITE)
 				.secondaryColor(Color.BLACK)
 				.build();
+		GUI.addPlayer(player2Name, 30000, car2);
 	}
 	
 	private void addPlayer3(){
 		
 		player3Name = GUI.getUserString("Choose your name player 3");
+		
+		while(player3Name.equals(player2Name)||player3Name.equals(player1Name)){
+			player3Name = GUI.getUserString(Language.getLang("WIN"));
+		}
+		
 		playerNameArray[2] = player3Name;
 		Car car3 = new Car.Builder()
 				.typeTractor()
@@ -77,10 +87,15 @@ public class Player{
 				.primaryColor(Color.PINK)
 				.secondaryColor(Color.RED)
 				.build();
+		GUI.addPlayer(player3Name, 30000, car3);
 	}
 	
 	private void addPlayer4(){		
 		player4Name = GUI.getUserString("Choose your name player 4");
+		
+		while(player4Name.equals(player3Name)||player4Name.equals(player2Name)||player4Name.equals(player1Name)){
+			player4Name = GUI.getUserString(Language.getLang("WIN"));
+		}
 		playerNameArray[3] = player4Name;
 		Car car4 = new Car.Builder()
 				.typeUfo()
@@ -93,6 +108,10 @@ public class Player{
 	
 	private void addPlayer5(){
 		player5Name = GUI.getUserString("Choose your name player 5");
+		
+		while(player5Name.equals(player4Name)||player5Name.equals(player3Name)||player5Name.equals(player2Name)||player5Name.equals(player1Name)){
+			player5Name = GUI.getUserString(Language.getLang("WIN"));
+		}
 		playerNameArray[4] = player5Name;
 		Car car5 = new Car.Builder()
 				.typeCar()
@@ -104,7 +123,11 @@ public class Player{
 	}
 	
 	private void addPlayer6(){		
-		player6Name = GUI.getUserString("Choose your name player 6");		
+		player6Name = GUI.getUserString("Choose your name player 6");
+		
+		while(player6Name.equals(player5Name)||player6Name.equals(player4Name)||player6Name.equals(player3Name)||player6Name.equals(player2Name)||player6Name.equals(player1Name)){
+			player6Name = GUI.getUserString(Language.getLang("WIN"));
+		}
 		playerNameArray[5] = player6Name;
 		Car car6 = new Car.Builder()
 				.typeRacecar()
@@ -122,24 +145,6 @@ public class Player{
 	public int getNumberOfPlayers(){
 		return playerNameArray.length;
 	}
-	
-//	private void setupPlayers(){
-//		String player2name = getPlayerName(1);
-//		
-//		//A player can't name them after someone else cannot be called the same as player1
-//		while(!verifyName(user2) || user2.equals(user1))
-//		{
-//			if(!verifyName(user2))
-//			{
-//				user2 = GUI.getUserString(Translator.getString("EMPTYNAMEERROR"));
-//			}
-//			else
-//			{
-//				user2 = GUI.getUserString(Translator.getString("NAMEERROR"));
-//			}
-//		}
-//		createPlayer(user2);
-//	}
 
 //---------------------------------------------------------------------------------------------------------------------------------------
 	Die Die = new Die();
