@@ -13,7 +13,7 @@ public class FieldController {
 	Refuge Refuge = new Refuge();
 
 	private int type;
-	
+	//Get the price of the field
 	public int getPrice(){
 		int returnValue = 0;
 		if (type == 1){
@@ -25,6 +25,7 @@ public class FieldController {
 		}
 		return returnValue;
 	}
+	//Get the owner of the field
 	public int getPlayer(){
 		int returnValue = 0;
 		if (type == 1){
@@ -40,6 +41,7 @@ public class FieldController {
 		}
 		return returnValue;
 	}
+	//Returning the rent of the field
 	public int getRent(){
 		int returnValue = 0;
 		if (type == 1){
@@ -55,6 +57,7 @@ public class FieldController {
 		}
 		return returnValue;
 	}
+	//Setting the owner of the field
 	public void setOwner(int IDOfPlayer){
 		if (type == 1){
 			Territory.setNewOwner(IDOfPlayer);
@@ -70,6 +73,7 @@ public class FieldController {
 	public void setDieSum(int diceSum){
 		Laborcamp.setDieSum(diceSum);
 	}
+	//Determines the type of the field and then checking the field in the types class
 	public boolean OwnableCheck(int IDOfPlayer, int playerPosition){
 		boolean isOwned = true;
 		Boolean[] fieldOwnable = GameBoard.getFieldOwnable();
