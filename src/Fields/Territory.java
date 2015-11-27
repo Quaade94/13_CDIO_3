@@ -25,15 +25,15 @@ public class Territory extends Ownable{
 		boolean isOwned = isTerOwned(IDOfPlayer, playerPosition);
 		return isOwned;
 	}
-	//Tr�kker penge fra spiller og s�tter som ny ejer
+	// Withdraws money from player and sets as new owner
 	public void setNewOwner(int IDOfPlayer){
 			terArray[fieldNumber] = IDOfPlayer;
 	}
-	//Modtager spillerens position
+	// Receives the players position
 	public void setPlayerPositionTer(int playerPositionMethod) {
 		playerPosition = playerPositionMethod;
 	}
-	//Tjekker om pladsen spilleren er landet p� er optaget
+	// Checks if the position of the player is occupied
 	public boolean isTerOwned(int IDOfPlayer, int playerPosition){
 		boolean isOwned = false;
 		String[] fieldNames = GameBoard.getFieldNames();
