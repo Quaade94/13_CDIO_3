@@ -67,7 +67,6 @@ public class FieldController {
 	}
 	public boolean OwnableCheck(int IDOfPlayer, int playerPosition){
 		boolean isOwned = true;
-		System.out.println(playerPosition);
 		Boolean[] fieldOwnable = GameBoard.getFieldOwnable();
 		String[] fieldNames = GameBoard.getFieldNames();
 		String fieldName = fieldNames[playerPosition-1];
