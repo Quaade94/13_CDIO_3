@@ -85,10 +85,11 @@ public class Main {
 					}
 				}
 				antalSpillere = Player.getPlayerArray().length - Turns1.numberOfBankrupts(Account.getAccountArray());
-			//placerer bilen på sin nye plads
-			
-//			System.out.println(Player.getNameOfPlayer(0));
-		
+
+				if(Account.getPlayerStash(Turns1.getPlayerTurn()) < 0){
+					Account.setPlayerStash(Turns1.getPlayerTurn(), -50000);
+					GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), 0);
+				}
 			//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
 				if (Turns1.getIndependentTurn() > 0){
 					GUI.removeCar(Player.carDestroyer, Player.getPlayerName(Turns1.getPlayerTurn()));
