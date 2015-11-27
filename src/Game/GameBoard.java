@@ -22,7 +22,6 @@ public class GameBoard {
 	private String[] fieldName = {"TER1","TER2","TER3","TER4","TER5","TER6","TER7","TER8","TER9","TER10","TER11","REF1","REF2","LAB1","LAB2","TAX1","TAX2","FLE1","FLE2", "FLE3", "FLE4"};
 	private String[] fieldDescription = {"TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","TER_DES1","REF1_DES","REF2_DES","LAB_DES","LAB_DES","TAX1_DES","TAX2_DES","FLEET_DES","FLEET_DES","FLEET_DES","FLEET_DES"};
 	private Boolean[] fieldOwnable = {true, true, true, true, true, true, true, true, true, true, true, false, false, true, true, false, false, true, true, true, true};
-	
 	private int[] fieldPrice = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000,5000,500,2500,2500,2000,4000,4000,4000,4000,4000};
 
 	public String[] getFieldNames(){
@@ -46,7 +45,6 @@ public class GameBoard {
 						.setTitle(Language.getLang(fieldName[index]))
 						.setDescription(Language.getLang(fieldDescription[index]))
 						.setSubText(Language.getLang("REC")+fieldPrice[index] + ",-")
-//						.setRent(fieldRent[index] + ",-")
 						.setFgColor(Color.BLACK)
 						.setBgColor(Color.pink)
 						.build();
@@ -58,7 +56,6 @@ public class GameBoard {
 						.setTitle(Language.getLang(fieldName[index]))
 						.setDescription(Language.getLang(fieldDescription[index]))
 						.setSubText(Language.getLang("PAY")+fieldPrice[index] + ",-")
-//						.setRent(fieldRent[index] + ",-")
 						.setFgColor(Color.BLACK)
 						.setBgColor(Color.LIGHT_GRAY)
 						.build();
@@ -72,7 +69,6 @@ public class GameBoard {
 						.setTitle(Language.getLang(fieldName[index]))
 						.setDescription(Language.getLang(fieldDescription[index]))
 						.setSubText(Language.getLang("PRI")+fieldPrice[index] + ",-")
-//						.setRent(fieldRent[index] + ",-")
 						.setFgColor(Color.black)
 						.setBgColor(Color.cyan)
 						.build();
@@ -85,7 +81,6 @@ public class GameBoard {
 						.setTitle(Language.getLang(fieldName[index]))
 						.setDescription(Language.getLang(fieldDescription[index]))
 						.setSubText(Language.getLang("PRI")+fieldPrice[index] + ",-")
-//						.setRent(fieldRent[index] + ",-")
 						.setFgColor(Color.BLACK)
 						.setBgColor(Color.orange)
 						.build();
@@ -98,7 +93,6 @@ public class GameBoard {
 						.setTitle(Language.getLang(fieldName[index]))
 						.setDescription(Language.getLang(fieldDescription[index]))
 						.setSubText(Language.getLang("PRI")+fieldPrice[index] + ",-")
-//						.setRent(fieldRent[index] + ",-")
 						.setFgColor(Color.BLACK)
 						.setBgColor(Color.yellow)
 						.build();
