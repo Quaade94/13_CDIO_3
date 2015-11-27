@@ -56,6 +56,8 @@ public class FieldController {
 			returnValue = Laborcamp.getPlayer();
 		}else if (type == 4){
 			returnValue = 6;
+		} else if (type == 5){
+			returnValue = 6;
 		}
 		return returnValue;
 	}
@@ -69,6 +71,8 @@ public class FieldController {
 			returnValue = Laborcamp.getRent();
 		}else if (type == 4){
 			returnValue = Tax.getRent();
+		} else if (type == 5){
+			returnValue = Refuge.getBonus();
 		}
 		return returnValue;
 	}
@@ -132,7 +136,14 @@ public class FieldController {
 					Tax.landOnField(IDOfPlayer);
 					isOwned = true;
 				} else if (fieldName.contains("REF")){
+					System.out.println("Success");
 					type = 5;
+					if (fieldName.contains("REF1")){
+						Refuge.setFieldNumber(1);
+					} else if (fieldName.contains("REF2")){
+						Refuge.setFieldNumber(2);
+					}
+					Refuge.landOnField(IDOfPlayer);
 					isOwned = true;
 				}
 		}

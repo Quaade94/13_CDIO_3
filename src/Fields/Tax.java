@@ -33,7 +33,6 @@ public class Tax extends Field{
 	}
 	public void setFieldNumber(int taxNumber){
 		fieldNumber = taxNumber;
-		System.out.println(fieldNumber);
 	}
 	public void setPlayerPositionTax(int playerPositionMethod) {
 		playerPosition = playerPositionMethod;

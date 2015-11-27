@@ -9,7 +9,7 @@ public class Account {
 	private int[] Accounts;
 	
 	public Account (){		
-		StartingCapital = 5000;		
+		StartingCapital = 30000;		
 	}
 
 	public void addAccounts(int lengthOfAccountArray){

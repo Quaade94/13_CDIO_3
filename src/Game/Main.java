@@ -1,5 +1,7 @@
 package Game;
 
+import java.util.Arrays;
+
 import desktop_resources.GUI;
 
 public class Main {
@@ -70,6 +72,7 @@ public class Main {
 						}
 					}
 				} else if (Turns1.getOwned()){
+					System.out.println(Arrays.toString(rentAndPlayer));
 					Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0] * -1);
 					GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
 					if(rentAndPlayer[1] != 6){

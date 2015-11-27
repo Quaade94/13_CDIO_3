@@ -1,40 +1,28 @@
 package Fields;
 
+import desktop_resources.GUI;
+
 public class Refuge extends Field{
 
 		private int bonus;
-		private int [] bonusArray = {5000,500};
+		private int fieldNumber;
+		private int player;
 		
 		@Override
 		public void landOnField(int IDOfPlayer){
-			
 			bonus = 0;
-
-			if (Player.getPlayerPosition(IDOfPlayer) == 11){
-				
-				bonus = bonusArray[0];
-				
-			}
-
-			else if (Player.getPlayerPosition(IDOfPlayer) == 12){
-
-				bonus = bonusArray[1];
-
-
-
+			player = IDOfPlayer;
+			
+			if (fieldNumber == 2){
+				bonus = -5000;
+			} else if (fieldNumber == 1){
+				bonus = -500;
 			}
 		}
-
+		public void setFieldNumber(int refNumber){
+			fieldNumber = refNumber;
+		}
 		public int getBonus() {
-
 			return bonus;
-
 		}
-		
-		
 	}
-	
-	
-	
-	
-
