@@ -4,15 +4,15 @@ import Fields.FieldController;
 import desktop_resources.GUI;
 
 public class PlayerTurnSwitcher {
-	int turnPlayer1 =0;
-	int turnPlayer2 =0;
-	int turnPlayer3 =0;
-	int turnPlayer4 =0;
-	int turnPlayer5 =0;
-	int turnPlayer6 =0;
-	int money;
-	int player;
-	boolean isOwned = false;
+	private int turnPlayer1 =0;
+	private int turnPlayer2 =0;
+	private int turnPlayer3 =0;
+	private int turnPlayer4 =0;
+	private int turnPlayer5 =0;
+	private int turnPlayer6 =0;
+	private int money;
+	private int player;
+	private boolean isOwned = false;
 	FieldController FieldController = new FieldController();
 	
 	int[] independentTurn = {turnPlayer1,turnPlayer2,turnPlayer3,turnPlayer4,turnPlayer5,turnPlayer6};
