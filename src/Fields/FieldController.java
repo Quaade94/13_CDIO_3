@@ -12,9 +12,6 @@ public class FieldController {
 	private int[] fleArray = {-1,-1,-1,-1};
 	private int[] labArray = {-1,-1};
 	
-	private void setTerArray(int IDOfPlayer, int index){
-		terArray[index] = IDOfPlayer;
-	}	
 	private void setFleArray(int IDOfPlayer, int index){
 		fleArray[index] = IDOfPlayer;
 	}	
@@ -22,9 +19,6 @@ public class FieldController {
 		labArray[index] = IDOfPlayer;
 	}
 	
-	private int getTerArray(int index){
-		return terArray[index];
-	}
 	private int getFleArray(int index){
 		return fleArray[index];
 	}
@@ -42,7 +36,7 @@ public class FieldController {
 		if (fieldOwnable[playerPosition-1] == true) {
 			if (fieldName.contains("TER") == true){
 				System.out.println("Territory");
-					Territory.setPlayerPositionTer(playerPosition);
+					Territory.setPlayerPositionTer(playerPosition-1);
 					Territory.landOnField(IDOfPlayer);
 			} else if (fieldName.contains("FLE") == true){
 				System.out.println("Fleet");
