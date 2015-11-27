@@ -13,7 +13,7 @@ import Game.Player;
 public class GameTests {
 	
 	Die dice = new Die();
-	Player player = new Player();
+	Player player = new Player(6);
 	GameBoard field = new GameBoard();
 	Language lang = new Language();
 	
@@ -26,5 +26,5 @@ public class GameTests {
 		
 		assertEquals(player.getPlayerPosition(0), roll);	
 	}
-
+	
 }
