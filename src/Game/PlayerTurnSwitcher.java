@@ -72,4 +72,32 @@ public class PlayerTurnSwitcher {
 	public void shiftOwner(int IDOfPlayer){
 		FieldController.setOwner(IDOfPlayer);
 	}
+	
+	
+	/**
+	 * This method can determin the amount of occurrence of numbers smaller than a number you diside, in an array of your choice 
+	 * 
+	 * @param LookingForLessThan: The number that want to look for the amount of occurrence smaller than this number
+	 * @param ArrayOfPlayers The Array of int's that you want to look for the number in
+	 * @return Returns the number of occurrence that was in the array
+	 */
+	private int numberOfBankrupts(int[] ArrayOfPlayers){
+			int i = 0;
+			int occurrence = 0;
+			while (i <= ArrayOfPlayers.length)
+			if (ArrayOfPlayers[i] < 0){
+				i++;
+				occurrence++;
+			} else i++;
+			return occurrence;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
