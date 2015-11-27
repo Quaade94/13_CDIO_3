@@ -59,11 +59,9 @@ public class Main {
 				
 				Turns1.setTenPercent(Account.getPlayerStash(Turns1.getPlayerTurn()));
 				Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
-				System.out.println(Player.getPlayerPosition(Turns1.getPlayerTurn()));
 				int[] rentAndPlayer = Turns1.getRentAndPlayer();
 				if (!(Turns1.getOwned())){
 					if (Account.getPlayerStash(Turns1.getPlayerTurn()) >= rentAndPlayer[0] * -1) {
-						System.out.println("pris " + rentAndPlayer[0]);
 						boolean wantToBuy = GUI.getUserLeftButtonPressed("BUY", "JA", "NOPE");
 						if (wantToBuy){
 								Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0]);
@@ -72,12 +70,13 @@ public class Main {
 						}
 					}
 				} else if (Turns1.getOwned()){
-					System.out.println("F�r " + Account.getPlayerStash(rentAndPlayer[1]) + " " + Account.getPlayerStash(Turns1.getPlayerTurn()));
 					Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0] * -1);
-					Account.setPlayerStash(rentAndPlayer[1], rentAndPlayer[0]);
 					GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
-					GUI.setBalance(Player.getPlayerName(rentAndPlayer[1]), Account.getPlayerStash(rentAndPlayer[1]));
-					System.out.println("Efter " + Account.getPlayerStash(rentAndPlayer[1])+ " " + Account.getPlayerStash(Turns1.getPlayerTurn()));
+					if(rentAndPlayer[1] != 6){
+						System.out.println(rentAndPlayer[1]);
+						Account.setPlayerStash(rentAndPlayer[1], rentAndPlayer[0]);
+						GUI.setBalance(Player.getPlayerName(rentAndPlayer[1]), Account.getPlayerStash(rentAndPlayer[1]));
+					}
 				}
 			
 			//placerer bilen på sin nye plads

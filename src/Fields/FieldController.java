@@ -55,7 +55,7 @@ public class FieldController {
 		} else if (type == 3){
 			returnValue = Laborcamp.getPlayer();
 		}else if (type == 4){
-			returnValue = 0;
+			returnValue = 6;
 		}
 		return returnValue;
 	}
