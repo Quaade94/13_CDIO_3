@@ -16,7 +16,7 @@ public class Player{
 	private int numOfPlayers;
 	String[] playerNameArray;
 	
-	// This constructor will get the amount of players (2-6) and same them in an array. 
+	// This constructor will get the amount of players (2-6) and save them in an array. 
 	public Player(int numOfPlayersConstructor){
 		numOfPlayers = numOfPlayersConstructor;
 		playerNameArray = new String[numOfPlayers];
