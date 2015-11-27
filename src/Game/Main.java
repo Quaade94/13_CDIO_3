@@ -23,6 +23,7 @@ public class Main {
 		PlayerTurnSwitcher Turns1 = new PlayerTurnSwitcher();
 	
 		Turns1.setPlayerSize(Player.getNumberOfPlayers());
+		//Creating players and accounts
 		Player.addPlayers();
 		Account.addAccounts(Player.getNumberOfPlayers());
 		
@@ -54,10 +55,15 @@ public class Main {
 					GUI.removeCar(Player.carDestroyer, Player.getPlayerName(Turns1.getPlayerTurn()));
 				}
 				
+				//Sending dice sum to Labor Camp class
 				Turns1.setDiceSum(Die.getDiceSum());
+				//Sending account stash to tax for calculation of 10%
 				Turns1.setTenPercent(Account.getPlayerStash(Turns1.getPlayerTurn()));
+				//Checking the field the player landed on
 				Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
+				//Getting price/rent and owning player in an array
 				int[] rentAndPlayer = Turns1.getRentAndPlayer();
+				//If the field is not owned
 				if (!(Turns1.getOwned())){
 					if (Account.getPlayerStash(Turns1.getPlayerTurn()) >= rentAndPlayer[0] * -1) {
 						boolean wantToBuy = GUI.getUserLeftButtonPressed(Language.getLang("CHOOSE"), Language.getLang("YES"), Language.getLang("NO"));
@@ -67,20 +73,20 @@ public class Main {
 								Turns1.shiftOwner(Turns1.getPlayerTurn());
 						}
 					}
+				//If the field is already owned / not ownable
 				} else if (Turns1.getOwned()){
-					System.out.println(Arrays.toString(rentAndPlayer));
 					Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0] * -1);
 					GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
 					if(rentAndPlayer[1] != 6){
-						System.out.println(rentAndPlayer[1]);
 						Account.setPlayerStash(rentAndPlayer[1], rentAndPlayer[0]);
 						if(Account.getPlayerStash(rentAndPlayer[1]) > 0){
 							GUI.setBalance(Player.getPlayerName(rentAndPlayer[1]), Account.getPlayerStash(rentAndPlayer[1]));
 						}
 					}
 				}
+				//Setting how many players are still left
 				antalSpillere = Player.getPlayerArray().length - Turns1.numberOfBankrupts(Account.getAccountArray());
-
+				//Cleaning up a player who lost from the board
 				if(Account.getPlayerStash(Turns1.getPlayerTurn()) < 0){
 					Account.setPlayerStash(Turns1.getPlayerTurn(), -50000);
 					GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), 0);
@@ -92,6 +98,7 @@ public class Main {
 				Turns1.scaleIndependentTurn();
 				Turns1.endTurn();
 			}else {
+				//If the player has lost
 				Account.setPlayerStash(Turns1.getPlayerTurn(), -50000);
 				GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), 0);
 				Turns1.endTurn();
