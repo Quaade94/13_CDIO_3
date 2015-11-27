@@ -16,13 +16,12 @@ public class Language {
 		text = ResourceBundle.getBundle("MessageBundle", eng);
 		
 	}
-	
+		
 	//en get-metode så vi kan kalde vores String til de andre klasser.
 	/**
 	 * 
-	 * @param keyword er et kort ord (i blokbukstaver) som man skriver ind imellem paranteterne når man kalder på metoden.
-	 * Inde i message bundle skriver man så sit keyword og = 'den text der skal så', se evt eksempler i MessageBundle.
-	 * @return retunere din String.
+	 * @param keyword is a string that you define in capital letters.
+	 * @return the String you define to the MessageBundle text file.
 	 */
 	public static String getLang(String keyword){
 		

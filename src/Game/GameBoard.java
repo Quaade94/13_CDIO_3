@@ -28,7 +28,6 @@ public class GameBoard {
 	public String[] getFieldNames(){
 		return fieldName;
 	}
-	
 	public int[] getFieldPrice(){
 		return fieldPrice;
 	}
