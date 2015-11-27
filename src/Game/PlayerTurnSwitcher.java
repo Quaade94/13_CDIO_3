@@ -62,6 +62,9 @@ public class PlayerTurnSwitcher {
 	public void setTenPercent(int playerMoney){
 		FieldController.setPlayerPercent(playerMoney);
 	}
+	public void setDiceSum(int diceSum){
+		FieldController.setDieSum(diceSum);
+	}
 	public int[] getRentAndPlayer(){
 		int[] rentAndPlayer = {money,player};
 		return rentAndPlayer;

@@ -88,6 +88,9 @@ public class FieldController {
 	public void setPlayerPercent(int playerMoney){
 		Tax.setTenPercent(playerMoney);
 	}
+	public void setDieSum(int diceSum){
+		Laborcamp.setDieSum(diceSum);
+	}
 	public boolean OwnableCheck(int IDOfPlayer, int playerPosition){
 		boolean isOwned = true;
 		Boolean[] fieldOwnable = GameBoard.getFieldOwnable();
@@ -122,7 +125,6 @@ public class FieldController {
 					isOwned = false;
 				}
 				Laborcamp.landOnField(IDOfPlayer);
-				System.out.println("Labor Camp");
 			}
 		} else {
 			 if (fieldName.contains("TAX")){
@@ -136,7 +138,6 @@ public class FieldController {
 					Tax.landOnField(IDOfPlayer);
 					isOwned = true;
 				} else if (fieldName.contains("REF")){
-					System.out.println("Success");
 					type = 5;
 					if (fieldName.contains("REF1")){
 						Refuge.setFieldNumber(1);
