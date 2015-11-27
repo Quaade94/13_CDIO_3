@@ -16,41 +16,39 @@ public class FieldController {
 	private int[] fleArray = {-1,-1,-1,-1};
 	private int[] labArray = {-1,-1};
 	
-	private void setFleArray(int IDOfPlayer, int index){
-		fleArray[index] = IDOfPlayer;
-	}	
-	private void setLabArray(int IDOfPlayer, int index){
-		labArray[index] = IDOfPlayer;
-	}
+//	private void setFleArray(int IDOfPlayer, int index){
+//		fleArray[index] = IDOfPlayer;
+//	}	
+//	private void setLabArray(int IDOfPlayer, int index){
+//		labArray[index] = IDOfPlayer;
+//	}
+//	
+//	private int getFleArray(int index){
+//		return fleArray[index];
+//	}
+//	private int getLabArray(int index){
+//		return labArray[index];
+//	}
 	
-	private int getFleArray(int index){
-		return fleArray[index];
+	public int getTerPrice(){
+		Territory.getPrice();
 	}
-	private int getLabArray(int index){
-		return labArray[index];
-	}
-	
-	public void OwnableCheck(int IDOfPlayer, int playerPosition, Account Account){
+	public boolean OwnableCheck(int IDOfPlayer, int playerPosition){
+		boolean isOwned = false;
 		System.out.println(playerPosition);
 		Boolean[] fieldOwnable = GameBoard.getFieldOwnable();
 		String[] fieldNames = GameBoard.getFieldNames();
 		String fieldName = fieldNames[playerPosition-1];
-		int rent;
 		
 		if (fieldOwnable[playerPosition-1]) {
 			if (fieldName.contains("TER")){
 					Territory.setPlayerPositionTer(playerPosition-1);
 					Territory.landOnField(IDOfPlayer);
-					if (Territory.isOwned(IDOfPlayer) == true){
-						Account.setPlayerStash(IDOfPlayer, Territory.getRent());
+					if (Territory.isOwned(IDOfPlayer)){
+						isOwned = true;
 					} else if (Territory.isOwned(IDOfPlayer) == false){
-						boolean wannaBuy = GUI.getUserLeftButtonPressed("Vil du købe?", "Ja", "Nej");
-						if (wannaBuy){
-							Account.setPlayerStash(IDOfPlayer, Territory.getPrice());
-						}
+						isOwned = false;
 					}
-					
-					
 			} else if (fieldName.contains("FLE") == true){
 				System.out.println("Fleet");
 			} else if (fieldName.contains("LAB") == true){
@@ -58,6 +56,7 @@ public class FieldController {
 				isLabOwned(IDOfPlayer, playerPosition);
 			}
 		}
+		return isOwned;
 	}
 	
 	public boolean isFleOwned(int IDOfPlayer, int playerPosition){

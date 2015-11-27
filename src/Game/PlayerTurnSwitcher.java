@@ -9,6 +9,8 @@ public class PlayerTurnSwitcher {
 	int turnPlayer4 =0;
 	int turnPlayer5 =0;
 	int turnPlayer6 =0;
+	int money;
+	boolean isOwned = false;
 	FieldController FieldController = new FieldController();
 	
 	int[] independentTurn = {turnPlayer1,turnPlayer2,turnPlayer3,turnPlayer4,turnPlayer5,turnPlayer6};
@@ -44,7 +46,19 @@ public class PlayerTurnSwitcher {
 	public int getPlayerTurn(){	
 	return playerTurn-1;
 	}
-	public void checkField(int IDOfPlayer, int playerPosition, Account Account){
-		FieldController.OwnableCheck(IDOfPlayer, playerPosition, Account);
+	public void checkField(int IDOfPlayer, int playerPosition){
+		if (FieldController.OwnableCheck(IDOfPlayer, playerPosition)){
+			
+		} else if (!(FieldController.OwnableCheck(IDOfPlayer, playerPosition))){
+			FieldController.getTerPrice();
+		}
+		
+		
+	}
+	public int[] getRentAndPlayer{
+		
+	}
+	public boolean getOwnable{
+		
 	}
 }

@@ -43,9 +43,8 @@ public class Main {
 			Account.setPlayerStash(Turns1.getPlayerTurn(), FieldEffect[Player.getPlayerPosition(Turns1.getPlayerTurn())-1]);
 
 			GUI.setCar(Player.getPlayerPosition(Turns1.getPlayerTurn()), Player.getPlayerName(Turns1.getPlayerTurn()));
-			GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
 			
-			Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()), Account);
+			Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
 		
 		//placerer bilen på sin nye plads
 		

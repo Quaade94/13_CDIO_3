@@ -132,7 +132,9 @@ public class Territory extends Ownable{
 		}
 		return isOwned;
 	}
-	
+	public int getPlayer(){
+		return whoOwns;
+	}
 	@Override
 	public int getRent() {
 		return rent;
