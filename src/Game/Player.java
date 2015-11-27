@@ -44,6 +44,7 @@ public class Player{
 		}
 	}
 	
+	// Depending on how many players entered, this creates their car, their GUI spot and adds their name to the name array
 	private void addPlayer1(){		
 		player1Name = GUI.getUserString("Choose your name player 1");
 		playerNameArray[0] = player1Name;
