@@ -65,7 +65,7 @@ public class Main {
 				int[] rentAndPlayer = Turns1.getRentAndPlayer();
 				if (!(Turns1.getOwned())){
 					if (Account.getPlayerStash(Turns1.getPlayerTurn()) >= rentAndPlayer[0] * -1) {
-						boolean wantToBuy = GUI.getUserLeftButtonPressed("BUY", "JA", "NOPE");
+						boolean wantToBuy = GUI.getUserLeftButtonPressed(Language.getLang("CHOOSE"), Language.getLang("YES"), Language.getLang("NO"));
 						if (wantToBuy){
 								Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0]);
 								GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));

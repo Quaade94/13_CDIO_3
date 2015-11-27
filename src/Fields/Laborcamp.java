@@ -28,7 +28,6 @@ public class Laborcamp extends Ownable {
 		rent = baseRent * dieSum;
 	}
 
-
 	public void setNewOwner(int IDOfPlayer){
 		labArray[fieldNumber] = IDOfPlayer;
 	}

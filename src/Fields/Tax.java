@@ -1,5 +1,6 @@
 package Fields;
 
+import Game.Language;
 import desktop_resources.GUI;
 
 public class Tax extends Field{
@@ -17,7 +18,7 @@ public class Tax extends Field{
 		
 		if (fieldNumber == 2){
 			//Ser ud til at knappen ikke laver en true eller false boolean alligvel.. -Lars
-			boolean choice = GUI.getUserLeftButtonPressed("GUI_TAX_DES", "10%", "4000,-");
+			boolean choice = GUI.getUserLeftButtonPressed(Language.getLang("PAY"), "10%", "4000,-");
 			if (choice){
 				double calculation = per * konto;
 				taxAmount = (int)calculation;
