@@ -31,7 +31,16 @@ public class FieldController {
 //	}
 	
 	public int getTerPrice(){
-		Territory.getPrice();
+		return Territory.getPrice();
+	}
+	public int getTerPlayer(){
+		return Territory.getPlayer();
+	}
+	public int getTerRent(){
+		return Territory.getRent();
+	}
+	public void setTerOwner(int IDOfPlayer){
+		Territory.setNewOwner(IDOfPlayer);
 	}
 	public boolean OwnableCheck(int IDOfPlayer, int playerPosition){
 		boolean isOwned = false;

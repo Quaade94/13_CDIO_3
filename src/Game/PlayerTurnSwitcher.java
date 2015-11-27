@@ -1,6 +1,7 @@
 package Game;
 
 import Fields.FieldController;
+import desktop_resources.GUI;
 
 public class PlayerTurnSwitcher {
 	int turnPlayer1 =0;
@@ -10,6 +11,7 @@ public class PlayerTurnSwitcher {
 	int turnPlayer5 =0;
 	int turnPlayer6 =0;
 	int money;
+	int player;
 	boolean isOwned = false;
 	FieldController FieldController = new FieldController();
 	
@@ -50,15 +52,21 @@ public class PlayerTurnSwitcher {
 		if (FieldController.OwnableCheck(IDOfPlayer, playerPosition)){
 			
 		} else if (!(FieldController.OwnableCheck(IDOfPlayer, playerPosition))){
-			FieldController.getTerPrice();
+			isOwned = false;
+			money = FieldController.getTerPrice() * -1;
+			player = FieldController.getTerPlayer();
 		}
 		
 		
 	}
-	public int[] getRentAndPlayer{
-		
+	public int[] getRentAndPlayer(){
+		int[] rentAndPlayer = {money,player};
+		return rentAndPlayer;
 	}
-	public boolean getOwnable{
-		
+	public boolean getOwned(){
+		return isOwned;
+	}
+	public void shiftOwner(int IDOfPlayer){
+		FieldController.setTerOwner(IDOfPlayer);
 	}
 }

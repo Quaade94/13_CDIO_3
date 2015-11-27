@@ -40,22 +40,36 @@ public class Main {
 			GUI.setDice(Die.getDice1(),Die.getDice2());
 			
 			Player.setPlayerPosition(Turns1.getPlayerTurn(), Die.getDiceSum());
-			Account.setPlayerStash(Turns1.getPlayerTurn(), FieldEffect[Player.getPlayerPosition(Turns1.getPlayerTurn())-1]);
 
 			GUI.setCar(Player.getPlayerPosition(Turns1.getPlayerTurn()), Player.getPlayerName(Turns1.getPlayerTurn()));
 			
+			//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
+			if (Turns1.getIndependentTurn() > 0){
+				GUI.removeCar(Player.carDestroyer, Player.getPlayerName(Turns1.getPlayerTurn()));
+			}
+			
 			Turns1.checkField(Turns1.getPlayerTurn(), Player.getPlayerPosition(Turns1.getPlayerTurn()));
+			int[] rentAndPlayer = Turns1.getRentAndPlayer();
+			if (!(Turns1.getOwned())){
+				boolean wantToBuy = GUI.getUserLeftButtonPressed("BUY", "JA", "NOPE");
+				if (wantToBuy){
+					Account.setPlayerStash(Turns1.getPlayerTurn(), rentAndPlayer[0]);
+					System.out.print("LOLOLO" + Account.getPlayerStash(Turns1.getPlayerTurn()));
+					GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), Account.getPlayerStash(Turns1.getPlayerTurn()));
+					Turns1.shiftOwner(Turns1.getPlayerTurn());
+				}
+			}
 		
 		//placerer bilen på sin nye plads
 		
 //		System.out.println(Player.getNameOfPlayer(0));
 	
 		//fjerner bilen fra sin tidligere plads (med mindre det er første tur)
-		if (Turns1.getIndependentTurn() > 0){
-		GUI.removeCar(Player.carDestroyer, Player.getPlayerName(Turns1.getPlayerTurn()));
-		}
-		Turns1.scaleIndependentTurn();
-		Turns1.endTurn();
+			if (Turns1.getIndependentTurn() > 0){
+				GUI.removeCar(Player.carDestroyer, Player.getPlayerName(Turns1.getPlayerTurn()));
+			}
+			Turns1.scaleIndependentTurn();
+			Turns1.endTurn();
 		}
 		GUI.getUserButtonPressed(Language.getLang("WIN"), Language.getLang("CL"));
 		

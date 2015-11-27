@@ -1,5 +1,7 @@
 package Fields;
 
+import java.util.Arrays;
+
 import desktop_resources.GUI;
 
 public class Territory extends Ownable{
@@ -9,7 +11,7 @@ public class Territory extends Ownable{
 	private int player;
 	private int[] terArray = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 	private int[] priceArray = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000};
-	private int[] rentArray = {1000,1500,2000,3000,4000,4300,4750,5000,5500};
+	private int[] rentArray = {100,300,500,700,1000,1300,1600,2000,2600,3200,4000};
 	private int playerPosition;
 	private int whoOwns;
 	private int fieldNumber;
@@ -26,11 +28,9 @@ public class Territory extends Ownable{
 		return isOwned;
 	}
 	//Trækker penge fra spiller og sætter som ny ejer
-	private void setNewOwner(boolean wantToBuy, int IDOfPlayer){
-		if (wantToBuy == true){
-			price = price * -1;
+	public void setNewOwner(int IDOfPlayer){
 			terArray[fieldNumber] = IDOfPlayer;
-		}
+			System.out.println("Dette er ter array: " + Arrays.toString(terArray));
 	}
 	//Modtager spillerens position
 	public void setPlayerPositionTer(int playerPositionMethod) {

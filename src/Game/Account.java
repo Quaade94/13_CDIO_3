@@ -27,6 +27,7 @@ public class Account {
 		System.out.println("Dette: " + IDOfPlayer + incMoney);
 		System.out.println(Arrays.toString(Accounts));
 		Accounts[IDOfPlayer] = Accounts[IDOfPlayer] + incMoney;
+		System.out.println(Arrays.toString(Accounts));
 	}
 	
 //	public static int getAccountSum(int IDOfPlayer){
