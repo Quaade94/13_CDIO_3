@@ -152,6 +152,9 @@ public class Player{
 	public int getNumberOfPlayers(){
 		return playerNameArray.length;
 	}
+	public String[] getPlayerArray(){
+		return playerNameArray;
+	}
 
 //---------------------------------------------------------------------------------------------------------------------------------------
 	Die Die = new Die();
