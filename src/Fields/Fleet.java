@@ -15,8 +15,6 @@ public class Fleet extends Ownable{
 	private int fieldNumber;
 	
 	private int[] fleArray = {-1,-1,-1,-1};
-
-	private int ReturnElement;
 	
 	@Override
 	public void landOnField(int IDOfPlayer){
@@ -56,8 +54,7 @@ public class Fleet extends Ownable{
 				Occurances++;
 				i++;
 			} else i++;	
-		}
-	
+		}	
 		return Occurances;
 	}
 	public void setPlayerPositionTer(int playerPositionMethod) {
