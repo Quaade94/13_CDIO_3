@@ -1,7 +1,6 @@
 package Game;
 
 import Fields.FieldController;
-import desktop_resources.GUI;
 
 public class PlayerTurnSwitcher {
 	private int turnPlayer1 =0;
