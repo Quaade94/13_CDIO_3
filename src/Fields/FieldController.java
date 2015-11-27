@@ -55,7 +55,7 @@ public class FieldController {
 		} else if (type == 3){
 			returnValue = Laborcamp.getPlayer();
 		}else if (type == 4){
-			returnValue = 7;
+			returnValue = 0;
 		}
 		return returnValue;
 	}
@@ -119,20 +119,22 @@ public class FieldController {
 				}
 				Laborcamp.landOnField(IDOfPlayer);
 				System.out.println("Labor Camp");
-			} else if (fieldName.contains("TAX")){
-				type = 4;
-				Tax.setPlayerPositionTax(playerPosition-1);
-				if (fieldName.contains("TAX1")){
-					Tax.setFieldNumber(1);
-				} else if (fieldName.contains("TAX2")){
-					Tax.setFieldNumber(2);
-				}
-				Tax.landOnField(IDOfPlayer);
-				isOwned = true;
-			} else if (fieldName.contains("REF")){
-				type = 5;
-				isOwned = true;
 			}
+		} else {
+			 if (fieldName.contains("TAX")){
+					type = 4;
+					Tax.setPlayerPositionTax(playerPosition-1);
+					if (fieldName.contains("TAX1")){
+						Tax.setFieldNumber(1);
+					} else if (fieldName.contains("TAX2")){
+						Tax.setFieldNumber(2);
+					}
+					Tax.landOnField(IDOfPlayer);
+					isOwned = true;
+				} else if (fieldName.contains("REF")){
+					type = 5;
+					isOwned = true;
+				}
 		}
 		return isOwned;
 	}
