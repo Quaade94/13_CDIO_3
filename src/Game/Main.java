@@ -39,10 +39,10 @@ public class Main {
 		int[] FieldEffect = GameBoard.getFieldPrice();
 				
 		//player kaster med terningen og flytter brikke	
+		int antalSpillere = Player.getNumberOfPlayers();
+		System.out.println("Spillere " + antalSpillere); 
 		
-		
-		
-		while(Player.getNumberOfPlayers()>1){
+		while(antalSpillere>1){
 			if (Account.getPlayerStash(Turns1.getPlayerTurn()) >= 0){
 				
 				GUI.getUserButtonPressed(Player.getPlayerName(Turns1.getPlayerTurn()) + Language.getLang("TURN"), Language.getLang("TD"));
@@ -79,10 +79,12 @@ public class Main {
 					if(rentAndPlayer[1] != 6){
 						System.out.println(rentAndPlayer[1]);
 						Account.setPlayerStash(rentAndPlayer[1], rentAndPlayer[0]);
-						GUI.setBalance(Player.getPlayerName(rentAndPlayer[1]), Account.getPlayerStash(rentAndPlayer[1]));
+						if(Account.getPlayerStash(rentAndPlayer[1]) > 0){
+							GUI.setBalance(Player.getPlayerName(rentAndPlayer[1]), Account.getPlayerStash(rentAndPlayer[1]));
+						}
 					}
 				}
-				Turns1.numberOfBankrupts(Account.getAccountArray(), Player.getPlayerArray());
+				antalSpillere = Player.getPlayerArray().length - Turns1.numberOfBankrupts(Account.getAccountArray());
 			//placerer bilen på sin nye plads
 			
 //			System.out.println(Player.getNameOfPlayer(0));
@@ -93,18 +95,19 @@ public class Main {
 				}
 				Turns1.scaleIndependentTurn();
 				Turns1.endTurn();
-			}
-			else {
+			}else {
 //				Turns1.scaleIndependentTurn();
+				Account.setPlayerStash(Turns1.getPlayerTurn(), -50000);
+				GUI.setBalance(Player.getPlayerName(Turns1.getPlayerTurn()), 0);
 				Turns1.endTurn();
 			}
 				
 				
 			}
-				
-			
-			
-		GUI.getUserButtonPressed(Language.getLang("WIN"), Language.getLang("CL"));
+
+		if (antalSpillere == 1) {
+			GUI.getUserButtonPressed(Turns1.whoHasWon(Account.getAccountArray(), Player.getPlayerArray()) + " " + Language.getLang("WIN"), Language.getLang("CL"));
+		}
 		
 		GUI.close();
 		long gameTime2 = System.currentTimeMillis();

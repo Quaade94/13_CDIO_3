@@ -84,7 +84,7 @@ public class PlayerTurnSwitcher {
 	 * @param ArrayOfPlayers The Array of int's that you want to look for the number in
 	 * @return Returns the number of occurrence that was in the array
 	 */
-	public void numberOfBankrupts(int[] ArrayOfPlayers, String[] playerNames){
+	public int numberOfBankrupts(int[] ArrayOfPlayers){
 		int i = 0;
 		int occurrence = 0;
 		while (i < ArrayOfPlayers.length)
@@ -92,26 +92,18 @@ public class PlayerTurnSwitcher {
 			i++;
 			occurrence++;
 		} else i++;
-		System.out.print("occ " + occurrence);
-		if (occurrence == ArrayOfPlayers.length-1) whoHasWon(ArrayOfPlayers, playerNames);
+		return occurrence;
 	}
-	private void whoHasWon(int[] ArrayOfPlayers, String[] playerNames){
-		System.out.println("Nice");
+	public String whoHasWon(int[] ArrayOfPlayers, String[] playerNames){
 		int i = 0;
 		int R = 0;
 		while (i < ArrayOfPlayers.length){
 			if (ArrayOfPlayers[i] > 0){
 					R = i;
+					i++;
 			} else i++;
 		}
 		String winner = playerNames[R];
-		GUI.showMessage(winner);
+		return winner;
 	}
-	
-	
-	
-	
-	
-	
-	
 }
