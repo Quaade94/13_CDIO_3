@@ -46,7 +46,6 @@ public class Laborcamp extends Ownable {
 				i++;
 			} else i++;	
 		}
-	
 		return Occurances;
 	}
 	
@@ -56,8 +55,7 @@ public class Laborcamp extends Ownable {
 	public boolean isOwned(int IDOfPlayer){
 		boolean isOwned = isLabOwned(IDOfPlayer, playerPosition);
 		return isOwned;
-	}
-	
+	}	
 	public boolean isLabOwned(int IDOfPlayer, int playerPosition){
 		boolean isOwned = false;
 		String[] fieldNames = GameBoard.getFieldNames();
