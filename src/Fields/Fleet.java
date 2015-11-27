@@ -43,6 +43,7 @@ public class Fleet extends Ownable{
 	}
 	public void setNewOwner(int IDOfPlayer){
 		fleArray[fieldNumber] = IDOfPlayer;
+		System.out.println("Fleet array: " + Arrays.toString(fleArray));
 	}
 	private int occurences(int LookingFor, int[] Array){
 		
@@ -70,7 +71,7 @@ public class Fleet extends Ownable{
 		boolean isOwned = false;
 		String[] fieldNames = GameBoard.getFieldNames();
 		
-		if (fieldNames[playerPosition] == "TER1") {
+		if (fieldNames[playerPosition] == "FLE1") {
 			fieldNumber = 0;
 			if (fleArray[0] == -1) {
 				isOwned = false;
@@ -78,7 +79,7 @@ public class Fleet extends Ownable{
 				isOwned = true;
 				whoOwns = fleArray[0];
 			}
-		} else if(fieldNames[playerPosition] == "TER2") {
+		} else if(fieldNames[playerPosition] == "FLE2") {
 			fieldNumber = 1;
 			if (fleArray[1] == -1) {
 				isOwned = false;
@@ -86,7 +87,7 @@ public class Fleet extends Ownable{
 				isOwned = true;
 				whoOwns = fleArray[1];
 			}
-		} else if(fieldNames[playerPosition] == "TER3") {
+		} else if(fieldNames[playerPosition] == "FLE3") {
 			fieldNumber = 2;
 			if (fleArray[2] == -1) {
 				isOwned = false;
@@ -94,7 +95,7 @@ public class Fleet extends Ownable{
 				isOwned = true;
 				whoOwns = fleArray[2];
 			}
-		} else if(fieldNames[playerPosition] == "TER4") {
+		} else if(fieldNames[playerPosition] == "FLE4") {
 			fieldNumber = 3;
 			if (fleArray[3] == -1) {
 				isOwned = false;

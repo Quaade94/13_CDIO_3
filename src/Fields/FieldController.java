@@ -95,64 +95,11 @@ public class FieldController {
 			} else if (fieldName.contains("LAB")){
 				type = 3;
 				System.out.println("Labor Camp");
-				isLabOwned(IDOfPlayer, playerPosition);
 			} else if (fieldName.contains("TAX")){
 				type = 4;
 				isOwned = true;
 			} else if (fieldName.contains("REF")){
 				type = 5;
-				isOwned = true;
-			}
-		}
-		return isOwned;
-	}
-	
-	public boolean isFleOwned(int IDOfPlayer, int playerPosition){
-
-		boolean isOwned = false;
-		String[] fieldNames = GameBoard.getFieldNames();
-		if (fieldNames[playerPosition-1] == "FLE1") {
-			if (fleArray[0] == -1) {
-				isOwned = false;
-			} else if (fleArray[0] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "FLE2") {
-			if (fleArray[1] == -1) {
-				isOwned = false;
-			} else if (fleArray[1] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "FLE3") {
-			if (fleArray[2] == -1) {
-				isOwned = false;
-			} else if (fleArray[2] >= 0) {
-				isOwned = true;
-			}
-		} else if(fieldNames[playerPosition-1] == "FLE4") {
-			if (fleArray[3] == -1) {
-				isOwned = false;
-			} else if (fleArray[3] >= 0) {
-				isOwned = true;
-			}
-		}
-		return isOwned;
-	}
-	public boolean isLabOwned(int IDOfPlayer, int playerPosition){
-
-		boolean isOwned = false;
-		String[] fieldNames = GameBoard.getFieldNames();
-		if (fieldNames[playerPosition-1] == "LAB1") {
-			if (labArray[0] == -1) {
-				isOwned = false;
-			} else if (labArray[0] >= 0) {
-				isOwned = true;
-				//whoOwns(IDOfPlayer,labArray[0]);
-			}
-		} else if (fieldNames[playerPosition-1] == "LAB1") {
-			if (labArray[1] == -1) {
-				isOwned = false;
-			} else if (labArray[1] >= 0) {
 				isOwned = true;
 			}
 		}

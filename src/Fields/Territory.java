@@ -23,7 +23,6 @@ public class Territory extends Ownable{
 		price = 0;
 		rent = rentArray[fieldNumber];
 		price = priceArray[fieldNumber];
-		System.out.println("field " + fieldNumber);
 	}
 	public boolean isOwned(int IDOfPlayer){
 		boolean isOwned = isTerOwned(IDOfPlayer, playerPosition);
@@ -32,7 +31,6 @@ public class Territory extends Ownable{
 	//Trækker penge fra spiller og sætter som ny ejer
 	public void setNewOwner(int IDOfPlayer){
 			terArray[fieldNumber] = IDOfPlayer;
-			System.out.println("Dette er ter array: " + Arrays.toString(terArray));
 	}
 	//Modtager spillerens position
 	public void setPlayerPositionTer(int playerPositionMethod) {
