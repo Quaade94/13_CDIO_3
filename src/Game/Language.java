@@ -10,8 +10,11 @@ public class Language {
 	
 	public static void setLocale(Locale eng){	
 		
-		//Resource bundle 'text' bliver difineret som vores textfil (som vi skriver vores sætningerne ind i).
+		//Resource bundle 'text' bliver difineret som vores textfil som hedder 'MessageBundle..
+		//(som vi skriver vores sætningerne ind i).
+		//Messagebundle bliver altså kaldet her
 		text = ResourceBundle.getBundle("MessageBundle", eng);
+		
 	}
 	
 	//en get-metode så vi kan kalde vores String til de andre klasser.
@@ -21,7 +24,13 @@ public class Language {
 		//Kommandoen lyder Locale(String language, String country), her sætter vi den til typen engelsk i storbritanien.
 		setLocale(new Locale("en", "GB"));
 		
+		//VIGTIG
+		//keyword er et kort ord som man skriver ind imellem paranteterne når man kalder på metoden.
+		//Inde i message bundle skriver man så sit keyword og = 'den text der skal så', se evt eksempler i MessageBundle.
+		
 		return text.getString(keyword);
 	}
 	
 }
+
+//	.properties gør det muligt at åbne filen i alle text editors.
