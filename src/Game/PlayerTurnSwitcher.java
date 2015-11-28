@@ -47,6 +47,7 @@ public class PlayerTurnSwitcher {
 	public int getPlayerTurn(){	
 	return playerTurn-1;
 	}
+	//Checking the field the player landed on
 	public void checkField(int IDOfPlayer, int playerPosition){
 		if (FieldController.OwnableCheck(IDOfPlayer, playerPosition)){
 			isOwned = true;
@@ -64,20 +65,23 @@ public class PlayerTurnSwitcher {
 	public void setDiceSum(int diceSum){
 		FieldController.setDieSum(diceSum);
 	}
+	//Return the rent/price of the field and the owner
 	public int[] getRentAndPlayer(){
 		int[] rentAndPlayer = {money,player};
 		return rentAndPlayer;
 	}
+	//Returns whether or not the field is owned
 	public boolean getOwned(){
 		return isOwned;
 	}
+	//Changes the owner
 	public void shiftOwner(int IDOfPlayer){
 		FieldController.setOwner(IDOfPlayer);
 	}
 	
 	
 	/**
-	 * This method can determin the amount of occurrence of numbers smaller than a number you diside, in an array of your choice 
+	 * This method can determine the amount of occurrence of numbers smaller than a number you decide, in an array of your choice 
 	 * 
 	 * @param LookingForLessThan: The number that want to look for the amount of occurrence smaller than this number
 	 * @param ArrayOfPlayers The Array of int's that you want to look for the number in

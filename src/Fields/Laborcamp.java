@@ -16,14 +16,14 @@ public class Laborcamp extends Ownable {
 
 	@Override
 	public void landOnField(int IDOfPlayer) {
-
 		rent = 0;
 		price = 2500;
 
+		rent = baseRent * dieSum;
+		//Doubles the rent if player owns both
 		if (occurences(whoOwns, labArray) == 2) {
 			rent = rent * 2;
 		}
-		rent = baseRent * dieSum;
 	}
 
 	public void setNewOwner(int IDOfPlayer){
@@ -54,6 +54,7 @@ public class Laborcamp extends Ownable {
 		boolean isOwned = isLabOwned(IDOfPlayer, playerPosition);
 		return isOwned;
 	}	
+	// Checks if the position of the player is occupied
 	public boolean isLabOwned(int IDOfPlayer, int playerPosition){
 		boolean isOwned = false;
 		String[] fieldNames = GameBoard.getFieldNames();

@@ -1,8 +1,6 @@
 package Fields;
 
-import Game.Account;
 import Game.GameBoard;
-import Game.Player;
 
 public abstract class Field{
 
